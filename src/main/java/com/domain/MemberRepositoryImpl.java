@@ -16,7 +16,7 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
     @Override
-    public void addMemeber() {
+    public void addMemeber(Member member) {
 
     }
 

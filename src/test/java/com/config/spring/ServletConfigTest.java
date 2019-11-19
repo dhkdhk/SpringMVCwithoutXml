@@ -1,23 +1,31 @@
 package com.config.spring;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=ServletInit.class)
-public class ServletInitTest {
+@WebAppConfiguration
+@ContextConfiguration(classes = ServletConfig.class)
+public class ServletConfigTest {
 
-    @Autowired
-    private ApplicationContext context;
+
+    protected AnnotationConfigWebApplicationContext context;
+
+    @Before
+    public void setUp(){
+        context = new AnnotationConfigWebApplicationContext();
+        context.register(RootConfig.class);
+        context.refresh();
+    }
 
     @Test
     public void rootConfigTest(){

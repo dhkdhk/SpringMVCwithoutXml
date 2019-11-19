@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class MysqlConfig {
 
     public MysqlConfig() {
-        System.out.println(MysqlConfig.class.getPackage().getName());
+        System.out.println(MysqlConfig.class.getPackage().getClass());
     }
 
     private final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";

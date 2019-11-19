@@ -1,6 +1,6 @@
 package com.domain;
 
-public interface MemberRepository {
+public interface MemberService {
 
     void addMemeber(Member member);
 

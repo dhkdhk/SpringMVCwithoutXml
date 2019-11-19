@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class RootConfig {
 
     public RootConfig(){
-        System.out.println(RootConfig.class.getPackage().getName());
+        System.out.println(RootConfig.class.getPackage().getClass());
     }
 }
