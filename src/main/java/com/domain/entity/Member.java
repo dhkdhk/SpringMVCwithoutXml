@@ -2,13 +2,11 @@ package com.domain.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-
-
 @Getter @Setter @Builder @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+//@Entity
+//@Table(name="test")
 public class Member {
 
     private Long memberId;

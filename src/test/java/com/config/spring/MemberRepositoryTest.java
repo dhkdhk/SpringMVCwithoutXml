@@ -28,4 +28,13 @@ public class MemberRepositoryTest {
         //When & Then
         Assert.assertEquals(1, memberRepository.addMemeber(member));
     }
+
+    @Test
+    public void getMember() throws Exception {
+
+        Member member = memberRepository.getMember(6L);
+
+        //When & Then
+        Assert.assertEquals("dhk", member.getMemberName());
+    }
 }

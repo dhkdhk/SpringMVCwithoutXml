@@ -18,17 +18,4 @@ import org.springframework.web.servlet.view.JstlView;
         excludeFilters = @ComponentScan.Filter(type= FilterType.ANNOTATION, value = {Repository.class, Service.class}))
 public class WebAppConfig implements WebMvcConfigurer {
 
-    public WebAppConfig(){
-        System.out.println(this.getClass().getName());
-    }
-
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/WEB-INF/view/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
 }

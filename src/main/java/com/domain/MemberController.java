@@ -2,17 +2,18 @@ package com.domain;
 
 import com.domain.entity.Member;
 import com.domain.service.MemberService;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/api/member")
-@NoArgsConstructor
+@RequestMapping(value = "/api/member", produces = MediaType.APPLICATION_JSON_VALUE)
+
 public class MemberController {
 
     @Autowired

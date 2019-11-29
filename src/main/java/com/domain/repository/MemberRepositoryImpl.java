@@ -2,11 +2,8 @@ package com.domain.repository;
 
 
 import com.domain.entity.Member;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -20,7 +17,9 @@ public class MemberRepositoryImpl implements MemberRepository {
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
     private final String INSERT_QUERY = "INSERT INTO member (member_password, member_name) VALUES (:memberPassword, :memberName)";
-    private final String SELECT_QUERY = "SELECT member_id, member_name FROM member WHERE member_id= :id";
+    private final String SELECT_QUERY = "SELECT member_id, member_name FROM member WHERE member_id= :memberId";
+    private final String UPDATE_QUERY = "UPDATE member SET member_name= :memberName";
+    private final String DELETE_QUERY = "DELETE member WHERE member_id= :memberId";
 
     public MemberRepositoryImpl(NamedParameterJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -29,11 +28,12 @@ public class MemberRepositoryImpl implements MemberRepository {
     private static final class MemberMapper implements RowMapper<Member>{
         public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
             Member member = new Member();
-            member.setMemberId(rs.getLong("memberId"));
-            member.setMemberName(rs.getString("memberName"));
+            member.setMemberId(rs.getLong("member_id"));
+            member.setMemberName(rs.getString("member_name"));
             return member;
         }
     }
+
 
     @Override
     public int addMemeber(Member member) {
@@ -45,10 +45,13 @@ public class MemberRepositoryImpl implements MemberRepository {
         return jdbcTemplate.update(INSERT_QUERY, paramMap);
     }
 
+
+
     @Override
     public Member getMember(Long memberId) {
-        return jdbcTemplate.queryForObject(SELECT_QUERY, new MapSqlParameterSource(
-                "memberId", memberId), new MemberMapper());
+        Map namedParameters = new HashMap();
+        namedParameters.put("memberId",memberId);
+        return jdbcTemplate.queryForObject(SELECT_QUERY, namedParameters, new MemberMapper());
     }
 
     @Override
