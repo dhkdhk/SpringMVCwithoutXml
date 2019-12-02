@@ -15,9 +15,6 @@ public class MysqlConfig {
     private final String USER_NAME = "study";
     private final String PASSWORD = "hard";
     //Enhanced Random
-    public MysqlConfig(){
-        System.out.println(this.getClass().getName());
-    }
 
     @Bean
     public DataSource getDataSource() {

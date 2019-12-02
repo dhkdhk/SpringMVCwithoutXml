@@ -1,17 +1,17 @@
 package com.config.spring;
 
+import com.config.datasource.MysqlConfig;
+import com.domain.repository.MemberRepository;
+import com.domain.service.MemberService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-//@EnableTransactionManagement
-@ComponentScan(basePackages = { "com.config.datasource", "com.domain"},
+@ComponentScan(basePackageClasses = {MysqlConfig.class, MemberRepository.class, MemberService.class},
                 excludeFilters = @ComponentScan.Filter(type= FilterType.ANNOTATION, value= Controller.class))
 public class RootAppConfig {
 
@@ -20,8 +20,4 @@ public class RootAppConfig {
         return new ObjectMapper();
     }
 
-//    @Bean
-//    public PlatformTransactionManager txManager() {
-//         return new DataSourceTransactionManager(dataSource());
-//    }
 }
