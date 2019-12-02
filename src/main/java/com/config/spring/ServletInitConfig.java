@@ -1,7 +1,5 @@
 package com.config.spring;
 
-import org.hibernate.mapping.RootClass;
-import org.springframework.context.ApplicationContext;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -13,9 +11,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
 public class ServletInitConfig implements WebApplicationInitializer {
-
-    private final int ROOT_CONTEXT = 1;
-    private final int CHILD_CONTEXT = 2;
 
     @Override
     public void onStartup(ServletContext container) {
