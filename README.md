@@ -12,26 +12,20 @@
   Java 코드로 Spring을 설정하기 전에 먼저 이해해야하는 부분은 RootApplicationContext와 WebApplicationContext이다. 
  
   처음에는 이 두 개의 용어가 Spring의 특별한 것을 일컫는줄 알았다. 특별한 기술용어를 지칭하는 것이 아닌 Spring의 ApplicationContext를
- 계층적으로 분리하여 Root(부모)와 Web(자식)으로 나눈 ApplicationContext를 말하는 것이었다. (상속 구조를 생각하면 된다)
+ 계층적으로 분리하여 Root(부모)와 Web(자식)으로 나눈 ApplicationContext를 말하는 것이었다.(상속 구조를 생각하면 된다)
 
+![ScreenShot](contexts.png)
 
- ![Screenshot](mvc_contexts.png) 
-
+위의 그림처럼 여러 개의 WebApplicationContext들은 단 하나의 RootApplicationContext에서 설정된 Bean들을 공유하여 사용한다. 
+Spring에서는 왜 이렇게 하나의 Root와 여러개의 Web ApplicationContext만들 수 있도록 제공하였을까? 
+당연히 확장성 때문이다. 각 레이어간의 책임 및 역할을 생각해보면, 왜 그림과 같은 구조로 만들었는지 어느정도 이해할 수 있다. 
  
  일반적으로 Java WebApplication 구조는 Client에 UI 랜더링, 컴포넌트를 처리하는 Presentation Layer, 비즈니스 로직을 처리하는 Business Layer, Database에 접근하는 Data Access Layer로 구성되어 있다. 
  여기서 RootApplicationContext는 Business Layer와 Data Access Layer에 필요한 Bean 생성과 관계설정등에 대한 설정 내용을 담고 있고,
- WebApplicationContext는 UI 랜더링을 처리하는 Presentation Layer와 관련된 설정 내용을 담고 있다. 
+ WebApplicationContext는 Presentation Layer인 SpringMVC와 관련된 설정 내용을 담고 있다. 
  
- 그렇게 해서, 여러 WebApplicationContext들은 하나의 RootApplicationContext를 두고 Service Layer와 Business Layer에 필요한 Bean들을 공유하여 사용한다. 
- 
- 그러면 왜 이렇게 하나의 Root와 여러개의 Web ApplicationContext의 계층간 레이어를 구성하였을까?
- 
- 각 레이어간의 책임을 생각해보면 계층간 레이어를 두고 왜 확장성을 고려했는지 알 수 있다.(스터디원분의 피드백)
- 
- Presentation Layer는 DispatcherServlet을 통해 Spring MVC를 사용하여 Client에 가장 가까운 요청과 응답을 처리하는 레이어다. 확장성에서 생각해 봤을 때, 
-Business, Data Access Layer를 여러 ApplicationContext를 두는게 효율적일까? 아니면 Client의 요청과 응답을 최전방에서 처리하는 ApplicationContext를 여러개 두는게 효율적일까?
-
-우선 이 부분에 대한 정리와 생각은 실습예제를 진행한 후에 내려보겠다.
+ 데이터의 처리와 정합성, 트랜잭션의 일관성 등을 유지해야하는 Business Layer, Data Access Layer를 굳이 두개를 만들어 중복이 허용되도록 할 필요는 없을 것 같다.
+ 상대적으로 Client와 가장 밀접한 Presentation Layer는 여러 명의 Client에 필요한 부분을 맞춰야하기 때문에 WebApplicationContext를 여러개를 두지 않았나라고 생각이 들었다.
  
  
 ### 2. ServletContext 설정 및 Servlet 생성과정
@@ -72,9 +66,10 @@ Servlet 3.0 이상부터는 xml대신 Java 코드로 Web과 관련된 설정이 
  대략 위에서 아래로 훓어만 봐도 Root와 Web Context, 그리고 DispatcherServlet을 설정한다는 것을 알 수 있다. 
  
   **RootApplicationContext**
- 
- ServletContext container 변수에 RootApplicationContext는 addListener라는 메소드를 통해 ContextLoaderListener 생성자 인자값으로 ServletContext에 등록이 된다. 
- 여기서 주의할 점은 Servlet이 아직 생성되지 않은 상태이다. 코드상의 표현 그대로 Context 구성만 하였다.
+ 위의 코드에서 RootContext와 관련된 부분만 요약하면, 
+ - RootAppConfig 클래스에 설정된 Bean 정보를 ApplicationContext에 등록한다.
+ - ServletContext container 변수에 RootApplicationContext는 addListener라는 메소드를 통해 ContextLoaderListener 생성자 인자값으로 
+   ServletContext에 등록이 된다. 여기서 주의할 점은 Servlet이 아직 생성되지 않은 상태이다. 코드상의 표현 그대로 Context 구성만 하였다.
  
  여기서 ContextLoaderListener가 RootApplicationContext에서 가장 중요한 역할을 한다. 
  Root Context(Bean 생성, 관계설정 등)를 구성하고 이러한 Bean들을 여러 DispatcherServlet이 사용될 수 있도록 공유하는 역할과
