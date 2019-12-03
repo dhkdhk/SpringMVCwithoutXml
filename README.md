@@ -17,22 +17,24 @@
 ![ScreenShot](contexts.png)
 
 위의 그림처럼 여러 개의 WebApplicationContext들은 단 하나의 RootApplicationContext에서 설정된 Bean들을 공유하여 사용한다. 
-Spring에서는 왜 이렇게 하나의 Root와 여러개의 Web ApplicationContext만들 수 있도록 제공하였을까? 
-당연히 확장성 때문이다. 각 레이어간의 책임 및 역할을 생각해보면, 왜 그림과 같은 구조로 만들었는지 어느정도 이해할 수 있다. 
+Spring에서는 왜 이렇게 하나의 Root와 여러개의 Web ApplicationContext를 만들 수 있도록 제공하였을까? 
+당연히 확장성 때문이다. 각 레이어간의 책임 및 역할을 생각해보면, 왜 그림과 같은 구조로 만들었는지 어느정도 이해할 수 있었다. 
  
  일반적으로 Java WebApplication 구조는 Client에 UI 랜더링, 컴포넌트를 처리하는 Presentation Layer, 비즈니스 로직을 처리하는 Business Layer, Database에 접근하는 Data Access Layer로 구성되어 있다. 
  여기서 RootApplicationContext는 Business Layer와 Data Access Layer에 필요한 Bean 생성과 관계설정등에 대한 설정 내용을 담고 있고,
  WebApplicationContext는 Presentation Layer인 SpringMVC와 관련된 설정 내용을 담고 있다. 
  
  데이터의 처리와 정합성, 트랜잭션의 일관성 등을 유지해야하는 Business Layer, Data Access Layer를 굳이 두개를 만들어 중복이 허용되도록 할 필요는 없을 것 같다.
- 상대적으로 Client와 가장 밀접한 Presentation Layer는 여러 명의 Client에 필요한 부분을 맞춰야하기 때문에 WebApplicationContext를 여러개를 두지 않았나라고 생각이 들었다.
+ 상대적으로 Client와 가장 밀접한 Presentation Layer는 다양한 Client에 필요한 부분을 맞춰줘야하기 때문에 WebApplicationContext를 여러개를 두지 않았나라는 생각이 든다.
  
+ 
+
  
 ### 2. ServletContext 설정 및 Servlet 생성과정
 Servlet 3.0 이상부터는 xml대신 Java 코드로 Web과 관련된 설정이 가능하다. Spring에서는 web 설정을 지원 해줄 수 있는 몇 개의 인터페이스를 제공한다.
-그 중에서 WebApplicationInitializer를 선택하였다. 개인적으로 선택한 이유는 설정방식이 좀 더 명확하게 보이기 때문이다. 
+그 중에서 좀 더 Servlet 설정에 직관적으로 보이는 WebApplicationInitializer를 선택하였다. 
 
-아래는 web.xml을 대신하여 Java 코드로 구현한 Servlet 설정 방식이다. 
+아래는 web.xml을 대신하여 Java 코드로 구현한 Spring의 Servlet 설정 방식이다. 
   
 ~~~JAVA
  public class ServletInitConfig implements WebApplicationInitializer {
@@ -40,17 +42,18 @@ Servlet 3.0 이상부터는 xml대신 Java 코드로 Web과 관련된 설정이 
      @Override
      public void onStartup(ServletContext container) {
  
-         // RootApplicationContext 생성
+         //① RootApplicationContext 생성 및 설정정보 등록
          AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
          rootContext.register(RootAppConfig.class);
  
-         // RootApplicationContext 라이프사이클 설정
+         //② RootApplicationContext 라이프사이클 설정
          container.addListener(new ContextLoaderListener(rootContext));
  
-         // DispatcherServlet의 WebApplicationContext 생성
+         //③ WebApplicationContext 생성 및 설정정보 등록
          AnnotationConfigWebApplicationContext dispatcherContext = new AnnotationConfigWebApplicationContext();
          dispatcherContext.register(WebAppConfig.class);
  
+         //④ DispatcherServlet 생성 및 기타 옵션정보 설정
          ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(dispatcherContext));
          dispatcher.setLoadOnStartup(1);
          dispatcher.addMapping("/");
@@ -58,38 +61,20 @@ Servlet 3.0 이상부터는 xml대신 Java 코드로 Web과 관련된 설정이 
      }
 }
  ~~~
- WebApplicationInitializer 인터페이스를 구현하면 onStartup 메서드가 만들어진다. onStartup메서드의 인자값을 확인해보면 ServletContext타입의 변수를 파라미터로 받는것을 확인 할 수 있다.
- 변수명도 container인걸 보니, Servlet container를 초기화하는 메서드인지를 명확하게 알 수 있다. 
+ **WebApplicationInitializer** 인터페이스를 구현하면 **onStartup** 메서드가 만들어진다. **onStartup** 메서드의 인자값을 확인해보면 ServletContext타입의 변수를 파라미터로 받는것을 확인 할 수 있다.
+ 변수명도 container인걸 보니, Servlet container를 **초기화**하는 메서드이다.
  
- (여기서, ServletContext타입의 변수는 누가 던져 주는 것일까? SpringServletContainerInitializer라는 SPI(Service Provider Interface)인데 이 API가 자동으로 감지하여 컨테이너에 부트스트랩 한다고한다.)
+ (여기서, ServletContext타입의 변수는 누가 던져 주는 것일까? SpringServletContainerInitializer라는 SPI(Service Provider Interface)인데 이 API가 자동으로 감지하여 컨테이너에 부트스트랩 한다고한다. 이 부분은 나중에 공부해봐야 겠다.)
  
- 대략 위에서 아래로 훓어만 봐도 Root와 Web Context, 그리고 DispatcherServlet을 설정한다는 것을 알 수 있다. 
+ 대략 위에서 아래로 훓어만 봐도 Root와 Web의 ApplicationContext 생성과 설정, 그리고 DispatcherServlet을 설정한다는 것을 알 수 있다. 
  
-  **RootApplicationContext**
- 위의 코드에서 RootContext와 관련된 부분만 요약하면, 
- - RootAppConfig 클래스에 설정된 Bean 정보를 ApplicationContext에 등록한다.
- - ServletContext container 변수에 RootApplicationContext는 addListener라는 메소드를 통해 ContextLoaderListener 생성자 인자값으로 
-   ServletContext에 등록이 된다. 여기서 주의할 점은 Servlet이 아직 생성되지 않은 상태이다. 코드상의 표현 그대로 Context 구성만 하였다.
+  **[ RootApplicationContext 생성 및 설정 살펴보기 ]**
  
- 여기서 ContextLoaderListener가 RootApplicationContext에서 가장 중요한 역할을 한다. 
- Root Context(Bean 생성, 관계설정 등)를 구성하고 이러한 Bean들을 여러 DispatcherServlet이 사용될 수 있도록 공유하는 역할과
- Servlet의 생성과 소멸 시점을 리스닝(?) 혹은 대기하고 있어, 그 시점에 라이프사이클 주기를 맞추는 역할을 해준다. 
+ ① RootApplicationContext 생성 및 설정정보 등록
  
- ContextLoaderListener 다이어그램
-   
- ![Screenshot](contextLoaderListener.png) 
- 
- WebApplicationContext는 container 변수에 addServlet 메서드를 통해 DispatcherServlet 생성자 인자값으로 등록된 것을 확인 할 수 있다. 
- 
- 
- 
-
-
- 
- ~~~JAVA
+  ~~~JAVA
 @Configuration
-@ComponentScan(basePackageClasses = {MysqlConfig.class, MemberRepository.class, MemberService.class},
-                excludeFilters = @ComponentScan.Filter(type= FilterType.ANNOTATION, value= Controller.class))
+@ComponentScan(basePackageClasses = {MysqlConfig.class, MemberRepository.class, MemberService.class})
 public class RootAppConfig {
 
     @Bean
@@ -98,36 +83,71 @@ public class RootAppConfig {
     }
 
 }
- ~~~
- ~~~JAVA
- @Configuration
- public class MysqlConfig {
-    
-     private final String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
-     private final String DRIVER_URL = "jdbc:mysql://localhost:3306/base?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC";
-     private final String USER_NAME = "*****";
-     private final String PASSWORD = "*****";
+  ~~~
+  RootApplicationContext에 등록된 Bean들에 대한 설정코드이다. ComponentScan을 사용하여 Service, Repository, Db설정정보들을 
+  rootContext에 등록하였다.
+  
+ ② RootApplicationContext 라이프사이클 설정
+  1번의 설정정보가 담긴 rootContext를 ServletContext의 addListener메서드를 통해 ContextLocaderListener 인스턴스 생성자 파라미터로 담아 등록하였는데
+  이 부분이 어떻게 라이프사이클을 결정짓는지 확인해보자. 
+  
+  먼저 ContextLoaderListener를 살펴보겠다.
+  
+  **ContextLoaderListener 다이어그램**
+   ![Screenshot](contextLoaderListener.png) 
+  ContextLoaderListener는 ServletContextListener 인터페이스의 구현체이자 ContextLoader 클래스를 상속한 클래스이다.
  
-     @Bean
-     public DataSource getDataSource() {
-         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-         dataSource.setDriverClassName(DRIVER_CLASS_NAME);
-         dataSource.setUrl(DRIVER_URL);
-         dataSource.setUsername(USER_NAME);
-         dataSource.setPassword(PASSWORD);
-         return dataSource;
-     }
- 
-     @Bean
-     public NamedParameterJdbcTemplate jdbcTemplate(DataSource dataSource){
-         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-         return jdbcTemplate;
-     }
- 
- }
- ~~~
- (Service와 Repository는 예제는 생략하겠다. Github 예제 참고)
+ **ContextLoaderListener 클래스**
+~~~JAVA
+public class ContextLoaderListener extends ContextLoader implements ServletContextListener {
+    public ContextLoaderListener() {
+    }
 
+    public ContextLoaderListener(WebApplicationContext context) {
+        super(context);
+    }
+
+    public void contextInitialized(ServletContextEvent event) {
+        this.initWebApplicationContext(event.getServletContext());
+    }
+
+    public void contextDestroyed(ServletContextEvent event) {
+        this.closeWebApplicationContext(event.getServletContext());
+        ContextCleanupListener.cleanupAttributes(event.getServletContext());
+    }
+}
+~~~
+위의 클래스다이어그램과 ContextLoader 클래스의 내용들을 우선 대략적으로 분석해봤다.
+첫번째, ServletContextListener의 두 개의 메서드를 오버라이드한 contextInitialized와 contextDestroyed 메서드를 구현한게 보인다. 메서드명을 살펴보면 이 두 개의
+메서드가 RootApplicationContext의 LifeCycle을 담당하는 것을 알 수 있다. 
+
+두번째,  최상위 계층인 EventListener 인터페이스가 있다. 이 인터페이스는 어떠한 구현체도 없는 껍데기만 있는 인터페이스이다. 지금만 봤을 때는 
+일종의 마커 인터페이스를 수행하는 것으로 보인다. 
+ 
+우선 여기까지 ServletContext에 RootApplicationContext를 설정한 부분을 분석해봤는데, 아직까지 어떻게 동작하는지는 이해가 안간다. 
+아래의 WebApplicationContext를 살짝 분석해보고 전체적으로 분석해보자.
+
+ (여기서 주의할 점은 Servlet이 아직 생성되지 않은 상태이다. 코드상의 표현 그대로 Context(환경) 구성만 하였다)
+ 
+   **[ WebApplicationContext 생성 및 설정 살펴보기 ]**
+ ③ WebApplicationContext 생성 및 설정정보 등록
+ ~~~JAVA
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackageClasses = MemberController.class)
+public class WebAppConfig implements WebMvcConfigurer {
+
+}
+ ~~~
+ @EnableWebMvc 어노테이션은 Spring의 기본설정들을 담고 있다. (MessageConverter나 ViewResolvers 등 ..) 추가로 Controller를 스캔하여 
+ SpringMVC 구조의 Bean들을 설정하였다. 
+  
+ ④ DispatcherServlet 생성 및 기타 옵션정보 설정
+ 
+ 
+
+  
  
 
  

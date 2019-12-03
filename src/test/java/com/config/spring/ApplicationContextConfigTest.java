@@ -34,14 +34,4 @@ public class ApplicationContextConfigTest {
     }
 
 
-
-//    @Test
-//    public void jpaEntityManagerTest(){
-//
-//        //Given
-//        LocalContainerEntityManagerFactoryBean lem = (LocalContainerEntityManagerFactoryBean)context.getBean("entityManagerFactory");
-//        DataSource dataSource = lem.getDataSource();
-//        assertNotNull(lem);
-//    }
-
 }

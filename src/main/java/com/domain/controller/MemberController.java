@@ -1,4 +1,4 @@
-package com.domain;
+package com.domain.controller;
 
 import com.domain.entity.Member;
 import com.domain.service.MemberService;

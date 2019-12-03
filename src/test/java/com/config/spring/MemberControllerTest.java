@@ -1,6 +1,6 @@
 package com.config.spring;
 
-import com.domain.MemberController;
+import com.domain.controller.MemberController;
 import com.domain.entity.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
