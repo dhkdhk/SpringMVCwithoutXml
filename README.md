@@ -95,7 +95,8 @@ public class RootAppConfig {
   
 
    ![Screenshot](contextLoaderListener.png) 
-  ContextLoaderListener는 ServletContextListener 인터페이스의 구현체이자 ContextLoader 클래스를 상속한 클래스이다.
+   
+ ContextLoaderListener는 ServletContextListener 인터페이스의 구현체이자 ContextLoader 클래스를 상속한 클래스이다.
  
  **ContextLoaderListener 클래스**
 ~~~JAVA
