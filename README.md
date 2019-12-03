@@ -132,7 +132,7 @@ Destoryed될 때에는 메모리해제를 위해 정상적으로 종료가 되�
 
  
    **[ WebApplicationContext 생성 및 설정 살펴보기 ]**
- ③ WebApplicationContext 생성 및 설정정보 등록
+③ WebApplicationContext 생성 및 설정정보 등록
  ~~~JAVA
 
 @Configuration
