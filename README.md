@@ -4,7 +4,7 @@
 기존에는 xml방식으로 Spring 프로젝트를 만들었다. 익숙한 xml 설정은 대략적인 흐름도에 대한 이해만 있었고, 그 내부에 어떤 식으로 환경들을 구성하고
 조립되는지에 대해 더 깊은 고민은 해보지 않았던 것 같았다.  
 
-이번 Java Code로 Spring 설정을 통해 Spring의 아키텍처와 생성방식에 대해 이전보다는 조금 더 이해하기 위하여 해당 실습예제를 준비하였다. 
+이번 Java Code로 Spring 설정을 통해 Spring의 ServletContext 구조에 대해 조금 더 이해하기 위하여 해당 실습예제를 준비하였다. 
 
 
 ### 1. RootApplicationContext / WebApplicationContext 
@@ -29,7 +29,6 @@ Spring에서는 왜 이렇게 하나의 Root와 여러개의 Web ApplicationCont
  
  
 
- 
 ### 2. ServletContext 설정 및 Servlet 생성과정
 Servlet 3.0 이상부터는 xml대신 Java 코드로 Web과 관련된 설정이 가능하다. Spring에서는 web 설정을 지원 해줄 수 있는 몇 개의 인터페이스를 제공한다.
 그 중에서 좀 더 Servlet 설정에 직관적으로 보이는 WebApplicationInitializer를 선택하였다. 
@@ -88,12 +87,13 @@ public class RootAppConfig {
   rootContext에 등록하였다.
   
  ② RootApplicationContext 라이프사이클 설정
+ 
   1번의 설정정보가 담긴 rootContext를 ServletContext의 addListener메서드를 통해 ContextLocaderListener 인스턴스 생성자 파라미터로 담아 등록하였는데
   이 부분이 어떻게 라이프사이클을 결정짓는지 확인해보자. 
   
   먼저 ContextLoaderListener를 살펴보겠다.
   
-  **ContextLoaderListener 다이어그램**
+
    ![Screenshot](contextLoaderListener.png) 
   ContextLoaderListener는 ServletContextListener 인터페이스의 구현체이자 ContextLoader 클래스를 상속한 클래스이다.
  
@@ -118,16 +118,17 @@ public class ContextLoaderListener extends ContextLoader implements ServletConte
 }
 ~~~
 위의 클래스다이어그램과 ContextLoader 클래스의 내용들을 우선 대략적으로 분석해봤다.
+
 첫번째, ServletContextListener의 두 개의 메서드를 오버라이드한 contextInitialized와 contextDestroyed 메서드를 구현한게 보인다. 메서드명을 살펴보면 이 두 개의
 메서드가 RootApplicationContext의 LifeCycle을 담당하는 것을 알 수 있다. 
 
-두번째,  최상위 계층인 EventListener 인터페이스가 있다. 이 인터페이스는 어떠한 구현체도 없는 껍데기만 있는 인터페이스이다. 지금만 봤을 때는 
-일종의 마커 인터페이스를 수행하는 것으로 보인다. 
- 
-우선 여기까지 ServletContext에 RootApplicationContext를 설정한 부분을 분석해봤는데, 아직까지 어떻게 동작하는지는 이해가 안간다. 
-아래의 WebApplicationContext를 살짝 분석해보고 전체적으로 분석해보자.
+두번째,  최상위 계층인 EventListener 인터페이스가 있다. 이 인터페이스는 어떠한 구현체도 없는 마커 인터페이스이다. 
+ServletContext의 addListener 메서드를 확인해보면 EventListener 타입의 인자값을 받는것을 확인 할 수 있다. 
 
- (여기서 주의할 점은 Servlet이 아직 생성되지 않은 상태이다. 코드상의 표현 그대로 Context(환경) 구성만 하였다)
+
+RootApplicationContext의 eventlistener 설정을 통해 라이프사이클 설정을 한 이유는 컨테이너 생성 시에는 RootContext를 생성해야 Bean들을 사용할 수 있으며,
+Destoryed될 때에는 메모리해제를 위해 정상적으로 종료가 되야하기 때문이다. 
+
  
    **[ WebApplicationContext 생성 및 설정 살펴보기 ]**
  ③ WebApplicationContext 생성 및 설정정보 등록
@@ -144,8 +145,36 @@ public class WebAppConfig implements WebMvcConfigurer {
  SpringMVC 구조의 Bean들을 설정하였다. 
   
  ④ DispatcherServlet 생성 및 기타 옵션정보 설정
- 
- 
+  ServletContainer에 DispatcherServlet을 생성 후, setLoadOnStartup 부분을 볼 수가 있다. 서블릿은 서버가 올라가게 되면, 최초 request 요청이 들어올 때
+  초기화가 되는데, 이럴 경우 처음 사용자는 서비스에 불편을 겪게된다. 그래서 서버가 스타트되면 바로 초기화 과정이 이루어질 수 있도록 setLoadOnStartup 메서드를 사용한다.
+  숫자가 0과 같거나 클 경우 해당되며, 동작방식은 ServletContext가 초기화 단계 동안 ServletContextListener 객체의 contextInitialized 메서드를 호출하여 Servlet을 인스턴스화하고
+  초기화한다. 
+  (ContedxtLoaderListener 클래스다이어그램 참고) 
+  
+
+[정리]
+두서없이 정리된 점이 없지 않아 있다. 설정하고 디버깅하면서 더 궁금하고 모르는 부분이 나왔는데 내용이 산으로 갈까봐 하나의 주제에 집중해서 정리하였다.
+Spring의 ApplicationContext의 계층구조에 대한 이해와 Spring의 Servlet 설정방식에 대해 얕게나마 알 수 있었다. 
+
+
+부족하지만 긴 글 읽어주셔서 감사합니다.
+
+[Reference]
+
+https://spring.io/
+
+https://www.technicalkeeda.com/spring-tutorials/spring-4-jdbctemplate-annotation-example
+
+https://www.baeldung.com/spring-xml-vs-java-config
+
+https://jhgan.tistory.com/40
+
+https://www.baeldung.com/spring-web-contexts
+
+https://dzone.com/articles/understanding-spring-web
+
+https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html
+
 
   
  
