@@ -1,28 +1,30 @@
 package com.config.datasource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 @Configuration
+@PropertySource("classpath:datasource.properties")
 public class MysqlConfig {
-    //프로퍼티
-    private final String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
-    private final String DRIVER_URL = "jdbc:mysql://localhost:3306/base?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC";
-    private final String USER_NAME = "study";
-    private final String PASSWORD = "hard";
-    //Enhanced Random
+
+    @Autowired
+    private Environment env;
+
 
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(DRIVER_CLASS_NAME);
-        dataSource.setUrl(DRIVER_URL);
-        dataSource.setUsername(USER_NAME);
-        dataSource.setPassword(PASSWORD);
+        dataSource.setDriverClassName(env.getProperty("db.driverclass"));
+        dataSource.setUrl(env.getProperty("db.url"));
+        dataSource.setUsername(env.getProperty("db.username"));
+        dataSource.setPassword(env.getProperty("db.password"));
         return dataSource;
     }
 

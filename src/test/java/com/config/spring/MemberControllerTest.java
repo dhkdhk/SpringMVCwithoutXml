@@ -40,7 +40,7 @@ public class MemberControllerTest {
     public void addMember() throws Exception{
         //Given
         Member member = Member.builder()
-                .memberName("KDH")
+                .memberName("한글")
                 .memberPassword("123")
                 .build();
 

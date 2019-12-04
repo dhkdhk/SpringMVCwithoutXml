@@ -9,8 +9,12 @@ import org.springframework.web.servlet.DispatcherServlet;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
+import java.nio.charset.StandardCharsets;
 
 public class ServletInitConfig implements WebApplicationInitializer {
+
+    private final String DISPATCHER_NAME = "dispatcher";
+    private final String DISPATCHER_MAPPING_URL = "/";
 
     @Override
     public void onStartup(ServletContext container) {
@@ -27,17 +31,24 @@ public class ServletInitConfig implements WebApplicationInitializer {
         dispatcherContext.register(WebAppConfig.class);
 
         //④ DispatcherServlet 생성 및 기타 옵션정보 설정
-        ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(dispatcherContext));
+        ServletRegistration.Dynamic dispatcher = container.addServlet(DISPATCHER_NAME, new DispatcherServlet(dispatcherContext));
         dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/");
+        dispatcher.addMapping(DISPATCHER_MAPPING_URL);
 
         // Add cuatom filters to servletContext
-        FilterRegistration charEncodingFilterReg = container.addFilter("CharacterEncodingFilter", CharacterEncodingFilter.class);
-        charEncodingFilterReg.setInitParameter("encoding", "UTF-8");
-        charEncodingFilterReg.setInitParameter("forceEncoding", "true");
+        FilterRegistration charEncodingFilterReg = container.addFilter(FilterType.CHARACTER_ENCODING.name(), createdFilter(FilterType.CHARACTER_ENCODING));
         charEncodingFilterReg.addMappingForUrlPatterns(null, true, "/*");
-
     }
 
+    private CharacterEncodingFilter createdFilter(FilterType type){
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        switch (type){
+            case CHARACTER_ENCODING:
+                filter.setEncoding(StandardCharsets.UTF_8.name());
+                filter.setForceEncoding(true);
+                break;
+        }
 
+        return filter;
+    }
 }
