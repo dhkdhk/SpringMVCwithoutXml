@@ -4,6 +4,8 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
+import org.springframework.web.filter.GenericFilterBean;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.FilterRegistration;
@@ -40,15 +42,21 @@ public class ServletInitConfig implements WebApplicationInitializer {
         charEncodingFilterReg.addMappingForUrlPatterns(null, true, "/*");
     }
 
-    private CharacterEncodingFilter createdFilter(FilterType type){
-        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+    private GenericFilterBean createdFilter(FilterType type){
+
         switch (type){
             case CHARACTER_ENCODING:
+                CharacterEncodingFilter filter = new CharacterEncodingFilter();
                 filter.setEncoding(StandardCharsets.UTF_8.name());
                 filter.setForceEncoding(true);
-                break;
+                return filter;
+
+            case SPRING_SECURITY:
+                //TODO Spring Security Filter Setting
+
+            default:
+                throw new IllegalArgumentException("해당되는 FilterType이 없습니다");
         }
 
-        return filter;
     }
 }
