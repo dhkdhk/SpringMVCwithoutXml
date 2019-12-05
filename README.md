@@ -122,9 +122,20 @@ public class ContextLoaderListener extends ContextLoader implements ServletConte
 첫번째, ServletContextListener의 두 개의 메서드를 오버라이드한 contextInitialized와 contextDestroyed 메서드를 구현한게 보인다. 메서드명을 살펴보면 이 두 개의
 메서드가 RootApplicationContext의 LifeCycle을 담당하는 것을 알 수 있다. 
 
-두번째,  최상위 계층인 EventListener 인터페이스가 있다. 이 인터페이스는 어떠한 구현체도 없는 마커 인터페이스이다. 
+두번째, 최상위 계층인 EventListener 인터페이스가 있다. 이 인터페이스는 어떠한 구현체도 없는 마커 인터페이스이다. 
 ServletContext의 addListener 메서드를 확인해보면 EventListener 타입의 인자값을 받는것을 확인 할 수 있다. 
-
+~~~JAVA
+public interface ServletContext {
+    String TEMPDIR = "javax.servlet.context.tempdir";
+    String ORDERED_LIBS = "javax.servlet.context.orderedLibs";
+    
+    //.....생략
+   
+    <T extends EventListener> void addListener(T var1);
+    
+}
+~~~
+(javax.servlet의 ServletContext의 addListener 메서드)
 
 RootApplicationContext의 eventlistener 설정을 통해 라이프사이클 설정을 한 이유는 컨테이너 생성 시에는 RootContext를 생성해야 Bean들을 사용할 수 있으며,
 Destoryed될 때에는 메모리해제를 위해 정상적으로 종료가 되야하기 때문이다. 
@@ -154,21 +165,42 @@ public class WebAppConfig implements WebMvcConfigurer {
   
 ###3. RootApplicationContext와 WebApplicationContext의 관계  
 
+여기까지 아주 간단한 Java 코드로  WebApplication을 만들어보고, 그 과정의 흐름도를 얕게 분석 해봤다. 
+디버깅 모드로 테스트하여 조금 더 RootApplication, WebApplication Context 간의 관계를 살펴보겠다.
+(두 개의 용어가 너무 길어 앞으로 RootContext, WebAppContext로 표현하겠다)
+
+위에 설정된 Java Web 환경을 디버깅 모드로 테스트 해보면 아래의 그림과 같은 의존성 주입 순서가 나온다.
+
+![ScreenShout](DIorder.png)
+
+WebContext는 RootContext의 Bean들을 필요하기에 RootContext의 Bean들을 먼저 생성하고 이 후에
+WebContext를 생성 후 필요한 Bean들의 순서를 조립한 걸 알 수 있다.
+
+그렇다면, 두 Context간의 상속구조와 Bean 주입순서를 Spring이 어떻게 만들어넀는지 궁금하기도 하였고,
+@Repository -> @Service의 Bean 주입 순서는 어떻게 결정했는지도 궁금하였다.
+그래서 클래스 다이어그램이랑 인터넷에서 이것저것 찾아봤는데 이 부분은 나의 실력 및 분석 부족으로 인해 다루지 못하였다. 
+
+대략 찾아본 결과는 BeanPostProcessor가 Bean 생명주기에 관여하여 Bean이 필요한 순서를 처리한다고 한다.(정확한건 아닙니다.)
+
+아쉽지만, 추상적인 정리로 Bean 의존관계에 대한 순서를 Spring이 보장한다는 것이고, 이거에 대한 특별한 API가 관여하여 처리한다고
+결론을 여기서는 내리기로 했다. 
+
+또한, RootContext는 WebContext에 있는 Bean들에 대한 정보를 가져 올 수 없고, 오로지 WebContext가 RootContext에 있는 Bean들에 접근 할 수 있다는 것이다.
 
 
-
-3. 정리
- - Spring은 확장성을 위하여 ApplicationContext를 계층적으로 나누었다. 나눈 기준은 객체지향관점에서 변하는 것과 변하지 않는 부분을 
- 나누어 RootApplicationContext와 WebApplicationContext를 분리하였다.
+###4. 정리
  
- -   
+ - Spring은 확장성을 위하여 ApplicationContext를 계층적으로 나누었다. 나눈 기준은 객체지향관점에서 변하는 것과 변하지 않는 부분을 
+ 나누어 RootApplicationContext와 WebApplicationContext를 분리하였다. 
+ 
+ - 기존 xml 방식에서는 해당 클래스가 다른 클래스에 대한 의존도를 찾아보기가 어려웠는데 Java환경으로 구성할 경우, 각 클래스별 의존도와 
+ 구현에 대한 상세한 부분을 알 수 있었다.
+ 
+ - 마지막으로 설정 오류가 될 경우, 디버깅 모드로 테스트가 가능하기에 좀 더 오류에 대해 대응하기가 쉬웠다. 
+ 
+ 
 
-[정리]
-두서없이 정리된 점이 없지 않아 있다. 설정하고 디버깅하면서 더 궁금하고 모르는 부분이 나왔는데 내용이 산으로 갈까봐 하나의 주제에 집중해서 정리하였다.
-Spring의 ApplicationContext의 계층구조에 대한 이해와 Spring의 Servlet 설정방식에 대해 얕게나마 알 수 있었다. 
-
-
-부족하지만 긴 글 읽어주셔서 감사합니다.
+두서없이 정리한 글이고, 많이 부족하지만 긴 글 읽어주셔서 감사합니다.
 
 [Reference]
 
