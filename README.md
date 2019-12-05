@@ -151,6 +151,17 @@ public class WebAppConfig implements WebMvcConfigurer {
   초기화한다. 
   (ContedxtLoaderListener 클래스다이어그램 참고) 
   
+  
+###3. RootApplicationContext와 WebApplicationContext의 관계  
+
+
+
+
+3. 정리
+ - Spring은 확장성을 위하여 ApplicationContext를 계층적으로 나누었다. 나눈 기준은 객체지향관점에서 변하는 것과 변하지 않는 부분을 
+ 나누어 RootApplicationContext와 WebApplicationContext를 분리하였다.
+ 
+ -   
 
 [정리]
 두서없이 정리된 점이 없지 않아 있다. 설정하고 디버깅하면서 더 궁금하고 모르는 부분이 나왔는데 내용이 산으로 갈까봐 하나의 주제에 집중해서 정리하였다.

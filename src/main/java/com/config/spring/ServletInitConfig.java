@@ -4,8 +4,6 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.filter.DelegatingFilterProxy;
-import org.springframework.web.filter.GenericFilterBean;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.FilterRegistration;
@@ -14,7 +12,6 @@ import javax.servlet.ServletRegistration;
 import java.nio.charset.StandardCharsets;
 
 public class ServletInitConfig implements WebApplicationInitializer {
-
     private final String DISPATCHER_NAME = "dispatcher";
     private final String DISPATCHER_MAPPING_URL = "/";
 
@@ -37,12 +34,12 @@ public class ServletInitConfig implements WebApplicationInitializer {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping(DISPATCHER_MAPPING_URL);
 
-        // Add cuatom filters to servletContext
+        //필터 등록
         FilterRegistration charEncodingFilterReg = container.addFilter(FilterType.CHARACTER_ENCODING.name(), createdFilter(FilterType.CHARACTER_ENCODING));
         charEncodingFilterReg.addMappingForUrlPatterns(null, true, "/*");
     }
 
-    private GenericFilterBean createdFilter(FilterType type){
+    private CharacterEncodingFilter createdFilter(FilterType type){
 
         switch (type){
             case CHARACTER_ENCODING:
