@@ -14,8 +14,6 @@ import spock.lang.Specification;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = RootAppConfig.class)
-@Transactional
-@Rollback(false)
 public class MemberServiceTests extends Specification {
 
     @Autowired

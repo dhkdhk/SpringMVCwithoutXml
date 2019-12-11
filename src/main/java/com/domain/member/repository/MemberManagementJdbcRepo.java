@@ -2,7 +2,7 @@ package com.domain.member.repository;
 
 import com.domain.member.entity.Member;
 
-public interface MemberUpdateJdbcRepo {
+public interface MemberManagementJdbcRepo {
 
     int addMemeber(Member member);
 

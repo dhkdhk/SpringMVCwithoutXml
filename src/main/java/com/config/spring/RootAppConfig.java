@@ -2,7 +2,7 @@ package com.config.spring;
 
 import com.config.datasource.JpaConfig;
 //import com.config.datasource.MysqlConfig;
-import com.domain.member.repository.MemberUpdateJdbcRepo;
+import com.domain.member.repository.MemberManagementJdbcRepo;
 import com.domain.member.service.MemberManagementService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +17,14 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:datasource.properties")
-@ComponentScan(basePackageClasses = {JpaConfig.class, MemberUpdateJdbcRepo.class, MemberManagementService.class})
+@ComponentScan(basePackageClasses = {JpaConfig.class, MemberManagementJdbcRepo.class, MemberManagementService.class})
 public class RootAppConfig {
 
     @Autowired
     private Environment env;
 
     @Bean
-    public DataSource getDataSource() {
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getProperty("db.driverclass"));
         dataSource.setUrl(env.getProperty("db.url"));
@@ -38,5 +38,8 @@ public class RootAppConfig {
     public ObjectMapper objectMapper(){
         return new ObjectMapper();
     }
+
+
+
 
 }

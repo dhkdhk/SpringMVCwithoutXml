@@ -11,7 +11,10 @@ public class MemberDto {
     private String memberPassword;
     private String memberName;
     private String memberEmail;
+    private Integer memberAge;
+    private String memberSex;
     private String memberAddress;
     private String memberPhoneNumber;
+    private String memberGrade;
 
 }

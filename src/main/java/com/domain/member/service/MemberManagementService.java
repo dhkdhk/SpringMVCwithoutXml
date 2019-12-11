@@ -9,7 +9,7 @@ public interface MemberManagementService {
 
     Member updateMember(MemberDto memberDto);
 
-    Member getMember();
+    Member getMember(Long memberId);
 
     void deleteMember();
 }

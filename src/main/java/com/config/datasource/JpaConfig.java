@@ -1,6 +1,6 @@
 package com.config.datasource;
 
-import com.domain.member.repository.MemberUpdateJpaRepo;
+import com.domain.member.repository.MemberManagementJpaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = MemberUpdateJpaRepo.class)
+@EnableJpaRepositories(basePackageClasses = MemberManagementJpaRepo.class)
 @EnableTransactionManagement
 @PropertySource("classpath:jpa.properties")
 public class JpaConfig {
@@ -46,7 +46,7 @@ public class JpaConfig {
 
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+    public PlatformTransactionManager jpaTransactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
         jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);
         return jpaTransactionManager;

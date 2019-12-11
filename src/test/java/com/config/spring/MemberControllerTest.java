@@ -3,6 +3,7 @@ package com.config.spring;
 import com.domain.member.controller.MemberController;
 import com.domain.member.entity.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,11 +24,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(classes = {RootAppConfig.class, WebAppConfig.class})
 public class MemberControllerTest {
 
-    @Autowired
-    private MemberController memberController;
+    @Autowired private MemberController memberController;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    @Autowired private ObjectMapper objectMapper;
 
     private MockMvc mockMvc;
 
@@ -40,11 +39,17 @@ public class MemberControllerTest {
     public void addMember() throws Exception{
         //Given
         Member member = Member.builder()
-                .memberName("한글")
                 .memberPassword("123")
+                .memberName("dhk")
+                .memberEmail("abc@abc.com")
+                .memberSex("남")
+                .memberAge(31)
+                .memberAddress("서울시 동작구")
+                .memberPhoneNumber("010-010-010")
+                .memberGrade("TEST")
                 .build();
 
-        //When
+        //When & Then
         mockMvc.perform(post("/api/member")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(member)))

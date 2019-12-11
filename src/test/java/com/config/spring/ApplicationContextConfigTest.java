@@ -1,13 +1,17 @@
 package com.config.spring;
 
-import com.domain.member.repository.MemberUpdateJdbcRepo;
+import com.domain.member.repository.MemberManagementJdbcRepo;
 import com.domain.member.service.MemberManagementService;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -24,23 +28,24 @@ public class ApplicationContextConfigTest {
 
     @Autowired private MemberManagementService memberManagementService;
 
-    @Autowired private MemberUpdateJdbcRepo memberUpdateJdbcRepo;
+    @Autowired private MemberManagementJdbcRepo memberManagementJdbcRepo;
 
     @Autowired private EntityManagerFactory entityManagerFactory;
+
+    @Autowired private PlatformTransactionManager jpaTransactionManager;
+
+    @Autowired private PlatformTransactionManager dataSourceTransactionManager;
 
     @Test
     public void rootContextDependencyInjection(){
         assertNotNull(dataSource);
         assertNotNull(jdbcTemplate);
         assertNotNull(memberManagementService);
-        assertNotNull(memberUpdateJdbcRepo);
+        assertNotNull(memberManagementJdbcRepo);
         assertNotNull(entityManagerFactory);
+        Assert.assertEquals(jpaTransactionManager.getClass(), new JpaTransactionManager().getClass());
+        Assert.assertEquals(dataSourceTransactionManager.getClass(), new DataSourceTransactionManager().getClass());
     }
-
-    @Test
-    public void entityManagerTest(){
-    }
-
 
 
 }

@@ -13,14 +13,14 @@ import java.util.Map;
 //StringUtils
 
 @Repository
-public class MemberUpdateJDBC implements MemberUpdateJdbcRepo {
+public class MemberManagementJDBC implements MemberManagementJdbcRepo {
 
     private final String INSERT_QUERY = "INSERT INTO member (member_password, member_name) VALUES (:memberPassword, :memberName)";
     private final String SELECT_QUERY = "SELECT member_id, member_name FROM member WHERE member_id= :memberId";
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public MemberUpdateJDBC(NamedParameterJdbcTemplate jdbcTemplate) {
+    public MemberManagementJDBC(NamedParameterJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
