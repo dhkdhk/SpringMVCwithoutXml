@@ -34,6 +34,7 @@ public class ServletInitConfig implements WebApplicationInitializer {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping(DISPATCHER_MAPPING_URL);
 
+
         //필터 등록
         FilterRegistration charEncodingFilterReg = container.addFilter(FilterType.CHARACTER_ENCODING.name(), createdFilter(FilterType.CHARACTER_ENCODING));
         charEncodingFilterReg.addMappingForUrlPatterns(null, true, "/*");
