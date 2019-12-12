@@ -1,7 +1,7 @@
 package com.config.spring;
 
+import com.config.datasource.JdbcTemplateConfig;
 import com.config.datasource.JpaConfig;
-//import com.config.datasource.MysqlConfig;
 import com.domain.member.repository.MemberManagementJdbcRepo;
 import com.domain.member.service.MemberManagementService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:datasource.properties")
-@ComponentScan(basePackageClasses = {JpaConfig.class, MemberManagementJdbcRepo.class, MemberManagementService.class})
+@ComponentScan(basePackageClasses = {JpaConfig.class, JdbcTemplateConfig.class, MemberManagementJdbcRepo.class, MemberManagementService.class})
 public class RootAppConfig {
 
     @Autowired

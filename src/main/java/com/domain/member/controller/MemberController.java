@@ -3,7 +3,7 @@ package com.domain.member.controller;
 import com.domain.member.entity.Member;
 import com.domain.member.entity.MemberDto;
 import com.domain.member.repository.MemberManagementJpaRepo;
-import com.domain.member.service.MemberManagementService;
+//import com.domain.member.service.MemberManagementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class MemberController {
 
-    private final MemberManagementService memberManagementService;
+//    private final MemberManagementService memberManagementService;
     private final MemberManagementJpaRepo memberManagementJpaRepo;
 
 

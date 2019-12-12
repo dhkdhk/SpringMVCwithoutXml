@@ -22,7 +22,7 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackageClasses = MemberManagementJpaRepo.class)
 @EnableTransactionManagement
 @PropertySource("classpath:jpa.properties")
-public class JpaConfig {
+public class JpaConfig  {
 
     @Autowired
     private Environment env;
@@ -59,6 +59,5 @@ public class JpaConfig {
         properties.setProperty("spring.jpa.properties.hibernate.format_sql",  env.getProperty("format_sql"));
         return properties;
     }
-
 
 }

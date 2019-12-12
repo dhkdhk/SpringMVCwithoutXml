@@ -4,14 +4,13 @@ import com.domain.member.entity.Member;
 import com.domain.member.entity.MemberDto;
 import com.domain.member.repository.MemberManagementJpaRepo;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
-
+@Transactional
 public class MemberManagementImpl implements MemberManagementService {
 
     private final MemberManagementJpaRepo memberManagementJpaRepo;
