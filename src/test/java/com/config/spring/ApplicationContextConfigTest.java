@@ -1,11 +1,12 @@
 package com.config.spring;
 
-import com.domain.member.repository.MemberManagementJdbcRepo;
+import com.domain.member.repository.jdbc.MemberManagementJdbcRepo;
 import com.domain.member.service.MemberManagementService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -47,5 +48,11 @@ public class ApplicationContextConfigTest {
         Assert.assertEquals(dataSourceTransactionManager.getClass(), new DataSourceTransactionManager().getClass());
     }
 
+
+    @Test
+    public void transactionMangerCheck(){
+        AnnotationConfigApplicationContext config = new AnnotationConfigApplicationContext();
+
+    }
 
 }

@@ -2,7 +2,8 @@ package com.config.spring;
 
 import com.config.datasource.JdbcTemplateConfig;
 import com.config.datasource.JpaConfig;
-import com.domain.member.repository.MemberManagementJdbcRepo;
+import com.config.datasource.PersistenceConfig;
+import com.domain.member.repository.jdbc.MemberManagementJdbcRepo;
 import com.domain.member.service.MemberManagementService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:datasource.properties")
-@ComponentScan(basePackageClasses = {JpaConfig.class, JdbcTemplateConfig.class, MemberManagementJdbcRepo.class, MemberManagementService.class})
+@ComponentScan(basePackageClasses = {PersistenceConfig.class, MemberManagementJdbcRepo.class, MemberManagementService.class})
 public class RootAppConfig {
 
     @Autowired

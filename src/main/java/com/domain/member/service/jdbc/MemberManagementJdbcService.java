@@ -1,8 +1,8 @@
-package com.domain.member.repository;
+package com.domain.member.service.jdbc;
 
 import com.domain.member.entity.Member;
 
-public interface MemberManagementJdbcRepo {
+public interface MemberManagementJdbcService {
 
     int addMemeber(Member member);
 

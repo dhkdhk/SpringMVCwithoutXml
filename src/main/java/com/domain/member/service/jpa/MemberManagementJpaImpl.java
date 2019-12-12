@@ -1,8 +1,9 @@
-package com.domain.member.service;
+package com.domain.member.service.jpa;
 
 import com.domain.member.entity.Member;
 import com.domain.member.entity.MemberDto;
-import com.domain.member.repository.MemberManagementJpaRepo;
+import com.domain.member.repository.jpa.MemberManagementJpaRepo;
+import com.domain.member.service.MemberManagementService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,15 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
-@Transactional
-public class MemberManagementImpl implements MemberManagementService {
+@Transactional(transactionManager = "jpaTx")
+public class MemberManagementJpaImpl implements MemberManagementService {
 
     private final MemberManagementJpaRepo memberManagementJpaRepo;
-    private final ObjectMapper objectMapper;
 
-    public MemberManagementImpl(MemberManagementJpaRepo memberManagementJpaRepo, ObjectMapper objectMapper){
+    public MemberManagementJpaImpl(MemberManagementJpaRepo memberManagementJpaRepo, ObjectMapper objectMapper){
         this.memberManagementJpaRepo = memberManagementJpaRepo;
-        this.objectMapper = objectMapper;
     }
 
     @Override

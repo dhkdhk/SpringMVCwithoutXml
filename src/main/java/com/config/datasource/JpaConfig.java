@@ -1,7 +1,8 @@
 package com.config.datasource;
 
-import com.domain.member.repository.MemberManagementJpaRepo;
+import com.domain.member.repository.jpa.MemberManagementJpaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -19,10 +20,12 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = MemberManagementJpaRepo.class)
+@EnableJpaRepositories(
+        basePackageClasses = MemberManagementJpaRepo.class,
+        transactionManagerRef = "jpaTx")
 @EnableTransactionManagement
 @PropertySource("classpath:jpa.properties")
-public class JpaConfig  {
+public class JpaConfig implements PersistenceConfig {
 
     @Autowired
     private Environment env;
@@ -46,6 +49,7 @@ public class JpaConfig  {
 
 
     @Bean
+    @Qualifier("jpaTx")
     public PlatformTransactionManager jpaTransactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
         jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);

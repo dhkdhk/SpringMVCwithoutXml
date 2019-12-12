@@ -2,7 +2,7 @@ package com.domain.member.controller;
 
 import com.domain.member.entity.Member;
 import com.domain.member.entity.MemberDto;
-import com.domain.member.repository.MemberManagementJpaRepo;
+import com.domain.member.repository.jpa.MemberManagementJpaRepo;
 //import com.domain.member.service.MemberManagementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-public class JdbcTemplateConfig {
+public class JdbcTemplateConfig implements PersistenceConfig {
 
     @Bean
     public NamedParameterJdbcTemplate jdbcTemplate(DataSource dataSource){

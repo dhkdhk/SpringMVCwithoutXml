@@ -1,4 +1,4 @@
-package com.domain.member.repository;
+package com.domain.member.repository.jdbc;
 
 
 import com.domain.member.entity.Member;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class MemberManagementJDBC implements MemberManagementJdbcRepo {
 
     private final String INSERT_QUERY = "INSERT INTO member (member_password, member_name) VALUES (:memberPassword, :memberName)";
-    private final String SELECT_QUERY = "SELECT member_id, member_name FROM member WHERE member_id= :memberId";
+    private final String SELECT_QUERY = "SELECT * FROM members WHERE memberId= :memberId";
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -24,11 +24,18 @@ public class MemberManagementJDBC implements MemberManagementJdbcRepo {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private static final class MemberMapper implements RowMapper<Member>{
+    private static final class MemberMapper implements RowMapper<Member> {
         public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
             Member member = Member.builder()
-                .memberId(rs.getLong("member_id"))
-                .memberName(rs.getString("member_name"))
+                    .memberId(rs.getLong("memberId"))
+                    .memberName(rs.getString("memberName"))
+                    .memberPassword(rs.getString("memberPassword"))
+                    .memberEmail(rs.getString("memberEmail"))
+                    .memberAge(rs.getInt("memberAge"))
+                    .memberSex(rs.getString("memberSex"))
+                    .memberAddress(rs.getString("memberAddress"))
+                    .memberPhoneNumber(rs.getString("memberPhoneNumber"))
+                    .memberGrade(rs.getString("memberGrade"))
 
                     .build();
             return member;
@@ -47,11 +54,10 @@ public class MemberManagementJDBC implements MemberManagementJdbcRepo {
     }
 
 
-
     @Override
     public Member getMember(Long memberId) {
         Map namedParameters = new HashMap();
-        namedParameters.put("memberId",memberId);
+        namedParameters.put("memberId", memberId);
         return jdbcTemplate.queryForObject(SELECT_QUERY, namedParameters, new MemberMapper());
     }
 

@@ -2,12 +2,14 @@ package com.config.spring;
 
 import com.domain.member.entity.Member;
 import com.domain.member.service.MemberManagementService;
+import com.domain.member.service.jdbc.MemberManagementJdbcService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 import spock.lang.Specification;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -17,8 +19,11 @@ public class MemberServiceTests extends Specification {
     @Autowired
     private MemberManagementService memberManagementService;
 
+    @Autowired
+    private MemberManagementJdbcService memberManagementJdbcService;
+
     @Test
-    public void addMember(){
+    public void addJpaMember(){
         //Given
         Member member = Member.builder()
                 .memberPassword("123")
@@ -45,6 +50,16 @@ public class MemberServiceTests extends Specification {
         Assert.assertEquals(member.getMemberGrade(), memberResult.getMemberGrade());
         Assert.assertEquals(member.getMemberPhoneNumber(), memberResult.getMemberPhoneNumber());
         Assert.assertEquals(member.getMemberSex(), memberResult.getMemberSex());
+
+    }
+
+    @Test
+    public void getJdbcMember(){
+        Member member = memberManagementJdbcService.getMember(17L);
+        //When
+
+        //Then
+
 
     }
 }
