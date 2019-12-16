@@ -3,10 +3,13 @@ package com.domain.member.entity;
 
 import lombok.*;
 
+import java.util.List;
+
 @Getter @Setter @Builder
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MemberDto {
+
 
     private String memberPassword;
     private String memberName;
@@ -15,6 +18,7 @@ public class MemberDto {
     private String memberSex;
     private String memberAddress;
     private String memberPhoneNumber;
-    private String memberGrade;
+    private List<String> roles;
+    private String memberGrade; //BRONZE , SLIVER , GOLD
 
 }

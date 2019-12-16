@@ -15,7 +15,8 @@ import java.util.Map;
 @Repository
 public class MemberManagementJDBC implements MemberManagementJdbcRepo {
 
-    private final String INSERT_QUERY = "INSERT INTO member (member_password, member_name) VALUES (:memberPassword, :memberName)";
+    private final String INSERT_QUERY = "INSERT INTO members(memberName, memberPassword, memberEmail, memberAge, memberSex, memberAddress, memberPhoneNumber, memberGrade) " +
+            "                           VALUES(:memberName, :memberPassword, :memberEmail, :memberAge, :memberSex, :memberAddress, :memberPhoneNumber, :memberGrade)";
     private final String SELECT_QUERY = "SELECT * FROM members WHERE memberId= :memberId";
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
@@ -47,8 +48,15 @@ public class MemberManagementJDBC implements MemberManagementJdbcRepo {
     public int addMemeber(Member member) {
 
         Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("memberPassword", member.getMemberPassword());
+
         paramMap.put("memberName", member.getMemberName());
+        paramMap.put("memberPassword", member.getMemberPassword());
+        paramMap.put("memberEmail", member.getMemberEmail());
+        paramMap.put("memberAge", member.getMemberAge());
+        paramMap.put("memberSex", member.getMemberSex());
+        paramMap.put("memberAddress", member.getMemberAddress());
+        paramMap.put("memberPhoneNumber", member.getMemberPhoneNumber());
+        paramMap.put("memberGrade", member.getMemberGrade());
 
         return jdbcTemplate.update(INSERT_QUERY, paramMap);
     }
