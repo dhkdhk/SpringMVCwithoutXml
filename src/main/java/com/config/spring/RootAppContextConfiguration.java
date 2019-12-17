@@ -4,6 +4,7 @@ import com.config.datasource.PersistenceConfiguration;
 import com.domain.member.repository.jdbc.MemberManagementJdbcRepo;
 import com.domain.member.service.MemberComponentScanService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -38,7 +39,10 @@ public class RootAppContextConfiguration {
         return new ObjectMapper();
     }
 
-
+    @Bean
+    public ModelMapper modelMapper(){
+        return new ModelMapper();
+    }
 
 
 }

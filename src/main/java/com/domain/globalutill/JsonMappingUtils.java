@@ -2,15 +2,13 @@ package com.domain.globalutill;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.experimental.UtilityClass;
 
 import java.io.IOException;
 
+@UtilityClass
 public class JsonMappingUtils {
 	private static final ObjectMapper MAPPER = new ObjectMapper();
-
-	private JsonMappingUtils(){
-
-	}
 
 	public static <T> T toObject(final String json, final Class<T> type) {
 		try {

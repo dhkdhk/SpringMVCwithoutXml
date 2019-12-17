@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -27,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
-public class MemberControllerTest {
+public class ValidationTest {
 
     @Autowired
     private MemberController memberController;
@@ -40,11 +39,10 @@ public class MemberControllerTest {
     @Before
     public void setUp()  {
         mockMvc = MockMvcBuilders.standaloneSetup(memberController).build();
-
     }
 
     @Test
-    public void addMember() throws Exception{
+    public void emailDuplicate() throws Exception {
         //Given
         List<String> roles = new ArrayList<>();
         roles.add("ADMIN");
@@ -74,6 +72,5 @@ public class MemberControllerTest {
                 .content(objectMapper.writeValueAsString(member)))
                 .andDo(print())
                 .andExpect(status().isOk());
-
     }
 }
