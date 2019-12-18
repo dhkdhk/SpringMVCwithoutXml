@@ -6,8 +6,8 @@ import lombok.*;
 import java.util.List;
 
 @Getter @Setter @Builder
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberDto {
 
     private String memberPassword;
@@ -20,6 +20,7 @@ public class MemberDto {
     private String memberAddress;
     private String memberPhoneNumber;
     private List<String> roles;
-    private String memberGrade; //BRONZE , SLIVER , GOLD
+    private String memberGrade;
+    private AccountEnable accountEnable;
 
 }

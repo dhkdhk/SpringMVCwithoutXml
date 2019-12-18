@@ -8,9 +8,9 @@ import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.domain.member.validation.MemberValidatior;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +20,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping
+@RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MemberController {
 
     private final MemberValidatior memberValidatior;
@@ -28,12 +28,14 @@ public class MemberController {
     private final ModelMapper modelMapper;
 
     @PostMapping("/api/member")
-    public ResponseEntity addMember(@RequestBody @Valid MemberDto memberDto, BindingResult errors) throws BindException {
+    public ResponseEntity addMember(@RequestBody @Valid MemberDto memberDto, BindingResult errors)  {
 
         memberValidatior.validate(memberDto, errors);
+
         if(errors.hasErrors()){
             ResponseErrors responseErrors = new ResponseErrors(errors);
-            return ResponseEntity.badRequest().body(responseErrors.getResponseErrorsList());
+
+            return ResponseEntity.badRequest().body(JsonMappingUtils.toJson(responseErrors.getResponseErrorsList()));
         }
 
         Member member = modelMapper.map(memberDto, Member.class);
