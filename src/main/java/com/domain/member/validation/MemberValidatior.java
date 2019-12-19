@@ -22,14 +22,15 @@ public class MemberValidatior {
         Optional<Member> validationPhoneNumber = memberCommonRepository.findMemberByMemberEmail(memberDto.getMemberEmail());
 
         if(!validationEmail.isEmpty()){
-            errors.rejectValue("memberEmail","다른사람과 중복된 email입니다. 다른 email을 선택해주세요");
+            errors.rejectValue("memberEmail","duplicateEmail","다른사람과 중복된 email입니다. 다른 email을 선택해주세요");
         }
         if(!memberDto.getMemberPassword().equals(memberDto.getMemberCheckPassword())){
-            errors.rejectValue("memberPassword", "패스워드가 일치하지 않습니다.");
+            errors.rejectValue("memberPassword", "InconsistencyPassword", "패스워드가 일치하지 않습니다.");
         }
 
         if(!validationPhoneNumber.isEmpty()){
-            errors.rejectValue("memberPhoneNumber", "다른 사람이 사용하는 번호입니다. 다른 번호를 입력해주세요");
+            errors.rejectValue("memberPhoneNumber", "duplicatePhonNumber", "다른 사람이 사용하는 번호입니다. 다른 번호를 입력해주세요");
         }
+
     }
 }

@@ -3,7 +3,9 @@ package com.domain.member.controller;
 import com.config.spring.RootAppContextConfiguration;
 import com.config.spring.WebAppContextConfiguration;
 import com.domain.member.entity.AccountEnable;
+import com.domain.member.entity.Member;
 import com.domain.member.entity.MemberDto;
+import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +21,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -34,6 +37,9 @@ public class MemberControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private MemberCommonRepository memberCommonRepository;
 
     private MockMvc mockMvc;
     private List<String> roles = new ArrayList<>();
@@ -57,13 +63,13 @@ public class MemberControllerTest {
         MemberDto member = MemberDto.builder()
                 .memberCheckPassword("123")
                 .memberPassword("123")
-                .memberName("dhk")
-                .memberEmail("addTest@add.com")
+                .memberName("zzzz")
+                .memberEmail("addTest@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
                 .roles(roles)
                 .memberAddress("서울시 동작구")
-                .memberPhoneNumber("010-111-010")
+                .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)
                 .memberGrade("admin")
                 .build();
@@ -126,5 +132,73 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("[1].message").value("패스워드가 일치하지 않습니다."))
                 .andExpect(jsonPath("[2].message").value("다른 사람이 사용하는 번호입니다. 다른 번호를 입력해주세요"))
                 .andExpect(status().isBadRequest());
+    }
+
+
+    @Test
+    public void getMember() throws Exception {
+        //Given
+        Member member = Member.builder()
+                .memberPassword("55")
+                .memberName("GETTEST")
+                .memberEmail("get@asdfasdfasdf.com")
+                .memberSex("남")
+                .memberAge(31)
+                .roles(roles)
+                .memberAddress("서울시 동작구")
+                .memberPhoneNumber("010-1001-010")
+                .accountEnable(accountEnable)
+                .memberGrade("admin")
+                .build();
+
+
+        //When
+        Member result = memberCommonRepository.save(member);
+
+        //Then
+
+        mockMvc.perform(get("/api/member/{memberId}", result.getMemberId())
+                .accept(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print())
+                .andExpect(jsonPath("memberName").exists())
+                .andExpect(jsonPath("memberPassword").exists())
+                .andExpect(jsonPath("memberEmail").exists())
+                .andExpect(jsonPath("memberAge").exists())
+                .andExpect(jsonPath("memberSex").exists())
+                .andExpect(jsonPath("memberAddress").exists())
+                .andExpect(jsonPath("memberPhoneNumber").exists())
+                .andExpect(jsonPath("memberGrade").exists())
+                .andExpect(jsonPath("memberPhoneNumber").exists())
+                .andExpect(jsonPath("createdAt").exists())
+                .andExpect(jsonPath("modifiedAt").exists())
+                .andExpect(jsonPath("roles").exists())
+                .andExpect(jsonPath("accountEnable").exists());
+    }
+
+    @Test
+    public void getMemberNotFound() throws Exception{
+
+        //Given
+        Member member = Member.builder()
+                .memberPassword("55")
+                .memberName("GETTESTSSSSSSS")
+                .memberEmail("get@nnnnnnnnnn.com")
+                .memberSex("남")
+                .memberAge(31)
+                .roles(roles)
+                .memberAddress("서울시 동작구")
+                .memberPhoneNumber("010-1188-010")
+                .accountEnable(accountEnable)
+                .memberGrade("admin")
+                .build();
+
+
+        //When
+        Member result = memberCommonRepository.save(member);
+
+        //Then
+        mockMvc.perform(get("/api/member/{memberId}", result.getMemberId()+1))
+                .andDo(print())
+                .andExpect(status().isNotFound());
     }
 }

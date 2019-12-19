@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
 
 import java.util.ArrayList;
@@ -15,15 +16,15 @@ public class ResponseErrors  {
 
     private List<ErrorInformation> responseErrorsList = new ArrayList<>();
 
-    public ResponseErrors(BindingResult bindingResult){
-        this.setErrorsToList(bindingResult);
+    public ResponseErrors(Errors result){
+        this.setErrorsToList(result);
     }
 
-    private void setErrorsToList(BindingResult bindingResult){
-        for(FieldError fieldError : bindingResult.getFieldErrors()){
+    private void setErrorsToList(Errors result){
+        for(FieldError fieldError : result.getFieldErrors()){
             ErrorInformation errorInformaation = new ErrorInformation();
             errorInformaation.setErrorName(fieldError.getField());
-            errorInformaation.setMessage(fieldError.getCode());
+            errorInformaation.setMessage(fieldError.getDefaultMessage());
             responseErrorsList.add(errorInformaation);
         }
     }

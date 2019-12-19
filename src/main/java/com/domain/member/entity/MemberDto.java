@@ -23,4 +23,19 @@ public class MemberDto {
     private String memberGrade;
     private AccountEnable accountEnable;
 
+    public Member toEntity(){
+        return Member.builder()
+                .memberName(memberName)
+                .memberPassword(memberPassword)
+                .memberEmail(memberEmail)
+                .memberAge(memberAge)
+                .memberSex(memberSex)
+                .memberAddress(memberAddress)
+                .memberPhoneNumber(memberPhoneNumber)
+                .roles(roles)
+                .memberGrade(memberGrade)
+                .accountEnable(accountEnable)
+                .build();
+    }
+
 }
