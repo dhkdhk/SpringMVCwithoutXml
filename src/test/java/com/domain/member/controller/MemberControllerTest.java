@@ -21,8 +21,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -58,7 +57,7 @@ public class MemberControllerTest {
     }
 
     @Test
-    public void addMemberTest() throws Exception {
+    public void addMember() throws Exception {
         //Given
         MemberDto member = MemberDto.builder()
                 .memberCheckPassword("123")
@@ -91,32 +90,24 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("memberPhoneNumber").exists())
                 .andExpect(jsonPath("roles").exists())
                 .andExpect(jsonPath("accountEnable").exists())
-                .andExpect(status().isOk());
+                .andExpect(status().isCreated());
     }
 
     @Test
-    public void duplicationTest() throws Exception {
+    public void validatie() throws Exception {
         //Given
-        List<String> roles = new ArrayList<>();
-        roles.add("ADMIN");
 
-        AccountEnable accountEnable = AccountEnable.builder()
-                .accountNonExpired(true)
-                .accountNonLocked(true)
-                .credentialsNonExpired(true)
-                .enabled(true)
-                .build();
-
+        //Given
         MemberDto member = MemberDto.builder()
-                .memberCheckPassword("123123123")
+                .memberCheckPassword("1232222222")
                 .memberPassword("123")
-                .memberName("dhk")
-                .memberEmail("abc@abc.com")
+                .memberName("zzzz")
+                .memberEmail("addTest@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
                 .roles(roles)
                 .memberAddress("서울시 동작구")
-                .memberPhoneNumber("010-010-010")
+                .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)
                 .memberGrade("admin")
                 .build();
@@ -181,7 +172,7 @@ public class MemberControllerTest {
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
-                .memberName("GETTESTSSSSSSS")
+                .memberName("GET_TEST")
                 .memberEmail("get@nnnnnnnnnn.com")
                 .memberSex("남")
                 .memberAge(31)
@@ -200,5 +191,57 @@ public class MemberControllerTest {
         mockMvc.perform(get("/api/member/{memberId}", result.getMemberId()+1))
                 .andDo(print())
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void deleteMember() throws Exception{
+        //Given
+        Member member = Member.builder()
+                .memberPassword("55")
+                .memberName("DELETE_TEST")
+                .memberEmail("delete@test.com")
+                .memberSex("남")
+                .memberAge(31)
+                .roles(roles)
+                .memberAddress("서울시 동작구")
+                .memberPhoneNumber("012-112-010")
+                .accountEnable(accountEnable)
+                .memberGrade("admin")
+                .build();
+
+
+        //When
+        Member result = memberCommonRepository.save(member);
+
+        //Then
+        mockMvc.perform(delete("/api/member/{memberId}", result.getMemberId()))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void deleteNotFoundMember() throws Exception{
+        //Given
+        Member member = Member.builder()
+                .memberPassword("55")
+                .memberName("DELETE_TEST_NOTFOUND")
+                .memberEmail("delete_notFound@test.com")
+                .memberSex("남")
+                .memberAge(31)
+                .roles(roles)
+                .memberAddress("서울시 동작구")
+                .memberPhoneNumber("013-112-010")
+                .accountEnable(accountEnable)
+                .memberGrade("admin")
+                .build();
+
+
+        //When
+        Member result = memberCommonRepository.save(member);
+
+        //Then
+        mockMvc.perform(delete("/api/member/{memberId}", result.getMemberId()+1))
+                .andDo(print())
+                .andExpect(status().isNoContent());
     }
 }

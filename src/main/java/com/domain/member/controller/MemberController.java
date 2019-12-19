@@ -23,8 +23,9 @@ public class MemberController {
 
     private final MemberValidatior memberValidatior;
     private final MemberCommonRepository memberCommonRepository;
+    private final String MEMBER_REST_URI = "/api/member";
 
-    @PostMapping("/api/member")
+    @PostMapping(MEMBER_REST_URI)
     public ResponseEntity addMember(@RequestBody MemberDto memberDto, Errors errors)  {
 
         memberValidatior.validate(memberDto, errors);
@@ -35,16 +36,24 @@ public class MemberController {
 
         Member result = memberCommonRepository.save(memberDto.toEntity());
 
-        return ResponseEntity.ok(result);
+        return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
-
-    @GetMapping("/api/member/{memberId}")
+    @GetMapping(MEMBER_REST_URI+"/{memberId}")
     public ResponseEntity getMember(@PathVariable Long memberId){
-        Optional<Member> memberOptionl = memberCommonRepository.findById(memberId);
-        return memberOptionl.map(member -> ResponseEntity.ok(member))
+        Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
+        return memberOptional.map(member -> ResponseEntity.ok(member))
                             .orElse(ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping(MEMBER_REST_URI+"/{memberId}")
+    public ResponseEntity updateMember(@PathVariable Long memberId){
+        Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
+        return memberOptional
+                    .map(member -> { memberCommonRepository.deleteById(memberId);
+                                     return  ResponseEntity.ok().build();
+                                    })
+                    .orElse(ResponseEntity.noContent().build());
+    }
 
 }
