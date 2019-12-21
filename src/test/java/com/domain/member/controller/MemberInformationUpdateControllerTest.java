@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -29,10 +30,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
-public class MemberControllerTest {
+public class MemberInformationUpdateControllerTest {
 
     @Autowired
-    private MemberController memberController;
+    private MemberInformationUpdateController memberInformationUpdateController;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -46,7 +47,7 @@ public class MemberControllerTest {
 
     @Before
     public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(memberController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(memberInformationUpdateController).build();
         roles.add("ADMIN");
         accountEnable = AccountEnable.builder()
                 .accountNonExpired(true)
@@ -244,4 +245,13 @@ public class MemberControllerTest {
                 .andDo(print())
                 .andExpect(status().isNoContent());
     }
+//
+//    @Test
+//    public void memberPasswordUpdate() throws Exception{
+//        //Given
+//        MemberDto memberDto = MemberDto.builder()
+//                .memberCheckPassword("123123123123")
+//                .memberPassword("1233223232")
+//                .build();
+//    }
 }

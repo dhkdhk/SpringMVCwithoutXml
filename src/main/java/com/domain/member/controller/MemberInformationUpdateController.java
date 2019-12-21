@@ -7,19 +7,19 @@ import com.domain.member.entity.MemberDto;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.domain.member.validation.MemberValidatior;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.bridge.MessageUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping
-public class MemberController {
+public class MemberInformationUpdateController {
 
     private final MemberValidatior memberValidatior;
     private final MemberCommonRepository memberCommonRepository;
@@ -47,7 +47,7 @@ public class MemberController {
     }
 
     @DeleteMapping(MEMBER_REST_URI+"/{memberId}")
-    public ResponseEntity updateMember(@PathVariable Long memberId){
+    public ResponseEntity deteleMember(@PathVariable Long memberId){
         Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
         return memberOptional
                     .map(member -> { memberCommonRepository.deleteById(memberId);
@@ -55,5 +55,4 @@ public class MemberController {
                                     })
                     .orElse(ResponseEntity.noContent().build());
     }
-
 }
