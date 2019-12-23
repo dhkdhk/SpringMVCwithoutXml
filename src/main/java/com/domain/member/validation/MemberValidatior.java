@@ -18,17 +18,16 @@ public class MemberValidatior {
     }
 
     public void validate(MemberDto memberDto, Errors errors) {
-        Optional<Member> validationEmail = memberCommonRepository.findMemberByMemberEmail(memberDto.getMemberEmail());
-        Optional<Member> validationPhoneNumber = memberCommonRepository.findMemberByMemberEmail(memberDto.getMemberEmail());
+        Optional<Member> validationMember = memberCommonRepository.findMemberByMemberEmail(memberDto.getMemberEmail());
 
-        if(!validationEmail.isEmpty()){
+        if(!validationMember.isEmpty()){
             errors.rejectValue("memberEmail","duplicateEmail","다른사람과 중복된 email입니다. 다른 email을 선택해주세요");
         }
         if(!memberDto.getMemberPassword().equals(memberDto.getMemberCheckPassword())){
             errors.rejectValue("memberPassword", "InconsistencyPassword", "패스워드가 일치하지 않습니다.");
         }
 
-        if(!validationPhoneNumber.isEmpty()){
+        if(!validationMember.isEmpty()){
             errors.rejectValue("memberPhoneNumber", "duplicatePhonNumber", "다른 사람이 사용하는 번호입니다. 다른 번호를 입력해주세요");
         }
 

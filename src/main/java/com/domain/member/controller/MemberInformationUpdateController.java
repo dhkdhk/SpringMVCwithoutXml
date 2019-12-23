@@ -13,19 +13,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping
 public class MemberInformationUpdateController {
 
     private final MemberValidatior memberValidatior;
     private final MemberCommonRepository memberCommonRepository;
-    private final String MEMBER_REST_URI = "/api/member";
 
-    @PostMapping(MEMBER_REST_URI)
+    @PostMapping("/api/member")
     public ResponseEntity addMember(@RequestBody MemberDto memberDto, Errors errors)  {
 
         memberValidatior.validate(memberDto, errors);
@@ -39,14 +36,14 @@ public class MemberInformationUpdateController {
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
-    @GetMapping(MEMBER_REST_URI+"/{memberId}")
+    @GetMapping("/api/member/{memberId}")
     public ResponseEntity getMember(@PathVariable Long memberId){
         Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
         return memberOptional.map(member -> ResponseEntity.ok(member))
                             .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping(MEMBER_REST_URI+"/{memberId}")
+    @DeleteMapping("/api/member/{memberId}")
     public ResponseEntity deteleMember(@PathVariable Long memberId){
         Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
         return memberOptional

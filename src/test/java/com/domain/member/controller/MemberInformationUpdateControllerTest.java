@@ -8,8 +8,10 @@ import com.domain.member.entity.MemberDto;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -30,6 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MemberInformationUpdateControllerTest {
 
     @Autowired
@@ -42,13 +45,11 @@ public class MemberInformationUpdateControllerTest {
     private MemberCommonRepository memberCommonRepository;
 
     private MockMvc mockMvc;
-    private List<String> roles = new ArrayList<>();
     private AccountEnable accountEnable;
 
     @Before
     public void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(memberInformationUpdateController).build();
-        roles.add("ADMIN");
         accountEnable = AccountEnable.builder()
                 .accountNonExpired(true)
                 .accountNonLocked(true)
@@ -58,7 +59,7 @@ public class MemberInformationUpdateControllerTest {
     }
 
     @Test
-    public void addMember() throws Exception {
+    public void A_addMember() throws Exception {
         //Given
         MemberDto member = MemberDto.builder()
                 .memberCheckPassword("123")
@@ -67,7 +68,7 @@ public class MemberInformationUpdateControllerTest {
                 .memberEmail("addTest@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(roles)
+                .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)
@@ -95,7 +96,7 @@ public class MemberInformationUpdateControllerTest {
     }
 
     @Test
-    public void validatie() throws Exception {
+    public void B_validatie() throws Exception {
         //Given
 
         //Given
@@ -106,7 +107,7 @@ public class MemberInformationUpdateControllerTest {
                 .memberEmail("addTest@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(roles)
+                .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)
@@ -128,7 +129,7 @@ public class MemberInformationUpdateControllerTest {
 
 
     @Test
-    public void getMember() throws Exception {
+    public void C_getMember() throws Exception {
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
@@ -136,7 +137,7 @@ public class MemberInformationUpdateControllerTest {
                 .memberEmail("get@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(roles)
+                .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1001-010")
                 .accountEnable(accountEnable)
@@ -168,7 +169,7 @@ public class MemberInformationUpdateControllerTest {
     }
 
     @Test
-    public void getMemberNotFound() throws Exception{
+    public void D_getMemberNotFound() throws Exception{
 
         //Given
         Member member = Member.builder()
@@ -177,7 +178,7 @@ public class MemberInformationUpdateControllerTest {
                 .memberEmail("get@nnnnnnnnnn.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(roles)
+                .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1188-010")
                 .accountEnable(accountEnable)
@@ -195,7 +196,7 @@ public class MemberInformationUpdateControllerTest {
     }
 
     @Test
-    public void deleteMember() throws Exception{
+    public void E_deleteMember() throws Exception{
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
@@ -203,7 +204,7 @@ public class MemberInformationUpdateControllerTest {
                 .memberEmail("delete@test.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(roles)
+                .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("012-112-010")
                 .accountEnable(accountEnable)
@@ -221,7 +222,7 @@ public class MemberInformationUpdateControllerTest {
     }
 
     @Test
-    public void deleteNotFoundMember() throws Exception{
+    public void F_deleteNotFoundMember() throws Exception{
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
@@ -229,7 +230,7 @@ public class MemberInformationUpdateControllerTest {
                 .memberEmail("delete_notFound@test.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(roles)
+                .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("013-112-010")
                 .accountEnable(accountEnable)

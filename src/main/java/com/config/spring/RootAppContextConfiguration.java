@@ -1,10 +1,9 @@
 package com.config.spring;
 
 import com.config.datasource.PersistenceConfiguration;
-import com.domain.member.repository.jdbc.MemberManagementJdbcRepo;
-import com.domain.member.service.MemberComponentScanService;
+import com.domain.member.repository.MemberRepositoryConfiguration;
+import com.domain.member.service.MemberServiceConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +16,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:datasource.properties")
-@ComponentScan(basePackageClasses = {PersistenceConfiguration.class, MemberManagementJdbcRepo.class, MemberComponentScanService.class})
+@ComponentScan(basePackageClasses = {PersistenceConfiguration.class, MemberRepositoryConfiguration.class, MemberServiceConfiguration.class})
 public class RootAppContextConfiguration {
 
     @Autowired
@@ -38,11 +37,5 @@ public class RootAppContextConfiguration {
     public ObjectMapper objectMapper(){
         return new ObjectMapper();
     }
-
-    @Bean
-    public ModelMapper modelMapper(){
-        return new ModelMapper();
-    }
-
 
 }
