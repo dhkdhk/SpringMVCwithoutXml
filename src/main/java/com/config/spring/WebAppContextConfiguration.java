@@ -12,4 +12,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan(basePackageClasses = {MemberInformationUpdateController.class, MemberValidatior.class})
 public class WebAppContextConfiguration implements WebMvcConfigurer {
 
+
 }

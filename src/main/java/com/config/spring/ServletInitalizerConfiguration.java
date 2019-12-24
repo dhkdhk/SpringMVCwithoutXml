@@ -3,18 +3,16 @@ package com.config.spring;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletRegistration;
-import java.nio.charset.StandardCharsets;
+import javax.servlet.*;
+import java.util.EnumSet;
 
 public class ServletInitalizerConfiguration implements WebApplicationInitializer {
     private final String DISPATCHER_NAME = "dispatcher";
     private final String DISPATCHER_MAPPING_URL = "/";
-
+    private  final String SPRING_SECURITY_FILTER_CHAIN = "springSecurityFilterChain";
     @Override
     public void onStartup(ServletContext container) {
 
@@ -35,26 +33,17 @@ public class ServletInitalizerConfiguration implements WebApplicationInitializer
         dispatcher.addMapping(DISPATCHER_MAPPING_URL);
 
 
-        //필터 등록
-        FilterRegistration charEncodingFilterReg = container.addFilter(FilterType.CHARACTER_ENCODING.name(), createdFilter(FilterType.CHARACTER_ENCODING));
-        charEncodingFilterReg.addMappingForUrlPatterns(null, true, "/*");
-    }
+        DelegatingFilterProxy springSecurityFilterChain = new DelegatingFilterProxy(SPRING_SECURITY_FILTER_CHAIN);
+        FilterRegistration.Dynamic registration = container.addFilter(SPRING_SECURITY_FILTER_CHAIN, springSecurityFilterChain);
 
-    private CharacterEncodingFilter createdFilter(FilterType type){
-
-        switch (type){
-            case CHARACTER_ENCODING:
-                CharacterEncodingFilter filter = new CharacterEncodingFilter();
-                filter.setEncoding(StandardCharsets.UTF_8.name());
-                filter.setForceEncoding(true);
-                return filter;
-
-            case SPRING_SECURITY:
-                //TODO Spring Security Filter Setting
-
-            default:
-                throw new IllegalArgumentException("해당되는 FilterType이 없습니다");
+        if (registration == null) {
+            throw new IllegalStateException("Duplicate Filter registration for '" + SPRING_SECURITY_FILTER_CHAIN
+                    + "'. Check to ensure the Filter is only configured once.");
         }
 
+        EnumSet<DispatcherType> dispatcherTypes = EnumSet.of(DispatcherType.REQUEST, DispatcherType.ERROR);
+        registration.addMappingForUrlPatterns(dispatcherTypes, false, "/*");
+
     }
+
 }
