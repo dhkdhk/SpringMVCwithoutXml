@@ -8,11 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional(transactionManager = "dataSourceTransactionManager")
-public class MemberManagementJdbcImple implements MemberManagementJdbcService{
+public class MemberInformationUpdateImpleJDBC implements MemberInformationUpdateServiceJDBC {
 
     private final MemberManagementJdbcRepo memberManagementJdbcRepo;
 
-    public MemberManagementJdbcImple(MemberManagementJdbcRepo memberManagementJdbcRepo){
+    public MemberInformationUpdateImpleJDBC(MemberManagementJdbcRepo memberManagementJdbcRepo){
         this.memberManagementJdbcRepo = memberManagementJdbcRepo;
     }
 

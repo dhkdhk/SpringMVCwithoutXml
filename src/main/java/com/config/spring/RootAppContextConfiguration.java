@@ -3,6 +3,7 @@ package com.config.spring;
 import com.config.datasource.PersistenceConfiguration;
 import com.config.security.SpringSecurityConfiguration;
 import com.domain.member.repository.MemberRepositoryConfiguration;
+import com.domain.member.service.MemberServiceConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
@@ -15,7 +16,7 @@ import javax.sql.DataSource;
 @Configuration
 @PropertySource("classpath:datasource.properties")
 @Import(SpringSecurityConfiguration.class)
-@ComponentScan(basePackageClasses = {PersistenceConfiguration.class, MemberRepositoryConfiguration.class})
+@ComponentScan(basePackageClasses = {PersistenceConfiguration.class, MemberServiceConfiguration.class, MemberRepositoryConfiguration.class})
 public class RootAppContextConfiguration {
 
     @Autowired

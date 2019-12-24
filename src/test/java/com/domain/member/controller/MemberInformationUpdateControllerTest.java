@@ -96,8 +96,6 @@ public class MemberInformationUpdateControllerTest {
     @Test
     public void B_validatie() throws Exception {
         //Given
-
-        //Given
         MemberDto member = MemberDto.builder()
                 .memberCheckPassword("1232222222")
                 .memberPassword("123")
@@ -147,7 +145,6 @@ public class MemberInformationUpdateControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-
         mockMvc.perform(get("/api/member/{memberId}", result.getMemberId())
                 .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print())
@@ -166,13 +163,13 @@ public class MemberInformationUpdateControllerTest {
                 .andExpect(jsonPath("accountEnable").exists());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void D_getMemberNotFound() throws Exception{
 
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
-                .memberName("GET_TEST")
+                .memberName("GET_NOT_FOUND")
                 .memberEmail("get@nnnnnnnnnn.com")
                 .memberSex("남")
                 .memberAge(31)
