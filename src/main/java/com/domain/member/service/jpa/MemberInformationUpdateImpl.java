@@ -2,35 +2,23 @@ package com.domain.member.service.jpa;
 
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Transactional(transactionManager="jpaTransactionManager")
-public class MemberUpdator implements MemberInformationUpdateService {
+public class MemberInformationUpdateImpl implements MemberInformationUpdate {
 
     private final MemberCommonRepository memberCommonRepository;
 
-    @Override
-    public Member addMember(Member member) {
-        return memberCommonRepository.save(member);
-    }
 
     @Override
-    public Optional<Member> updateMember() {
-        throw new IllegalArgumentException("updateMember는 유효하지 않는 요청입니다.");
-    }
-
-    @Override
-    public Member getMember(Long memberId) {
-        final Member member = memberCommonRepository.findById(memberId)
-                                        .orElseThrow(() -> new IllegalArgumentException(memberId + " 일치하는 정보가 없습니다."));
-        return  member;
+    public int updateMemberInformation(Member member) {
+      return  memberCommonRepository.updateMemberInformation(member);
     }
 
     @Override
@@ -41,9 +29,6 @@ public class MemberUpdator implements MemberInformationUpdateService {
                     return true;
                 })
                 .orElse(false);
-
-
-
-
     }
+
 }

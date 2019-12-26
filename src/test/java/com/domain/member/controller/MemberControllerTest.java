@@ -4,7 +4,7 @@ import com.config.spring.RootAppContextConfiguration;
 import com.config.spring.WebAppContextConfiguration;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
-import com.domain.member.entity.MemberDto;
+import com.domain.member.dto.MemberDto;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
@@ -14,11 +14,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 
@@ -31,10 +33,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MemberInformationUpdateControllerTest {
+public class MemberControllerTest {
 
     @Autowired
-    private MemberInformationUpdateController memberInformationUpdateController;
+    private MemberController memberController;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -47,7 +49,7 @@ public class MemberInformationUpdateControllerTest {
 
     @Before
     public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(memberInformationUpdateController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(memberController).build();
         accountEnable = AccountEnable.builder()
                 .accountNonExpired(true)
                 .accountNonLocked(true)
@@ -241,13 +243,42 @@ public class MemberInformationUpdateControllerTest {
                 .andDo(print())
                 .andExpect(status().isNoContent());
     }
-//
-//    @Test
-//    public void memberPasswordUpdate() throws Exception{
-//        //Given
-//        MemberDto memberDto = MemberDto.builder()
-//                .memberCheckPassword("123123123123")
-//                .memberPassword("1233223232")
-//                .build();
-//    }
+
+    @Test
+    @Transactional(transactionManager = "jpaTransactionManager")
+    @Rollback(false)
+    public void memberUpdateInformation() throws Exception{
+        //Given
+        Member member = Member.builder()
+                .memberPassword("123")
+                .memberName("NotUpdate")
+                .memberEmail("NotUpdate@memberUpdate.com")
+                .memberSex("남")
+                .memberAge(99)
+                .roles(Arrays.asList("ADMIN"))
+                .memberAddress("서울시 동작구")
+                .memberPhoneNumber("010-7788-010")
+                .accountEnable(accountEnable)
+                .memberGrade("admin")
+                .build();
+        Member result = memberCommonRepository.save(member);
+
+        MemberDto memberDto = MemberDto.builder()
+                .memberName("Update")
+                .memberEmail("update@memberUpdate.com")
+                .memberAddress("서울시 노량진")
+                .build();
+
+
+        //When & Then
+        mockMvc.perform(put("/api/member/{memberId}", result.getMemberId())
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .accept(MediaType.APPLICATION_JSON_UTF8)
+                .content(objectMapper.writeValueAsString(memberDto)))
+                .andDo(print())
+                .andExpect(jsonPath("memberName").value(memberDto.getMemberName()))
+                .andExpect(jsonPath("memberEmail").value(memberDto.getMemberEmail()))
+                .andExpect(jsonPath("memberAddress").value(memberDto.getMemberAddress()))
+                .andExpect(status().isOk());
+    }
 }
