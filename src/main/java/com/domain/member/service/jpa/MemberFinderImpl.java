@@ -22,7 +22,7 @@ public class MemberFinderImpl implements MemberFinder {
     }
 
     @Override
-    public Member findById(Long memberId) {
+    public Member findById(final Long memberId) {
         final Member member = memberCommonRepository.findById(memberId)
                 .orElseThrow(() -> new IllegalArgumentException(memberId + " 일치하는 정보가 없습니다."));
         return member;

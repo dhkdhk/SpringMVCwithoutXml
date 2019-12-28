@@ -1,7 +1,9 @@
 package com.domain.member.entity;
 
 import com.domain.globalutill.RoleAttributeConvertor;
+import com.domain.member.dto.MemberDto;
 import lombok.*;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
 import java.util.List;
@@ -37,4 +39,15 @@ public class Member extends CreatedAndModifiedEntity {
 
     @Embedded
     private AccountEnable accountEnable;
+
+
+    public void updateInformation(Long memberId, MemberDto memberDto) {
+        if (!StringUtils.isEmpty(memberDto)) {
+            this.memberId = memberId;
+            this.memberName = memberDto.getMemberName();
+            this.memberEmail = memberDto.getMemberEmail();
+            this.memberAddress = memberDto.getMemberAddress();
+            this.memberPhoneNumber = memberDto.getMemberPhoneNumber();
+        }
+    }
 }

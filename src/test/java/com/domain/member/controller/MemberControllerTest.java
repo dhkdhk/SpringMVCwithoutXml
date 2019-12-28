@@ -7,6 +7,7 @@ import com.domain.member.entity.Member;
 import com.domain.member.dto.MemberDto;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -23,6 +24,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -166,7 +168,7 @@ public class MemberControllerTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void D_getMemberNotFound() throws Exception{
+    public void D_getMemberNotFound() throws Exception {
 
         //Given
         Member member = Member.builder()
@@ -187,13 +189,13 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(get("/api/member/{memberId}", result.getMemberId()+1))
+        mockMvc.perform(get("/api/member/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
                 .andExpect(status().isNotFound());
     }
 
     @Test
-    public void E_deleteMember() throws Exception{
+    public void E_deleteMember() throws Exception {
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
@@ -219,7 +221,7 @@ public class MemberControllerTest {
     }
 
     @Test
-    public void F_deleteNotFoundMember() throws Exception{
+    public void F_deleteNotFoundMember() throws Exception {
         //Given
         Member member = Member.builder()
                 .memberPassword("55")
@@ -239,15 +241,13 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(delete("/api/member/{memberId}", result.getMemberId()+1))
+        mockMvc.perform(delete("/api/member/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
                 .andExpect(status().isNoContent());
     }
 
     @Test
-    @Transactional(transactionManager = "jpaTransactionManager")
-    @Rollback(false)
-    public void memberUpdateInformation() throws Exception{
+    public void memberUpdateInformation() throws Exception {
         //Given
         Member member = Member.builder()
                 .memberPassword("123")
@@ -263,22 +263,32 @@ public class MemberControllerTest {
                 .build();
         Member result = memberCommonRepository.save(member);
 
-        MemberDto memberDto = MemberDto.builder()
+        MemberDto memberUpdate = MemberDto.builder()
                 .memberName("Update")
                 .memberEmail("update@memberUpdate.com")
                 .memberAddress("서울시 노량진")
+                .memberPhoneNumber("010-1231-1231")
                 .build();
 
 
         //When & Then
-        mockMvc.perform(put("/api/member/{memberId}", result.getMemberId())
+        mockMvc.perform(patch("/api/members/{memberId}", result.getMemberId())
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
-                .content(objectMapper.writeValueAsString(memberDto)))
+                .content(objectMapper.writeValueAsString(memberUpdate)))
                 .andDo(print())
-                .andExpect(jsonPath("memberName").value(memberDto.getMemberName()))
-                .andExpect(jsonPath("memberEmail").value(memberDto.getMemberEmail()))
-                .andExpect(jsonPath("memberAddress").value(memberDto.getMemberAddress()))
+                .andExpect(jsonPath("memberName").value(memberUpdate.getMemberName()))
+                .andExpect(jsonPath("memberEmail").value(memberUpdate.getMemberEmail()))
+                .andExpect(jsonPath("memberAddress").value(memberUpdate.getMemberAddress()))
                 .andExpect(status().isOk());
+
+
+        Optional<Member> memberOptional = memberCommonRepository.findById(result.getMemberId());
+        Member memberUpdateObject = memberOptional.get();
+
+        Assert.assertEquals(memberUpdate.getMemberName(), memberUpdateObject.getMemberName());
+        Assert.assertEquals(memberUpdate.getMemberEmail(), memberUpdateObject.getMemberEmail());
+        Assert.assertEquals(memberUpdate.getMemberAddress(), memberUpdateObject.getMemberAddress());
+        Assert.assertEquals(memberUpdate.getMemberPhoneNumber(), memberUpdateObject.getMemberPhoneNumber());
     }
 }

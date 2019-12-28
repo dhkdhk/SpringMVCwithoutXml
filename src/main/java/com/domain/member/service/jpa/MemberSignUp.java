@@ -4,5 +4,5 @@ import com.domain.member.entity.Member;
 
 public interface MemberSignUp {
 
-    Member ourHomePageToJoin(Member member);
+    Member ourHomePageToSignUp(Member member);
 }

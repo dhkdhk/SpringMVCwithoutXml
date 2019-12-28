@@ -13,7 +13,7 @@ public class ServletInitalizerConfiguration implements WebApplicationInitializer
 
     private final String DISPATCHER_NAME = "dispatcher";
     private final String DISPATCHER_MAPPING_URL = "/";
-    private  final String SPRING_SECURITY_FILTER_CHAIN = "springSecurityFilterChain";
+    private final String SPRING_SECURITY_FILTER_CHAIN = "springSecurityFilterChain";
 
     @Override
     public void onStartup(ServletContext container) {
