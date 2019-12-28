@@ -1,4 +1,4 @@
-package com.domain.globalutill;
+package com.domain.commonutill;
 
 import org.apache.commons.lang3.StringUtils;
 

@@ -1,4 +1,4 @@
-package com.domain.member.validation;
+package com.domain.member.utill.validation;
 
 import com.domain.member.entity.Member;
 import com.domain.member.dto.MemberDto;

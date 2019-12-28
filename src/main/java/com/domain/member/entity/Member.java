@@ -1,6 +1,6 @@
 package com.domain.member.entity;
 
-import com.domain.globalutill.RoleAttributeConvertor;
+import com.domain.commonutill.RoleAttributeConvertor;
 import com.domain.member.dto.MemberDto;
 import lombok.*;
 import org.springframework.util.StringUtils;

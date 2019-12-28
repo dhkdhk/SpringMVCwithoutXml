@@ -1,4 +1,4 @@
-package com.domain.globalutill;
+package com.domain.commonutill;
 
 import lombok.Getter;
 import lombok.Setter;

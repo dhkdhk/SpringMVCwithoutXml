@@ -1,13 +1,14 @@
 package com.domain.member.controller;
 
-import com.domain.globalutill.JsonMappingUtils;
-import com.domain.globalutill.ResponseErrors;
+import com.domain.commonutill.JsonMappingUtils;
+import com.domain.commonutill.ResponseErrors;
 import com.domain.member.dto.MemberDto;
 import com.domain.member.entity.Member;
+import com.domain.member.service.jpa.MemberAccount;
 import com.domain.member.service.jpa.MemberFinder;
 import com.domain.member.service.jpa.MemberSignUp;
-import com.domain.member.service.jpa.MemberUpdator;
-import com.domain.member.validation.MemberValidatior;
+import com.domain.member.service.jpa.MemberIProfile;
+import com.domain.member.utill.validation.MemberValidatior;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,8 @@ public class MemberController {
 
     private final MemberValidatior memberValidatior;
 
-    private final MemberUpdator memberUpdator;
+    private final MemberAccount memberAccount;
+    private final MemberIProfile memberProfileUpdator;
     private final MemberSignUp memberSignUp;
     private final MemberFinder memberFinder;
 
@@ -48,12 +50,14 @@ public class MemberController {
 
     @GetMapping("/api/members/{memberId}")
     public ResponseEntity getMember(@PathVariable final Long memberId) {
+
         return ResponseEntity.ok(memberFinder.findById(memberId));
+
     }
 
     @DeleteMapping("/api/members/{memberId}")
     public ResponseEntity deleteMember(@PathVariable Long memberId) {
-        boolean result = memberUpdator.deleteMember(memberId);
+        boolean result = memberAccount.deleteMember(memberId);
 
         if (result) {
             return ResponseEntity.ok().build();
@@ -65,11 +69,11 @@ public class MemberController {
     @PatchMapping("/api/members/{memberId}")
     public ResponseEntity updateInformation(@PathVariable Long memberId, @RequestBody MemberDto memberDto, Errors errors) {
         memberValidatior.validate(memberDto, errors);
-        if (errors.hasErrors()) {
-            ResponseErrors responseErrors = new ResponseErrors(errors);
-            return ResponseEntity.badRequest().body(JsonMappingUtils.toJson(responseErrors.getResponseErrorsList()));
-        }
-        return ResponseEntity.ok().body(memberUpdator.updateMemberInformation(memberId , memberDto));
+//        if (errors.hasErrors()) {
+//            ResponseErrors responseErrors = new ResponseErrors(errors);
+//            return ResponseEntity.badRequest().body(JsonMappingUtils.toJson(responseErrors.getResponseErrorsList()));
+//        }
+        return ResponseEntity.ok().body(memberProfileUpdator.editProfile(memberId , memberDto));
     }
 
 }

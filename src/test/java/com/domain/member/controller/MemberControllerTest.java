@@ -2,9 +2,9 @@ package com.domain.member.controller;
 
 import com.config.spring.RootAppContextConfiguration;
 import com.config.spring.WebAppContextConfiguration;
+import com.domain.member.dto.MemberDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
-import com.domain.member.dto.MemberDto;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
@@ -15,13 +15,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -78,7 +76,7 @@ public class MemberControllerTest {
                 .build();
 
         //When & Then
-        mockMvc.perform(post("/api/member")
+        mockMvc.perform(post("/api/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(member)))
@@ -116,7 +114,7 @@ public class MemberControllerTest {
 
 
         //When & Then
-        mockMvc.perform(post("/api/member")
+        mockMvc.perform(post("/api/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(member)))
@@ -149,7 +147,7 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(get("/api/member/{memberId}", result.getMemberId())
+        mockMvc.perform(get("/api/members/{memberId}", result.getMemberId())
                 .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print())
                 .andExpect(jsonPath("memberName").exists())
@@ -189,7 +187,7 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(get("/api/member/{memberId}", result.getMemberId() + 1))
+        mockMvc.perform(get("/api/members/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
                 .andExpect(status().isNotFound());
     }
@@ -215,7 +213,7 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(delete("/api/member/{memberId}", result.getMemberId()))
+        mockMvc.perform(delete("/api/members/{memberId}", result.getMemberId()))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
@@ -241,7 +239,7 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(delete("/api/member/{memberId}", result.getMemberId() + 1))
+        mockMvc.perform(delete("/api/members/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
                 .andExpect(status().isNoContent());
     }

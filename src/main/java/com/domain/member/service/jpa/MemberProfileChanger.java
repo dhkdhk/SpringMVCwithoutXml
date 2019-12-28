@@ -7,18 +7,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
 @Transactional(transactionManager="jpaTransactionManager")
-public class MemberUpdateInformation implements MemberUpdator {
+public class MemberProfileChanger implements MemberIProfile {
 
     private final MemberCommonRepository memberCommonRepository;
 
 
     @Override
-    public Member updateMemberInformation(final Long memberId, MemberDto memberDto) {
+    public Member editProfile(final Long memberId, MemberDto memberDto) {
         Member member = memberCommonRepository.findById(memberId)
                      .orElseThrow(() -> new IllegalArgumentException(" 수정 할 수 없습니다. 입력값을 다시 학번확인해주세요"));
 
@@ -27,14 +25,6 @@ public class MemberUpdateInformation implements MemberUpdator {
         return member;
     }
 
-    @Override
-    public boolean deleteMember(Long memberId) {
-        Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
-        return memberOptional
-                .map(member -> { memberCommonRepository.deleteById(memberId);
-                    return true;
-                })
-                .orElse(false);
-    }
+
 
 }
