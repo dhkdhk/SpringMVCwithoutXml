@@ -1,6 +1,7 @@
 package com.config.spring;
 
 import com.config.datasource.PersistenceConfiguration;
+import com.config.security.SecurityConfiguration;
 import com.config.security.SpringSecurityConfiguration;
 import com.domain.member.repository.MemberRepositoryConfiguration;
 import com.domain.member.service.MemberServiceConfiguration;
@@ -15,17 +16,11 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:datasource.properties")
-@Import(SpringSecurityConfiguration.class)
 @ComponentScan(basePackageClasses = {PersistenceConfiguration.class, MemberServiceConfiguration.class, MemberRepositoryConfiguration.class})
 public class RootAppContextConfiguration {
 
     @Autowired
     private Environment env;
-
-    @Bean(name = "mvcHandlerMappingIntrospector")
-    public HandlerMappingIntrospector mvcHandlerMappingIntrospector() {
-        return new HandlerMappingIntrospector();
-    }
 
     @Bean
     public DataSource dataSource() {

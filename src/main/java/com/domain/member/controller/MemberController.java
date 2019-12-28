@@ -6,8 +6,8 @@ import com.domain.member.dto.MemberDto;
 import com.domain.member.entity.Member;
 import com.domain.member.service.jpa.MemberAccount;
 import com.domain.member.service.jpa.MemberFinder;
-import com.domain.member.service.jpa.MemberSignUp;
 import com.domain.member.service.jpa.MemberIProfile;
+import com.domain.member.service.jpa.MemberSignUp;
 import com.domain.member.utill.validation.MemberValidatior;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -49,7 +49,7 @@ public class MemberController {
     }
 
     @GetMapping("/api/members/{memberId}")
-    public ResponseEntity getMember(@PathVariable final Long memberId) {
+    public ResponseEntity getMember(@PathVariable final Long memberId) throws Exception{
 
         return ResponseEntity.ok(memberFinder.findById(memberId));
 

@@ -3,11 +3,10 @@ package com.config.spring;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.*;
-import java.util.EnumSet;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletRegistration;
 
 public class ServletInitalizerConfiguration implements WebApplicationInitializer {
 
@@ -33,18 +32,6 @@ public class ServletInitalizerConfiguration implements WebApplicationInitializer
         ServletRegistration.Dynamic dispatcher = container.addServlet(DISPATCHER_NAME, new DispatcherServlet(dispatcherContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping(DISPATCHER_MAPPING_URL);
-
-
-        DelegatingFilterProxy springSecurityFilterChain = new DelegatingFilterProxy(SPRING_SECURITY_FILTER_CHAIN);
-        FilterRegistration.Dynamic registration = container.addFilter(SPRING_SECURITY_FILTER_CHAIN, springSecurityFilterChain);
-
-        if (registration == null) {
-            throw new IllegalStateException("Duplicate Filter registration for '" + SPRING_SECURITY_FILTER_CHAIN
-                    + "'. Check to ensure the Filter is only configured once.");
-        }
-
-        EnumSet<DispatcherType> dispatcherTypes = EnumSet.of(DispatcherType.REQUEST, DispatcherType.ERROR);
-        registration.addMappingForUrlPatterns(dispatcherTypes, false, "/*");
 
     }
 
