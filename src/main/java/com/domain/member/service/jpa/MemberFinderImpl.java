@@ -2,6 +2,7 @@ package com.domain.member.service.jpa;
 
 
 import com.domain.member.entity.Member;
+import com.domain.member.exception.MemberNotFoundException;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,16 +16,10 @@ public class MemberFinderImpl implements MemberFinder {
     private final MemberCommonRepository memberCommonRepository;
 
     @Override
-    public Member findMemberByMemberEmail(String email) {
-        final Member member = memberCommonRepository.findMemberByMemberEmail(email)
-                .orElseThrow(() -> new IllegalArgumentException(email + " 일치하는 정보가 없습니다."));
-        return member;
-    }
-
-    @Override
     public Member findById(final Long memberId) {
         final Member member = memberCommonRepository.findById(memberId)
-                .orElseThrow(() -> new IllegalArgumentException(memberId + " 일치하는 정보가 없습니다."));
+                .orElseThrow(() -> new MemberNotFoundException(memberId));
+        member.responseNotShowPassword();
         return member;
     }
 }

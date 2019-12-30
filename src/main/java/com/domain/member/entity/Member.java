@@ -1,6 +1,6 @@
 package com.domain.member.entity;
 
-import com.domain.commonutill.RoleAttributeConvertor;
+import com.domain.global.RoleAttributeConvertor;
 import com.domain.member.dto.MemberDto;
 import lombok.*;
 import org.springframework.util.StringUtils;
@@ -49,5 +49,9 @@ public class Member extends CreatedAndModifiedEntity {
             this.memberAddress = memberDto.getMemberAddress();
             this.memberPhoneNumber = memberDto.getMemberPhoneNumber();
         }
+    }
+
+    public void responseNotShowPassword(){
+        this.memberPassword = "";
     }
 }

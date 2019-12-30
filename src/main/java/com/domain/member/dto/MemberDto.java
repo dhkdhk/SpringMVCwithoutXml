@@ -7,12 +7,13 @@ import lombok.*;
 
 import java.util.List;
 
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberDto {
 
-    private Long memberId;
     private String memberPassword;
     private String memberCheckPassword;
 
@@ -41,5 +42,4 @@ public class MemberDto {
                 .accountEnable(accountEnable)
                 .build();
     }
-
 }

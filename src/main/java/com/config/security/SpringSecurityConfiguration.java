@@ -1,6 +1,5 @@
 package com.config.security;
 
-import com.domain.member.service.MemberFinderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

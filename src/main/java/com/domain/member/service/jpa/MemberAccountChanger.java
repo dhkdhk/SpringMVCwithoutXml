@@ -24,4 +24,9 @@ public class MemberAccountChanger implements MemberAccount{
                 })
                 .orElse(false);
     }
+
+    @Override
+    public void changePassword(Long memberId, String password) {
+
+    }
 }

@@ -6,8 +6,7 @@ import com.domain.member.entity.Member;
 public interface MemberIProfile {
 
 
-    Member editProfile(Long memberId, MemberDto member);
+    Member editProfile(Long memberId, MemberDto memberDto);
 
-//    void changePassword(Long memberId, String password);
 
 }

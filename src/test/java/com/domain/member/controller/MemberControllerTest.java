@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -35,8 +36,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MemberControllerTest {
 
-    @Autowired
-    private MemberController memberController;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -44,12 +43,15 @@ public class MemberControllerTest {
     @Autowired
     private MemberCommonRepository memberCommonRepository;
 
+    @Autowired
+    private WebApplicationContext context;
+
     private MockMvc mockMvc;
     private AccountEnable accountEnable;
 
     @Before
     public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(memberController).build();
+        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
         accountEnable = AccountEnable.builder()
                 .accountNonExpired(true)
                 .accountNonLocked(true)
@@ -165,7 +167,7 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("accountEnable").exists());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void D_getMemberNotFound() throws Exception {
 
         //Given
@@ -245,7 +247,7 @@ public class MemberControllerTest {
     }
 
     @Test
-    public void memberUpdateInformation() throws Exception {
+    public void memberUpdateProfile() throws Exception {
         //Given
         Member member = Member.builder()
                 .memberPassword("123")
@@ -289,4 +291,6 @@ public class MemberControllerTest {
         Assert.assertEquals(memberUpdate.getMemberAddress(), memberUpdateObject.getMemberAddress());
         Assert.assertEquals(memberUpdate.getMemberPhoneNumber(), memberUpdateObject.getMemberPhoneNumber());
     }
+
+
 }

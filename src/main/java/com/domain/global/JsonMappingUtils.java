@@ -1,4 +1,4 @@
-package com.domain.commonutill;
+package com.domain.global;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

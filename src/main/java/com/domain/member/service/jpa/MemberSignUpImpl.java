@@ -12,7 +12,9 @@ public class MemberSignUpImpl implements MemberSignUp {
     private final MemberCommonRepository memberCommonRepository;
 
     @Override
-    public Member ourHomePageToSignUp(Member member) {
-        return memberCommonRepository.save(member);
-    }
+    public Member ourHomePageToSignUp(final Member member) {
+        final Member resultMember = memberCommonRepository.save(member);
+        resultMember.responseNotShowPassword();
+        return resultMember;
+}
 }

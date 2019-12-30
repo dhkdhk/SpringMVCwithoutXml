@@ -1,7 +1,7 @@
 package com.domain.member.utill.validation;
 
-import com.domain.member.entity.Member;
 import com.domain.member.dto.MemberDto;
+import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -9,11 +9,11 @@ import org.springframework.validation.Errors;
 import java.util.Optional;
 
 @Component
-public class MemberValidatior {
+public class MemberValidator {
 
     private final MemberCommonRepository memberCommonRepository;
 
-    public MemberValidatior(MemberCommonRepository memberCommonRepository){
+    public MemberValidator(MemberCommonRepository memberCommonRepository){
         this.memberCommonRepository = memberCommonRepository;
     }
 
