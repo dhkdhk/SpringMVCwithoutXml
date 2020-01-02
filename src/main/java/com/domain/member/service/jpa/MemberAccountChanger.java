@@ -1,5 +1,7 @@
 package com.domain.member.service.jpa;
 
+import com.domain.global.error.ErrorCode;
+import com.domain.global.error.MethodNotSupportedException;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-@Service
+@Service(value = "memberAccountChanger")
 @RequiredArgsConstructor
 @Transactional(transactionManager="jpaTransactionManager")
 public class MemberAccountChanger implements MemberAccount{
@@ -27,6 +29,11 @@ public class MemberAccountChanger implements MemberAccount{
 
     @Override
     public void changePassword(Long memberId, String password) {
+        throw new MethodNotSupportedException("지원되지 않는 호출입니다.", ErrorCode.METHOD_NOT_SUPPORT);
+    }
 
+    @Override
+    public Member ourHomePageToSignUp(Member member) {
+        throw new MethodNotSupportedException("지원되지 않는 호출입니다.", ErrorCode.METHOD_NOT_SUPPORT);
     }
 }

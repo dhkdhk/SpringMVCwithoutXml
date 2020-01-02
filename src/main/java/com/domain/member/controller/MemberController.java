@@ -7,9 +7,7 @@ import com.domain.member.entity.Member;
 import com.domain.member.service.jpa.MemberAccount;
 import com.domain.member.service.jpa.MemberFinder;
 import com.domain.member.service.jpa.MemberIProfile;
-import com.domain.member.service.jpa.MemberSignUp;
 import com.domain.member.utill.validation.MemberValidator;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,16 +15,23 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@AllArgsConstructor
 public class MemberController {
 
     private final MemberValidator memberValidator;
-
-    private final MemberAccount memberAccount;
+    private final MemberAccount memberAccountChanger;
+    private final MemberAccount memberAccountSignUp;
     private final MemberIProfile memberProfileUpdator;
-    private final MemberSignUp memberSignUp;
     private final MemberFinder memberFinder;
 
+    public MemberController(MemberValidator memberValidator, MemberAccount memberAccountChanger, MemberAccount memberAccountSignUp,
+                            MemberIProfile memberProfileUpdator, MemberFinder memberFinder){
+        this.memberValidator = memberValidator;
+        this.memberAccountChanger = memberAccountChanger;
+        this.memberAccountSignUp = memberAccountSignUp;
+        this.memberProfileUpdator = memberProfileUpdator;
+        this.memberFinder = memberFinder;
+
+    }
 
     @GetMapping("/login")
     public void login() {
@@ -38,10 +43,10 @@ public class MemberController {
         memberValidator.validate(memberDto, errors);
         if (errors.hasErrors()) {
             ResponseErrors responseErrors = new ResponseErrors(errors);
-            return ResponseEntity.badRequest().body(JsonMappingUtils.toJson(responseErrors.getResponseErrorsList()));
+            return ResponseEntity.badRequest().body(responseErrors.getResponseErrorsList());
         }
 
-       Member result = memberSignUp.ourHomePageToSignUp(memberDto.toEntity());
+       final Member result = memberAccountSignUp.ourHomePageToSignUp(memberDto.toEntity());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
@@ -53,7 +58,7 @@ public class MemberController {
 
     @DeleteMapping("/api/members/{memberId}")
     public ResponseEntity deleteMember(@PathVariable Long memberId) {
-        boolean deleteSuccess = memberAccount.deleteMember(memberId);
+        boolean deleteSuccess = memberAccountChanger.deleteMember(memberId);
 
         if (deleteSuccess) {
             return ResponseEntity.ok().build();

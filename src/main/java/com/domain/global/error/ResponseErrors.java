@@ -1,6 +1,5 @@
 package com.domain.global.error;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.validation.Errors;
@@ -36,15 +35,14 @@ public class ResponseErrors  {
 
     private void ofErrors(ErrorCode errorCode){
         ErrorInformation errorInformation = new ErrorInformation();
-        errorInformation.setErrorObject(errorCode.getObjectName());
+        errorInformation.setErrorObject(errorCode.getErrorObject());
         errorInformation.setRejectValue(errorCode.getRejectValue());
-        errorInformation.setMessage(errorCode.getErrorMessage());
+        errorInformation.setMessage(errorCode.getMessage());
         responseErrorsList.add(errorInformation);
     }
 
-
-
     @Setter
+    @Getter
     private class ErrorInformation{
         private String errorObject;
         private String rejectValue;

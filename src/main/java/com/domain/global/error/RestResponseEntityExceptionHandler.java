@@ -11,13 +11,21 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class RestResponseEntityExceptionHandler {
 
     @ExceptionHandler(value= EntityNotFoundException.class)
-    public ResponseEntity<ResponseErrors> canNotFoundContent(EntityNotFoundException exception) {
+    public ResponseEntity canNotFoundContent(EntityNotFoundException e) {
 
-        log.error(exception.getMessage());
-        ResponseErrors responseErrors = new ResponseErrors(exception.getErrorCode());
+        log.error(e.getMessage());
+        ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
 
-        return new ResponseEntity<>(responseErrors, HttpStatus.NOT_FOUND);
+        return new ResponseEntity(responseErrors.getResponseErrorsList(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(value= MethodNotSupportedException.class)
+    public ResponseEntity notSupportedMethod(MethodNotSupportedException e) {
+
+        log.error(e.getMessage());
+        ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
+
+        return new ResponseEntity(responseErrors.getResponseErrorsList(), HttpStatus.METHOD_NOT_ALLOWED);
+    }
 
 }
