@@ -1,9 +1,9 @@
 package com.domain.member.service.jpa;
 
 import com.domain.global.error.ErrorCode;
-import com.domain.global.error.MethodNotSupportedException;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
+import com.domain.global.error.exception.MethodNotSupportedException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

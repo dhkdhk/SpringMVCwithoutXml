@@ -1,5 +1,6 @@
-package com.domain.global.error;
+package com.domain.global.error.exception;
 
+import com.domain.global.error.ErrorCode;
 import lombok.Getter;
 
 @Getter

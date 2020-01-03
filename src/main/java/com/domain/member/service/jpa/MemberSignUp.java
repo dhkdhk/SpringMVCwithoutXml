@@ -1,13 +1,18 @@
 package com.domain.member.service.jpa;
 
 import com.domain.global.error.ErrorCode;
-import com.domain.global.error.MethodNotSupportedException;
+import com.domain.global.error.exception.DuplicatedEntityException;
+import com.domain.global.error.exception.MethodNotSupportedException;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service(value = "memberAccountSignUp")
+@Transactional(transactionManager = "jpaTransactionManager")
 @RequiredArgsConstructor
 public class MemberSignUp implements MemberAccount {
 
@@ -15,9 +20,29 @@ public class MemberSignUp implements MemberAccount {
 
     @Override
     public Member ourHomePageToSignUp(final Member member) {
-        final Member resultMember = memberCommonRepository.save(member);
+
+        verifyDuplicateEmail(member.getMemberEmail());
+        verifyDuplicatePhoneNumber(member.getMemberPhoneNumber());
+
+        Member resultMember = memberCommonRepository.save(member);
+
         resultMember.responseNotShowPassword();
         return resultMember;
+
+    }
+
+    private void verifyDuplicateEmail(final String email) {
+        Optional<Member> optionalMember = memberCommonRepository.findByMemberEmail(email);
+        if (optionalMember.isPresent()) {
+            throw new DuplicatedEntityException(email, ErrorCode.DUPLICATION_FIELD);
+        }
+    }
+
+    private void verifyDuplicatePhoneNumber(final String phoneNumber) {
+        Optional<Member> optionalMember = memberCommonRepository.findByMemberPhoneNumber(phoneNumber);
+        if (optionalMember.isPresent()) {
+            throw new DuplicatedEntityException(phoneNumber, ErrorCode.DUPLICATION_FIELD);
+        }
     }
 
     @Override

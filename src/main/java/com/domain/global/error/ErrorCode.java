@@ -5,17 +5,20 @@ import lombok.Getter;
 @Getter
 public enum ErrorCode {
 
-    MEMBER_NOT_FOUND("MEMBER", "MEMERNOT_NOT_FOUND", "원하는 사용자를 찾지못했습니다."),
+    ENTITY_NOT_FOUND(400, "M001", "Can not find Entity"),
 
-    METHOD_NOT_SUPPORT("METHOD", "NOT_SUPPORTED", "지원되지 않는메서드입니다.");
+    METHOD_NOT_SUPPORT(405, "C001", "Not Supported Method"),
 
-    private String errorObject;
-    private String rejectValue;
+    DUPLICATION_FIELD(400, "C002", "Duplicated Field");
+
+    private int httpStatus;
+    private String code;
     private String message;
 
-    ErrorCode(final String errorObject, final String rejectValue, final String message) {
-        this.errorObject = errorObject;
-        this.rejectValue = rejectValue;
+
+    ErrorCode(final int httpStatus, final String code, final String message) {
+        this.httpStatus = httpStatus;
+        this.code = code;
         this.message = message;
     }
 }

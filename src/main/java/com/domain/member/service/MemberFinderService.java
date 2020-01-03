@@ -19,7 +19,7 @@ public class MemberFinderService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String memberEmail) throws UsernameNotFoundException {
-        final Member member = memberCommonRepository.findMemberByMemberEmail(memberEmail).orElseThrow(
+        final Member member = memberCommonRepository.findByMemberEmail(memberEmail).orElseThrow(
                 () -> new IllegalArgumentException(memberEmail + " is not founded"));
 
         return User.builder()
