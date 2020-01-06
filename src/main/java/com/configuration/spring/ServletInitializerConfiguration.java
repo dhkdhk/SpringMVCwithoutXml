@@ -8,11 +8,10 @@ import org.springframework.web.servlet.DispatcherServlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
-public class ServletInitalizerConfiguration implements WebApplicationInitializer {
+public class ServletInitializerConfiguration implements WebApplicationInitializer {
 
     private final String DISPATCHER_NAME = "dispatcher";
     private final String DISPATCHER_MAPPING_URL = "/";
-    private final String SPRING_SECURITY_FILTER_CHAIN = "springSecurityFilterChain";
 
     @Override
     public void onStartup(ServletContext container) {

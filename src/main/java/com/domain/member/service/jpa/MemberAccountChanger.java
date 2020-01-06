@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service(value = "memberAccountChanger")
 @RequiredArgsConstructor
-@Transactional(transactionManager = "jpaTransactionManager")
+@Transactional
 public class MemberAccountChanger implements MemberAccount {
 
     private final MemberCommonRepository memberCommonRepository;

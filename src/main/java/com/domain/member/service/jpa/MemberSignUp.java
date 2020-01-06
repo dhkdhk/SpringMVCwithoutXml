@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service(value = "memberAccountSignUp")
-@Transactional(transactionManager = "jpaTransactionManager")
+@Transactional
 @RequiredArgsConstructor
 public class MemberSignUp implements MemberAccount {
 

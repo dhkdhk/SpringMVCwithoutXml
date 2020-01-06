@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(transactionManager = "jpaTransactionManager")
+@Transactional
 public class MemberProfileChanger implements MemberIProfile {
 
     private final MemberCommonRepository memberCommonRepository;
