@@ -30,7 +30,7 @@ public class MemberController {
     }
 
 
-    @PostMapping("/api/members")
+    @PostMapping("/v1/members")
     public ResponseEntity signUp(@RequestBody MemberDto memberDto) {
 
         final Member result = memberSignUp.signUp(memberDto.toEntity());
@@ -38,18 +38,18 @@ public class MemberController {
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
-    @GetMapping("/api/members/{memberId}")
+    @GetMapping("/v1/members/{memberId}")
     public ResponseEntity getMember(@PathVariable final Long memberId) {
         return ResponseEntity.ok(memberFinder.findById(memberId));
     }
 
-    @DeleteMapping("/api/members/{memberId}")
+    @DeleteMapping("/v1/members/{memberId}")
     public ResponseEntity deleteMember(@PathVariable Long memberId) {
         memberAccountChanger.deleteMember(memberId);
         return ResponseEntity.ok().build();
     }
 
-    @PatchMapping("/api/members/{memberId}")
+    @PatchMapping("/v1/members/{memberId}")
     public ResponseEntity updateInformation(@PathVariable Long memberId, @RequestBody MemberDto memberDto) {
 
         return ResponseEntity.ok().body(memberProfileUpdater.editProfile(memberId, memberDto));

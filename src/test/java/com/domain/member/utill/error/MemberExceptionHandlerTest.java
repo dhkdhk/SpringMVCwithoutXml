@@ -49,10 +49,6 @@ public class MemberExceptionHandlerTest {
     private ObjectMapper objectMapper;
 
     @Autowired
-    @Qualifier(value = "memberAccountChanger")
-    private MemberAccount memberAccountChanger;
-
-    @Autowired
     private MemberCommonRepository memberCommonRepository;
 
     @Autowired
@@ -80,7 +76,7 @@ public class MemberExceptionHandlerTest {
     }
 
     private ResultActions requestGetMember(Long memberId) throws Exception {
-        return mockMvc.perform(get("/api/members/{id}", memberId)
+        return mockMvc.perform(get("/v1/members/{id}", memberId)
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print());
     }
@@ -99,7 +95,7 @@ public class MemberExceptionHandlerTest {
                 .build();
 
         //Then
-        mockMvc.perform(post("/api/members")
+        mockMvc.perform(post("/v1/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(memberDto)))
                 .andDo(print())
@@ -125,7 +121,7 @@ public class MemberExceptionHandlerTest {
                 .build();
 
         //Then
-        mockMvc.perform(post("/api/members")
+        mockMvc.perform(post("/v1/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(memberDto)))
                 .andDo(print())
@@ -159,18 +155,7 @@ public class MemberExceptionHandlerTest {
        return memberCommonRepository.save(member);
     }
 
-    @Test(expected = MethodNotSupportedException.class)
-    public void notSupportedMethod() {
-        //Then
-        Member member = Member.builder()
-                .memberName("KDH")
-                .memberPassword("123")
-                .build();
 
-        //When
-        memberAccountChanger.ourHomePageToSignUp(member);
-
-    }
 
 
 }
