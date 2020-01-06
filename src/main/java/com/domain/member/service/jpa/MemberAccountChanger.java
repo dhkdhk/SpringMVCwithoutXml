@@ -1,9 +1,10 @@
 package com.domain.member.service.jpa;
 
-import com.interfaces.exception.handler.ErrorCode;
 import com.domain.member.entity.Member;
+import com.domain.member.exception.MemberNotFoundException;
 import com.domain.member.repository.jpa.MemberCommonRepository;
-import com.interfaces.exception.MethodNotSupportedException;
+import com.interfaces.exception.DuplicatedEntityException;
+import com.interfaces.exception.handler.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,28 +14,53 @@ import java.util.Optional;
 @Service(value = "memberAccountChanger")
 @RequiredArgsConstructor
 @Transactional
-public class MemberAccountChanger implements MemberAccount {
+public class MemberAccountChanger implements MemberAccount, MemberSignUp {
 
     private final MemberCommonRepository memberCommonRepository;
 
     @Override
-    public boolean deleteMember(final Long memberId) {
-        Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
-        return memberOptional
-                .map(member -> {
-                    memberCommonRepository.deleteById(memberId);
-                    return true;
-                })
-                .orElse(false);
+    public Member signUp(final Member member) {
+
+        verifyDuplicateEmail(member.getMemberEmail());
+        verifyDuplicatePhoneNumber(member.getMemberPhoneNumber());
+
+        Member resultMember = memberCommonRepository.save(member);
+
+        resultMember.responseNotShowPassword();
+        return resultMember;
+
+    }
+
+    private void verifyDuplicateEmail(final String email) {
+        Optional<Member> optionalMember = memberCommonRepository.findByMemberEmail(email);
+        if (optionalMember.isPresent()) {
+            throw new DuplicatedEntityException(email, ErrorCode.DUPLICATION_FIELD);
+        }
+    }
+
+    private void verifyDuplicatePhoneNumber(final String phoneNumber) {
+        Optional<Member> optionalMember = memberCommonRepository.findByMemberPhoneNumber(phoneNumber);
+        if (optionalMember.isPresent()) {
+            throw new DuplicatedEntityException(phoneNumber, ErrorCode.DUPLICATION_FIELD);
+        }
     }
 
     @Override
     public void changePassword(Long memberId, String password) {
-        throw new MethodNotSupportedException("#### 지원되지 않는 호출입니다.", ErrorCode.METHOD_NOT_SUPPORT);
+        //TODO 구현 필요
     }
 
+
     @Override
-    public Member ourHomePageToSignUp(Member member) {
-        throw new MethodNotSupportedException("#### 지원되지 않는 호출입니다.", ErrorCode.METHOD_NOT_SUPPORT);
+    public void deleteMember(final Long memberId) {
+        Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
+        if(memberOptional.isPresent()){
+            memberCommonRepository.deleteById(memberId);
+        }
+          throw new MemberNotFoundException(memberId);
     }
+
+
+
+
 }
