@@ -5,8 +5,6 @@ import com.domain.member.entity.Member;
 
 public interface MemberIProfile {
 
-
     Member editProfile(Long memberId, MemberDto memberDto);
-
 
 }

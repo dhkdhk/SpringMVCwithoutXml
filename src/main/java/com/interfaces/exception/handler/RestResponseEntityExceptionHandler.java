@@ -1,8 +1,8 @@
-package com.domain.global.error;
+package com.interfaces.exception.handler;
 
-import com.domain.global.error.exception.DuplicatedEntityException;
-import com.domain.global.error.exception.EntityNotFoundException;
-import com.domain.global.error.exception.MethodNotSupportedException;
+import com.interfaces.exception.DuplicatedEntityException;
+import com.interfaces.exception.EntityNotFoundException;
+import com.interfaces.exception.MethodNotSupportedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler {
 
-    @ExceptionHandler(value= EntityNotFoundException.class)
+    @ExceptionHandler(value = EntityNotFoundException.class)
     public ResponseEntity<ResponseErrors> canNotFoundContent(EntityNotFoundException e) {
 
         log.error(e.getMessage());
@@ -22,8 +22,8 @@ public class RestResponseEntityExceptionHandler {
         return new ResponseEntity(responseErrors, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(value= DuplicatedEntityException.class)
-    public ResponseEntity<ResponseErrors> duplicatedEntity(DuplicatedEntityException e){
+    @ExceptionHandler(value = DuplicatedEntityException.class)
+    public ResponseEntity<ResponseErrors> duplicatedEntity(DuplicatedEntityException e) {
 
         log.error(e.getMessage());
         ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
@@ -31,7 +31,7 @@ public class RestResponseEntityExceptionHandler {
         return new ResponseEntity<>(responseErrors, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(value= MethodNotSupportedException.class)
+    @ExceptionHandler(value = MethodNotSupportedException.class)
     public ResponseEntity notSupportedMethod(MethodNotSupportedException e) {
 
         log.error(e.getMessage());
@@ -39,5 +39,7 @@ public class RestResponseEntityExceptionHandler {
 
         return new ResponseEntity(responseErrors.getResponseErrorsList(), HttpStatus.METHOD_NOT_ALLOWED);
     }
+
+    //Exception 추가
 
 }

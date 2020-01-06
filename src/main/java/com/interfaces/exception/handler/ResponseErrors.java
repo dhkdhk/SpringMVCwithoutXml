@@ -1,4 +1,4 @@
-package com.domain.global.error;
+package com.interfaces.exception.handler;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Getter
-public class ResponseErrors  {
+public class ResponseErrors {
 
     private String message;
     private int httpStatus;
@@ -18,8 +18,8 @@ public class ResponseErrors  {
 
     private List<ErrorInformation> responseErrorsList = new ArrayList<>();
 
-    public ResponseErrors(Errors errors){
-        for(FieldError fieldError : errors.getFieldErrors()){
+    public ResponseErrors(Errors errors) {
+        for (FieldError fieldError : errors.getFieldErrors()) {
             ErrorInformation errorInformation = new ErrorInformation();
             errorInformation.setField(fieldError.getObjectName());
             errorInformation.setValue(fieldError.getField());
@@ -28,7 +28,7 @@ public class ResponseErrors  {
         }
     }
 
-    public ResponseErrors(ErrorCode errorCode){
+    public ResponseErrors(ErrorCode errorCode) {
         this.message = errorCode.getMessage();
         this.httpStatus = errorCode.getHttpStatus();
         this.code = errorCode.getCode();
@@ -37,7 +37,7 @@ public class ResponseErrors  {
 
     @Setter
     @Getter
-    private class ErrorInformation{
+    private class ErrorInformation {
         private String field;
         private String value;
         private String reason;

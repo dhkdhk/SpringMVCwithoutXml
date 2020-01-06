@@ -1,7 +1,7 @@
 package com.domain.member.controller;
 
-import com.config.spring.RootAppContextConfiguration;
-import com.config.spring.WebAppContextConfiguration;
+import com.configuration.spring.RootAppContextConfiguration;
+import com.configuration.spring.WebAppContextConfiguration;
 import com.domain.member.dto.MemberDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;

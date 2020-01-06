@@ -1,4 +1,4 @@
-package com.config.datasource;
+package com.configuration.datasource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +14,13 @@ import javax.sql.DataSource;
 public class JdbcTemplateConfiguration implements PersistenceConfiguration {
 
     @Bean
-    public NamedParameterJdbcTemplate jdbcTemplate(DataSource dataSource){
+    public NamedParameterJdbcTemplate jdbcTemplate(DataSource dataSource) {
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         return jdbcTemplate;
     }
 
     @Bean
-    public PlatformTransactionManager dataSourceTransactionManager(DataSource dataSource){
+    public PlatformTransactionManager dataSourceTransactionManager(DataSource dataSource) {
         DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager();
         dataSourceTransactionManager.setDataSource(dataSource);
         return dataSourceTransactionManager;

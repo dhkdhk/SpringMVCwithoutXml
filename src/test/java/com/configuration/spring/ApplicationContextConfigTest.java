@@ -1,4 +1,4 @@
-package com.config.spring;
+package com.configuration.spring;
 
 import com.domain.member.repository.jdbc.MemberManagementJdbcRepo;
 import org.junit.Assert;

@@ -1,9 +1,9 @@
-package com.config.spring;
+package com.configuration.spring;
 
-import com.config.datasource.PersistenceConfiguration;
+import com.configuration.datasource.PersistenceConfiguration;
 import com.domain.member.repository.MemberRepositoryConfiguration;
 import com.domain.member.service.MemberServiceConfiguration;
-import com.domain.global.error.RestResponseEntityExceptionHandler;
+import com.interfaces.exception.handler.RestResponseEntityExceptionHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
@@ -32,7 +32,7 @@ public class RootAppContextConfiguration {
     }
 
     @Bean
-    public ObjectMapper objectMapper(){
+    public ObjectMapper objectMapper() {
         return new ObjectMapper();
     }
 

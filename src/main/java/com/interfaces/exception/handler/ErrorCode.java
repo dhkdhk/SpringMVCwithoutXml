@@ -1,4 +1,4 @@
-package com.domain.global.error;
+package com.interfaces.exception.handler;
 
 import lombok.Getter;
 

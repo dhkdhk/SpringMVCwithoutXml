@@ -1,4 +1,4 @@
-package com.config.datasource;
+package com.configuration.datasource;
 
 public interface PersistenceConfiguration {
 }

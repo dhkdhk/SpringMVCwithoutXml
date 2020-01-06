@@ -1,4 +1,4 @@
-package com.config.datasource;
+package com.configuration.datasource;
 
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,14 +43,14 @@ public class JpaConfiguration implements PersistenceConfiguration {
         return emf;
     }
 
-    private JpaVendorAdapter jpaVendorAdapter(){
+    private JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         jpaVendorAdapter.setShowSql(true);
         return jpaVendorAdapter;
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
@@ -65,7 +65,7 @@ public class JpaConfiguration implements PersistenceConfiguration {
         Properties properties = new Properties();
         properties.setProperty("spring.jpa.hibernate.ddl-auto", env.getProperty("ddl-auto"));
         properties.setProperty("spring.jpa.show-sql", env.getProperty("show-sql"));
-        properties.setProperty("spring.jpa.properties.hibernate.format_sql",  env.getProperty("format_sql"));
+        properties.setProperty("spring.jpa.properties.hibernate.format_sql", env.getProperty("format_sql"));
         return properties;
     }
 

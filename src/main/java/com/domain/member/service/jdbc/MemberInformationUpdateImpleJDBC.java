@@ -12,7 +12,7 @@ public class MemberInformationUpdateImpleJDBC implements MemberInformationUpdate
 
     private final MemberManagementJdbcRepo memberManagementJdbcRepo;
 
-    public MemberInformationUpdateImpleJDBC(MemberManagementJdbcRepo memberManagementJdbcRepo){
+    public MemberInformationUpdateImpleJDBC(MemberManagementJdbcRepo memberManagementJdbcRepo) {
         this.memberManagementJdbcRepo = memberManagementJdbcRepo;
     }
 

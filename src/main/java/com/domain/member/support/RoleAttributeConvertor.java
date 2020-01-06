@@ -1,4 +1,4 @@
-package com.domain.global;
+package com.domain.member.support;
 
 import org.apache.commons.lang3.StringUtils;
 

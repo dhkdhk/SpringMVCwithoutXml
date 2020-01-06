@@ -1,8 +1,8 @@
 package com.domain.member.service.jpa;
 
-import com.domain.global.error.ErrorCode;
-import com.domain.global.error.exception.DuplicatedEntityException;
-import com.domain.global.error.exception.MethodNotSupportedException;
+import com.interfaces.exception.handler.ErrorCode;
+import com.interfaces.exception.DuplicatedEntityException;
+import com.interfaces.exception.MethodNotSupportedException;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import lombok.RequiredArgsConstructor;

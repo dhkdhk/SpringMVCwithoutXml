@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(transactionManager="jpaTransactionManager")
+@Transactional(transactionManager = "jpaTransactionManager")
 public class MemberProfileChanger implements MemberIProfile {
 
     private final MemberCommonRepository memberCommonRepository;
@@ -19,13 +19,12 @@ public class MemberProfileChanger implements MemberIProfile {
     @Override
     public Member editProfile(final Long memberId, MemberDto memberDto) {
         Member member = memberCommonRepository.findById(memberId)
-                     .orElseThrow(() -> new MemberNotFoundException(memberId));
+                .orElseThrow(() -> new MemberNotFoundException(memberId));
 
         member.updateInformation(memberId, memberDto);
 
         return member;
     }
-
 
 
 }

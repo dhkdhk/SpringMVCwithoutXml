@@ -1,9 +1,9 @@
 package com.domain.member.utill.error;
 
-import com.config.spring.RootAppContextConfiguration;
-import com.config.spring.WebAppContextConfiguration;
-import com.domain.global.error.ErrorCode;
-import com.domain.global.error.exception.MethodNotSupportedException;
+import com.configuration.spring.RootAppContextConfiguration;
+import com.configuration.spring.WebAppContextConfiguration;
+import com.interfaces.exception.handler.ErrorCode;
+import com.interfaces.exception.MethodNotSupportedException;
 import com.domain.member.dto.MemberDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
@@ -18,7 +18,6 @@ import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;

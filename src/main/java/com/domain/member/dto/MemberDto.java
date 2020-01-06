@@ -28,7 +28,7 @@ public class MemberDto {
     private AccountEnable accountEnable;
 
 
-    public Member toEntity(){
+    public Member toEntity() {
         return Member.builder()
                 .memberName(memberName)
                 .memberPassword(memberPassword)

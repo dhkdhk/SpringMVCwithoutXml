@@ -1,6 +1,6 @@
 package com.domain.member.entity;
 
-import com.domain.global.RoleAttributeConvertor;
+import com.domain.member.support.RoleAttributeConvertor;
 import com.domain.member.dto.MemberDto;
 import lombok.*;
 import org.springframework.util.StringUtils;
@@ -8,7 +8,8 @@ import org.springframework.util.StringUtils;
 import javax.persistence.*;
 import java.util.List;
 
-@Getter @Builder
+@Getter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -34,7 +35,7 @@ public class Member extends CreatedAndModifiedEntity {
     private String memberPhoneNumber;
 
     private String memberGrade;
-    @Convert(converter= RoleAttributeConvertor.class)
+    @Convert(converter = RoleAttributeConvertor.class)
     private List<String> roles;
 
     @Embedded
@@ -51,7 +52,7 @@ public class Member extends CreatedAndModifiedEntity {
         }
     }
 
-    public void responseNotShowPassword(){
+    public void responseNotShowPassword() {
         this.memberPassword = "";
     }
 }
