@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-@Service(value = "memberAccountChanger")
+@Service
 @RequiredArgsConstructor
 @Transactional
 public class MemberAccountChanger implements MemberAccount, MemberSignUp {
@@ -50,10 +50,10 @@ public class MemberAccountChanger implements MemberAccount, MemberSignUp {
     @Override
     public void deleteMember(final Long memberId) {
         Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
-        if(memberOptional.isPresent()){
-            memberCommonRepository.deleteById(memberId);
+        if(memberOptional.isEmpty()){
+            throw new MemberNotFoundException(memberId);
         }
-          throw new MemberNotFoundException(memberId);
+        memberCommonRepository.deleteById(memberId);
     }
 
 

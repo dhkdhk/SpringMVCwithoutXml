@@ -35,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
-@Transactional(transactionManager = "jpaTransactionManager")
+@Transactional
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MemberExceptionHandlerTest {
 

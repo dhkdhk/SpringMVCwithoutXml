@@ -4,6 +4,6 @@ import com.domain.member.entity.Member;
 
 public interface MemberIProfile {
 
-    Member editProfile(final Member member);
+    Member editProfile(Member member);
 
 }

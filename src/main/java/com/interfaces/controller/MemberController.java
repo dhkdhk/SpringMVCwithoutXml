@@ -9,6 +9,7 @@ import com.domain.member.service.jpa.MemberSignUp;
 import com.domain.member.support.ModelMappingUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,13 @@ public class MemberController {
 
 
     @PostMapping("/v1/members")
-    public String signUp(@RequestBody final MemberRequestDto memberRequestDto) {
+    public ResponseEntity signUp(@RequestBody final MemberRequestDto memberRequestDto) {
 
         final Member member =  memberSignUp.signUp(ModelMappingUtil.dtoToEntity(memberRequestDto));
 
-        //TODO = Refactoring 대상. String 문자열 계속 생성문제
-        return "/v1/members/"+member.getMemberId();
+        log.debug("###Sign UP", member.getMemberEmail()+" 회원가입 완료");
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(ModelMappingUtil.entityToDto(member));
     }
 
     @GetMapping("/v1/members/{memberId}")

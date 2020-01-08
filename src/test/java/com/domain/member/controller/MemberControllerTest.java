@@ -7,7 +7,6 @@ import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -25,7 +24,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Arrays;
-import java.util.Optional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -63,19 +61,18 @@ public class MemberControllerTest {
     }
 
     @Test
-    @Rollback(false)
     public void A_addMember() throws Exception {
         //Given
         MemberRequestDto member = MemberRequestDto.builder()
-                .memberCheckPassword("123")
-                .memberPassword("123")
-                .memberName("zzzz")
-                .memberEmail("addTest@asdfasdfasdf.com")
+                .memberCheckPassword("addMember")
+                .memberPassword("addMember")
+                .memberName("kdh")
+                .memberEmail("addMember@naver.com")
                 .memberSex("남")
                 .memberAge(31)
                 .roles(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
-                .memberPhoneNumber("010-1111-010")
+                .memberPhoneNumber("010-828-8282")
                 .accountEnable(accountEnable)
                 .memberGrade("admin")
                 .build();
@@ -87,7 +84,6 @@ public class MemberControllerTest {
                 .content(objectMapper.writeValueAsString(member)))
                 .andDo(print())
                 .andExpect(jsonPath("memberName").exists())
-                .andExpect(jsonPath("memberPassword").exists())
                 .andExpect(jsonPath("memberEmail").exists())
                 .andExpect(jsonPath("memberAge").exists())
                 .andExpect(jsonPath("memberSex").exists())
@@ -97,11 +93,13 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("memberPhoneNumber").exists())
                 .andExpect(jsonPath("roles").exists())
                 .andExpect(jsonPath("accountEnable").exists())
+
+                .andExpect(jsonPath("memberPassword").doesNotExist())
                 .andExpect(status().isCreated());
     }
 
     @Test
-    public void B_validatie() throws Exception {
+    public void B_validate() throws Exception {
         //Given
         MemberRequestDto member = MemberRequestDto.builder()
                 .memberCheckPassword("1232222222")
@@ -199,7 +197,7 @@ public class MemberControllerTest {
         //Then
         mockMvc.perform(get("/v1/members/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
-                .andExpect(status().isNotFound());
+                .andExpect(status().isBadRequest());
     }
 
     @Test
@@ -251,7 +249,7 @@ public class MemberControllerTest {
         //Then
         mockMvc.perform(delete("/v1/members/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
-                .andExpect(status().isNoContent());
+                .andExpect(status().isBadRequest());
     }
 
     @Test

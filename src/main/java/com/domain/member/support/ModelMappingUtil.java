@@ -36,6 +36,7 @@ public class ModelMappingUtil {
                 .memberPhoneNumber(memberRequestDto.getMemberPhoneNumber())
                 .roles(memberRequestDto.getRoles())
                 .memberGrade(memberRequestDto.getMemberGrade())
+                .accountEnable(memberRequestDto.getAccountEnable())
                 .build();
     }
 }

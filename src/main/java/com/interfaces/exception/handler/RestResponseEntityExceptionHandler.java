@@ -13,33 +13,40 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler {
 
-    @ExceptionHandler(value = EntityNotFoundException.class)
-    public ResponseEntity<ResponseErrors> canNotFoundContent(EntityNotFoundException e) {
+    @ExceptionHandler(value = DuplicatedEntityException.class)
+    public ResponseEntity<ResponseErrors> duplicatedEntity(DuplicatedEntityException e) {
 
-        log.error(e.getMessage());
+        log.error("##### DuplicatedEntityException ", e.getMessage());
+        ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
+
+        return new ResponseEntity<>(responseErrors, HttpStatus.valueOf(ErrorCode.DUPLICATION_FIELD.getHttpStatus()));
+    }
+
+
+    @ExceptionHandler(value = EntityNotFoundException.class)
+    public ResponseEntity<ResponseErrors> notFoundEntity(EntityNotFoundException e) {
+
+        log.error("##### EntityNotFoundException ", e.getMessage());
         ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
 
         return new ResponseEntity(responseErrors, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(value = DuplicatedEntityException.class)
-    public ResponseEntity<ResponseErrors> duplicatedEntity(DuplicatedEntityException e) {
-
-        log.error(e.getMessage());
-        ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
-
-        return new ResponseEntity<>(responseErrors, HttpStatus.BAD_REQUEST);
-    }
 
     @ExceptionHandler(value = MethodNotSupportedException.class)
     public ResponseEntity notSupportedMethod(MethodNotSupportedException e) {
 
-        log.error(e.getMessage());
+        log.error("##### MethodNotSupportedException ", e.getMessage());
         ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
 
         return new ResponseEntity(responseErrors.getResponseErrorsList(), HttpStatus.METHOD_NOT_ALLOWED);
     }
 
-    //Exception 추가
+    @ExceptionHandler(value = Exception.class)
+    public ResponseEntity exceptionHandle(Exception e) {
 
+        log.error("##### Exception ", e.getMessage());
+
+        return null;
+    }
 }

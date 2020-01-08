@@ -2,15 +2,12 @@ package com.domain.member.dto;
 
 import com.domain.member.entity.AccountEnable;
 import lombok.*;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
-@Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberResponseDto {
 

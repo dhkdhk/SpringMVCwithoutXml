@@ -1,5 +1,6 @@
 package com.interfaces.exception.handler;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.validation.Errors;
@@ -20,10 +21,11 @@ public class ResponseErrors {
 
     public ResponseErrors(Errors errors) {
         for (FieldError fieldError : errors.getFieldErrors()) {
-            ErrorInformation errorInformation = new ErrorInformation();
-            errorInformation.setField(fieldError.getObjectName());
-            errorInformation.setValue(fieldError.getField());
-            errorInformation.setReason(fieldError.getDefaultMessage());
+            ErrorInformation errorInformation = ErrorInformation.builder()
+                    .field(fieldError.getObjectName())
+                    .value(fieldError.getField())
+                    .reason(fieldError.getDefaultMessage())
+                    .build();
             responseErrorsList.add(errorInformation);
         }
     }
@@ -35,7 +37,7 @@ public class ResponseErrors {
     }
 
 
-    @Setter
+    @Builder
     @Getter
     private class ErrorInformation {
         private String field;
