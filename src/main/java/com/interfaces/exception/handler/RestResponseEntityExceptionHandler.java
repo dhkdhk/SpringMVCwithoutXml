@@ -27,9 +27,8 @@ public class RestResponseEntityExceptionHandler {
     public ResponseEntity<ResponseErrors> notFoundEntity(EntityNotFoundException e) {
 
         log.error("##### EntityNotFoundException ", e.getMessage());
-        ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
 
-        return new ResponseEntity(responseErrors, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(e.getErrors(), HttpStatus.BAD_REQUEST);
     }
 
 
@@ -39,7 +38,7 @@ public class RestResponseEntityExceptionHandler {
         log.error("##### MethodNotSupportedException ", e.getMessage());
         ResponseErrors responseErrors = new ResponseErrors(e.getErrorCode());
 
-        return new ResponseEntity(responseErrors.getResponseErrorsList(), HttpStatus.METHOD_NOT_ALLOWED);
+        return new ResponseEntity(responseErrors.getErrors(), HttpStatus.METHOD_NOT_ALLOWED);
     }
 
     @ExceptionHandler(value = Exception.class)

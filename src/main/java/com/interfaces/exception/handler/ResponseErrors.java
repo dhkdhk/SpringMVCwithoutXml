@@ -1,10 +1,6 @@
 package com.interfaces.exception.handler;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.validation.Errors;
-import org.springframework.validation.FieldError;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +13,12 @@ public class ResponseErrors {
     private int httpStatus;
     private String code;
 
-    private List<ErrorInformation> responseErrorsList = new ArrayList<>();
+    private List<ErrorInformation> errors = new ArrayList<>();
 
-    public ResponseErrors(Errors errors) {
-        for (FieldError fieldError : errors.getFieldErrors()) {
-            ErrorInformation errorInformation = ErrorInformation.builder()
-                    .field(fieldError.getObjectName())
-                    .value(fieldError.getField())
-                    .reason(fieldError.getDefaultMessage())
-                    .build();
-            responseErrorsList.add(errorInformation);
-        }
+    public ResponseErrors(ErrorCode errorCode, String field, String targetValue, String reason){
+        this(errorCode);
+        ErrorInformation errorInformation = new ErrorInformation(field, targetValue, reason);
+        errors.add(errorInformation);
     }
 
     public ResponseErrors(ErrorCode errorCode) {
@@ -37,12 +28,13 @@ public class ResponseErrors {
     }
 
 
-    @Builder
     @Getter
+    @AllArgsConstructor(access = AccessLevel.PROTECTED)
     private class ErrorInformation {
         private String field;
         private String value;
         private String reason;
+
     }
 
 

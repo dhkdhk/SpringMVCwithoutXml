@@ -18,8 +18,7 @@ public class MemberProfileChanger implements MemberIProfile {
     @Override
     public Member editProfile(Member member) {
         Member editMember = memberCommonRepository.findById(member.getMemberId())
-                .orElseThrow(() -> new MemberNotFoundException(member.getMemberId()));
-
+                .orElseThrow(() -> new MemberNotFoundException("Member.memberId", member.getMemberId()));
         editMember.updateInformation(member);
 
         return editMember;

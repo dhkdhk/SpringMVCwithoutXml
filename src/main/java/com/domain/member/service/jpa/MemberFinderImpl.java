@@ -18,7 +18,7 @@ public class MemberFinderImpl implements MemberFinder {
     @Override
     public Member findById(final Long memberId) {
         final Member member = memberCommonRepository.findById(memberId)
-                .orElseThrow(() -> new MemberNotFoundException(memberId));
+                .orElseThrow(() -> new MemberNotFoundException("Member.memberId", memberId));
         return member;
     }
 }

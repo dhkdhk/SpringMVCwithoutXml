@@ -60,14 +60,18 @@ public class MemberExceptionHandlerTest {
     public void memberNotFound() throws Exception {
 
         //Given
-        final ResultActions resultActions = requestGetMember(0L);
+        final Long memberId = 0L;
+        final ResultActions resultActions = requestGetMember(memberId);
 
         //Then
         resultActions
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("message").value(ErrorCode.ENTITY_NOT_FOUND.getMessage()))
                 .andExpect(jsonPath("httpStatus").value(ErrorCode.ENTITY_NOT_FOUND.getHttpStatus()))
-                .andExpect(jsonPath("code").value(ErrorCode.ENTITY_NOT_FOUND.getCode()));
+                .andExpect(jsonPath("code").value(ErrorCode.ENTITY_NOT_FOUND.getCode()))
+                .andExpect(jsonPath("errors.[0]field").value("Member.memberId"))
+                .andExpect(jsonPath("errors.[0]value").value(memberId))
+                .andExpect(jsonPath("errors.[0]reason").exists());
 
 
     }

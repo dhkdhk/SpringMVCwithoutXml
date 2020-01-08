@@ -51,7 +51,7 @@ public class MemberAccountChanger implements MemberAccount, MemberSignUp {
     public void deleteMember(final Long memberId) {
         Optional<Member> memberOptional = memberCommonRepository.findById(memberId);
         if(memberOptional.isEmpty()){
-            throw new MemberNotFoundException(memberId);
+            throw new MemberNotFoundException("Member.meberId", memberId);
         }
         memberCommonRepository.deleteById(memberId);
     }
