@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class MemberFinderImpl implements MemberFinder {
 
+
     private final MemberCommonRepository memberCommonRepository;
 
     @Override
