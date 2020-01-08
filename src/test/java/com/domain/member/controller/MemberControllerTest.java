@@ -2,7 +2,7 @@ package com.domain.member.controller;
 
 import com.configuration.spring.RootAppContextConfiguration;
 import com.configuration.spring.WebAppContextConfiguration;
-import com.domain.member.dto.MemberDto;
+import com.domain.member.dto.MemberRequestDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
@@ -29,12 +29,12 @@ import java.util.Optional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
+@Transactional
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MemberControllerTest {
 
@@ -63,11 +63,10 @@ public class MemberControllerTest {
     }
 
     @Test
-    @Transactional
     @Rollback(false)
     public void A_addMember() throws Exception {
         //Given
-        MemberDto member = MemberDto.builder()
+        MemberRequestDto member = MemberRequestDto.builder()
                 .memberCheckPassword("123")
                 .memberPassword("123")
                 .memberName("zzzz")
@@ -102,10 +101,9 @@ public class MemberControllerTest {
     }
 
     @Test
-    @Transactional
     public void B_validatie() throws Exception {
         //Given
-        MemberDto member = MemberDto.builder()
+        MemberRequestDto member = MemberRequestDto.builder()
                 .memberCheckPassword("1232222222")
                 .memberPassword("123")
                 .memberName("zzzz")
@@ -153,12 +151,13 @@ public class MemberControllerTest {
         //When
         Member result = memberCommonRepository.save(member);
 
+
+
         //Then
         mockMvc.perform(get("/v1/members/{memberId}", result.getMemberId())
                 .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print())
                 .andExpect(jsonPath("memberName").exists())
-                .andExpect(jsonPath("memberPassword").exists())
                 .andExpect(jsonPath("memberEmail").exists())
                 .andExpect(jsonPath("memberAge").exists())
                 .andExpect(jsonPath("memberSex").exists())
@@ -166,10 +165,14 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("memberPhoneNumber").exists())
                 .andExpect(jsonPath("memberGrade").exists())
                 .andExpect(jsonPath("memberPhoneNumber").exists())
+                .andExpect(jsonPath("roles").exists())
+                .andExpect(jsonPath("accountEnable").exists())
                 .andExpect(jsonPath("createdAt").exists())
                 .andExpect(jsonPath("modifiedAt").exists())
-                .andExpect(jsonPath("roles").exists())
-                .andExpect(jsonPath("accountEnable").exists());
+
+                .andExpect(jsonPath("memberPassword").doesNotExist())
+
+        ;
     }
 
     @Test
@@ -268,7 +271,8 @@ public class MemberControllerTest {
                 .build();
         Member result = memberCommonRepository.save(member);
 
-        MemberDto memberUpdate = MemberDto.builder()
+        MemberRequestDto memberUpdate = MemberRequestDto.builder()
+                .memberId(result.getMemberId())
                 .memberName("Update")
                 .memberEmail("update@memberUpdate.com")
                 .memberAddress("서울시 노량진")
@@ -282,19 +286,10 @@ public class MemberControllerTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(memberUpdate)))
                 .andDo(print())
-                .andExpect(jsonPath("memberName").value(memberUpdate.getMemberName()))
-                .andExpect(jsonPath("memberEmail").value(memberUpdate.getMemberEmail()))
-                .andExpect(jsonPath("memberAddress").value(memberUpdate.getMemberAddress()))
-                .andExpect(status().isOk());
+                .andExpect(status().is3xxRedirection())
+                .andExpect(header().string("Location", "/v1/members/"+result.getMemberId())) ;
 
 
-        Optional<Member> memberOptional = memberCommonRepository.findById(result.getMemberId());
-        Member memberUpdateObject = memberOptional.get();
-
-        Assert.assertEquals(memberUpdate.getMemberName(), memberUpdateObject.getMemberName());
-        Assert.assertEquals(memberUpdate.getMemberEmail(), memberUpdateObject.getMemberEmail());
-        Assert.assertEquals(memberUpdate.getMemberAddress(), memberUpdateObject.getMemberAddress());
-        Assert.assertEquals(memberUpdate.getMemberPhoneNumber(), memberUpdateObject.getMemberPhoneNumber());
     }
 
 

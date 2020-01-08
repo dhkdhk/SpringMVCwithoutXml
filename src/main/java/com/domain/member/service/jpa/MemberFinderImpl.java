@@ -19,7 +19,6 @@ public class MemberFinderImpl implements MemberFinder {
     public Member findById(final Long memberId) {
         final Member member = memberCommonRepository.findById(memberId)
                 .orElseThrow(() -> new MemberNotFoundException(memberId));
-        member.responseNotShowPassword();
         return member;
     }
 }

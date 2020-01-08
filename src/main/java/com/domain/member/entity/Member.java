@@ -1,9 +1,7 @@
 package com.domain.member.entity;
 
-import com.domain.member.support.RoleAttributeConvertor;
-import com.domain.member.dto.MemberDto;
+import com.domain.member.support.RoleAttributeConverter;
 import lombok.*;
-import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
 import java.util.List;
@@ -35,24 +33,19 @@ public class Member extends CreatedAndModifiedEntity {
     private String memberPhoneNumber;
 
     private String memberGrade;
-    @Convert(converter = RoleAttributeConvertor.class)
+    @Convert(converter = RoleAttributeConverter.class)
     private List<String> roles;
 
     @Embedded
     private AccountEnable accountEnable;
 
 
-    public void updateInformation(Long memberId, MemberDto memberDto) {
-        if (!StringUtils.isEmpty(memberDto)) {
-            this.memberId = memberId;
-            this.memberName = memberDto.getMemberName();
-            this.memberEmail = memberDto.getMemberEmail();
-            this.memberAddress = memberDto.getMemberAddress();
-            this.memberPhoneNumber = memberDto.getMemberPhoneNumber();
-        }
+    public void updateInformation(Member member) {
+        this.memberName = member.getMemberName();
+        this.memberEmail = member.getMemberEmail();
+        this.memberAddress = member.getMemberAddress();
+        this.memberPhoneNumber = member.getMemberPhoneNumber();
+
     }
 
-    public void responseNotShowPassword() {
-        this.memberPassword = "";
-    }
 }

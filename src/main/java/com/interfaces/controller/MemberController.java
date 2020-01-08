@@ -1,58 +1,61 @@
 package com.interfaces.controller;
 
-import com.domain.member.dto.MemberDto;
+import com.domain.member.dto.MemberRequestDto;
 import com.domain.member.entity.Member;
 import com.domain.member.service.jpa.MemberAccount;
 import com.domain.member.service.jpa.MemberFinder;
 import com.domain.member.service.jpa.MemberIProfile;
 import com.domain.member.service.jpa.MemberSignUp;
+import com.domain.member.support.ModelMappingUtil;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
+@RequiredArgsConstructor
 public class MemberController {
+
 
     private final MemberAccount memberAccountChanger;
     private final MemberSignUp memberSignUp;
     private final MemberIProfile memberProfileUpdater;
     private final MemberFinder memberFinder;
 
-    public MemberController(MemberAccount memberAccountChanger, MemberSignUp memberSignUp,
-                            MemberIProfile memberProfileUpdater, MemberFinder memberFinder) {
-        this.memberAccountChanger = memberAccountChanger;
-        this.memberSignUp = memberSignUp;
-        this.memberProfileUpdater = memberProfileUpdater;
-        this.memberFinder = memberFinder;
-    }
-
 
     @PostMapping("/v1/members")
-    public ResponseEntity signUp(@RequestBody MemberDto memberDto) {
+    public String signUp(@RequestBody final MemberRequestDto memberRequestDto) {
 
-        final Member result = memberSignUp.signUp(memberDto.toEntity());
+        final Member member =  memberSignUp.signUp(ModelMappingUtil.dtoToEntity(memberRequestDto));
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(result);
+        //TODO = Refactoring 대상. String 문자열 계속 생성문제
+        return "/v1/members/"+member.getMemberId();
     }
 
     @GetMapping("/v1/members/{memberId}")
     public ResponseEntity getMember(@PathVariable final Long memberId) {
-        return ResponseEntity.ok(memberFinder.findById(memberId));
+
+        final Member getMember = memberFinder.findById(memberId);
+
+        return ResponseEntity.ok(ModelMappingUtil.entityToDto(getMember));
     }
 
     @DeleteMapping("/v1/members/{memberId}")
-    public ResponseEntity deleteMember(@PathVariable Long memberId) {
+    public ResponseEntity deleteMember(@PathVariable final Long memberId) {
         memberAccountChanger.deleteMember(memberId);
         return ResponseEntity.ok().build();
     }
 
     @PatchMapping("/v1/members/{memberId}")
-    public ResponseEntity updateInformation(@PathVariable Long memberId, @RequestBody MemberDto memberDto) {
+    public String updateInformation(@PathVariable final Long memberId, @RequestBody MemberRequestDto memberRequestDto) {
 
-        return ResponseEntity.ok().body(memberProfileUpdater.editProfile(memberId, memberDto));
+        Member member = ModelMappingUtil.dtoToEntity(memberRequestDto);
+
+        memberProfileUpdater.editProfile(member);
+
+        return "redirect:/v1/members/"+memberId;
     }
 
 }

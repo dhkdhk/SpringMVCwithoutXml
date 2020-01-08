@@ -1,6 +1,5 @@
 package com.domain.member.service.jpa;
 
-import com.domain.member.dto.MemberDto;
 import com.domain.member.entity.Member;
 import com.domain.member.exception.MemberNotFoundException;
 import com.domain.member.repository.jpa.MemberCommonRepository;
@@ -17,14 +16,12 @@ public class MemberProfileChanger implements MemberIProfile {
 
 
     @Override
-    public Member editProfile(final Long memberId, MemberDto memberDto) {
-        Member member = memberCommonRepository.findById(memberId)
-                .orElseThrow(() -> new MemberNotFoundException(memberId));
+    public Member editProfile(final Member member) {
+        Member editMember = memberCommonRepository.findById(member.getMemberId())
+                .orElseThrow(() -> new MemberNotFoundException(member.getMemberId()));
 
-        member.updateInformation(memberId, memberDto);
+        editMember.updateInformation(member);
 
-        return member;
+        return editMember;
     }
-
-
 }

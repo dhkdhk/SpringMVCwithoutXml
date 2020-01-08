@@ -24,11 +24,7 @@ public class MemberAccountChanger implements MemberAccount, MemberSignUp {
         verifyDuplicateEmail(member.getMemberEmail());
         verifyDuplicatePhoneNumber(member.getMemberPhoneNumber());
 
-        Member resultMember = memberCommonRepository.save(member);
-
-        resultMember.responseNotShowPassword();
-        return resultMember;
-
+        return memberCommonRepository.save(member);
     }
 
     private void verifyDuplicateEmail(final String email) {

@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import javax.persistence.AttributeConverter;
 import java.util.List;
 
-public class RoleAttributeConvertor implements AttributeConverter<List<String>, String> {
+public class RoleAttributeConverter implements AttributeConverter<List<String>, String> {
 
     @Override
     public String convertToDatabaseColumn(List<String> attribute) {

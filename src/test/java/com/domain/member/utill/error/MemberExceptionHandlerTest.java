@@ -3,12 +3,10 @@ package com.domain.member.utill.error;
 import com.configuration.spring.RootAppContextConfiguration;
 import com.configuration.spring.WebAppContextConfiguration;
 import com.interfaces.exception.handler.ErrorCode;
-import com.interfaces.exception.MethodNotSupportedException;
-import com.domain.member.dto.MemberDto;
+import com.domain.member.dto.MemberRequestDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
-import com.domain.member.service.jpa.MemberAccount;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -16,7 +14,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -90,14 +87,14 @@ public class MemberExceptionHandlerTest {
         //When
         memberCommonRepository.save(member);
 
-        MemberDto memberDto = MemberDto.builder()
+        MemberRequestDto memberRequestDto = MemberRequestDto.builder()
                 .memberEmail(member.getMemberEmail())
                 .build();
 
         //Then
         mockMvc.perform(post("/v1/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(objectMapper.writeValueAsString(memberDto)))
+                .content(objectMapper.writeValueAsString(memberRequestDto)))
                 .andDo(print())
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("message").value(ErrorCode.DUPLICATION_FIELD.getMessage()))
@@ -115,7 +112,7 @@ public class MemberExceptionHandlerTest {
         //When
         memberCommonRepository.save(member);
 
-        MemberDto memberDto = MemberDto.builder()
+        MemberRequestDto memberRequestDto = MemberRequestDto.builder()
                 .memberEmail(member.getMemberEmail()+"Anothor")
                 .memberPhoneNumber(member.getMemberPhoneNumber())
                 .build();
@@ -123,7 +120,7 @@ public class MemberExceptionHandlerTest {
         //Then
         mockMvc.perform(post("/v1/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(objectMapper.writeValueAsString(memberDto)))
+                .content(objectMapper.writeValueAsString(memberRequestDto)))
                 .andDo(print())
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("message").value(ErrorCode.DUPLICATION_FIELD.getMessage()))
