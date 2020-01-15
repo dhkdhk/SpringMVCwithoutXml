@@ -1,6 +1,7 @@
 package com.domain.member.service.jpa;
 
 import com.domain.member.entity.Member;
+import com.domain.member.exception.MemberNotFoundException;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class MemberPrincipleFinder implements UserDetailsService {
+public class MemberPrincipleFinder implements UserDetailsService, MemberFinder {
 
     private final MemberCommonRepository memberCommonRepository;
 
@@ -34,6 +35,13 @@ public class MemberPrincipleFinder implements UserDetailsService {
                 .authorities(grantedAuthorities)
                 .build();
 
+    }
+
+    @Override
+    public Member findById(final Long memberId) {
+        final Member member = memberCommonRepository.findById(memberId)
+                .orElseThrow(() -> new MemberNotFoundException("Member.memberId", memberId));
+        return member;
     }
 
 }

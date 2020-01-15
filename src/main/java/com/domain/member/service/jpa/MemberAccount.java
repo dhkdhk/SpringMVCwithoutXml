@@ -4,6 +4,4 @@ public interface MemberAccount {
 
     void deleteMember(Long memberId);
 
-    void changePassword(Long memberId, String password);
-
 }

@@ -4,6 +4,6 @@ import com.domain.member.entity.Member;
 
 public interface MemberFinder {
 
-    Member findById(Long memberId);
+    Member findById(final Long memberId);
 
 }

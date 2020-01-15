@@ -12,75 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d27a132-a970-4f0e-8465-cd2ce2da251c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/configuration/spring/WebAppContextConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/configuration/spring/WebAppContextConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/MemberFinderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMappingUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMappingUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/support/RoleAttributeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/support/GrantedAuthorityAttributeConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarkerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/configuration/security/SpringSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/configuration/security/SpringSecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/configuration/spring/WebAppContextConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/configuration/spring/WebAppContextConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberRequestDto$MemberRequestDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberRequestDto$MemberRequestDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberRequestDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberResponseDto$MemberResponseDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberResponseDto$MemberResponseDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberResponseDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberResponseDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/entity/Member$MemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/entity/Member$MemberBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/entity/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/entity/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/MemberFinderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberFinderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberFinderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/support/ModelMappingUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/support/ModelMappingUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/support/RoleAttributeConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/interfaces/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/interfaces/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/interfaces/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/datasource/JdbcTemplateConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/datasource/JpaConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/datasource/PersistenceConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/security/SecurityConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/security/SpringSecurityConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/spring/RootAppContextConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/spring/ServletInitalizerConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/spring/WebAppContextConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/commonutill/JsonMappingUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/commonutill/ResponseErrors$ErrorInformation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/commonutill/ResponseErrors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/commonutill/RoleAttributeConvertor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/controller/MemberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/dto/MemberDto$MemberDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/dto/MemberDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/AccountEnable$AccountEnableBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/AccountEnable$AccountEnableBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/AccountEnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/AccountEnable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/CreatedAndModifiedEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/CreatedAndModifiedEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/Member$MemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/Member$MemberBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/entity/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/repository/jpa/MemberCommonRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/repository/jpa/MemberCommonRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/MemberFinderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberAccountChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberAccountChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberFinderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberFinderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberIProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberIProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberProfileChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberProfileChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberSignUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberSignUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/service/jpa/MemberSignUpImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/utill/validation/MemberValidatior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/lib/jackson-core-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/lib/jackson-databind-2.9.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/spring.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/domain/member/controller/MemberControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/domain/member/controller/MemberControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/domain/member/utill/error/MemberExceptionHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/domain/member/utill/error/MemberExceptionHandlerTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,20 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+            <state relative-caret-position="219">
+              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +56,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="99" />
+            <state relative-caret-position="209">
+              <caret line="132" column="27" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -150,9 +123,9 @@
         <option value="FxmlFile" />
         <option value="JUnit4 Test Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -202,9 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/config/spring/WebAppContextConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/ErrorCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/exception/EntityNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java" />
@@ -239,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/RoleAttributeConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/GrantedAuthorityAttributeConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberResponseDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMappingUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java" />
@@ -248,11 +217,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/RootAppContextConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/WebAppContextConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarkerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" />
       </list>
     </option>
   </component>
@@ -315,17 +288,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="configuration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="configuration" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -335,6 +298,18 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -354,13 +329,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="interfaces" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -485,8 +453,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MemberSignControllerTest.loginTest">
-    <configuration name="MemberControllerTest.A_addMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MemberControllerTest.C_getMember">
+    <configuration name="MemberControllerTest.C_getMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
@@ -496,7 +464,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.domain.member.controller" />
       <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberControllerTest" />
-      <option name="METHOD_NAME" value="A_addMember" />
+      <option name="METHOD_NAME" value="C_getMember" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -714,20 +682,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MemberControllerTest.A_addMember" />
       <item itemvalue="JUnit.MemberSignControllerTest.loginTest" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.478" />
       <item itemvalue="JUnit.MemberSignControllerTest.forbidden" />
       <item itemvalue="JUnit.MemberSignControllerTest.A_addMember" />
       <item itemvalue="JUnit.MemberSignControllerTest.C_getMember" />
+      <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.loginTest" />
         <item itemvalue="JUnit.MemberSignControllerTest.A_addMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.C_getMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.forbidden" />
-        <item itemvalue="JUnit.MemberControllerTest.A_addMember" />
       </list>
     </recent_temporary>
   </component>
@@ -829,14 +797,11 @@
       <workItem from="1578996576930" duration="4692000" />
       <workItem from="1579003386846" duration="7625000" />
       <workItem from="1579018934469" duration="1178000" />
-      <workItem from="1579084673845" duration="13080000" />
+      <workItem from="1579084673845" duration="13822000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 34m 11s.xml">
-      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 36m 22s.xml">
       <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
@@ -864,9 +829,12 @@
     <history-entry file="MemberSignControllerTest_A_addMember - 2020.01.15 at 23h 58m 15s.xml">
       <configuration name="MemberSignControllerTest.A_addMember" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.16 at 00h 10m 29s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="480257000" />
+    <option name="totallyTimeSpent" value="480999000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -881,7 +849,7 @@
     <frame x="1913" y="-168" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.23326673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.23326673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -890,14 +858,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" sideWeight="0.08308605" side_tool="true" weight="0.14362416" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38297874" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5186304" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.38267875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6998993" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.6183283" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32729104" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.042296074" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5538771" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -1000,22 +968,10 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java</url>
-          <line>134</line>
-          <properties />
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java</url>
           <line>32</line>
           <properties />
           <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java</url>
-          <line>127</line>
-          <properties />
-          <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java</url>
@@ -1033,13 +989,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/FormLoginConfigurer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/openjdk-11.0.2/lib/src.zip!/java.net.http/jdk/internal/net/http/AuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1189,41 +1138,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-test/5.1.2.RELEASE/spring-security-test-5.1.2.RELEASE.jar!/org/springframework/security/test/web/servlet/response/SecurityMockMvcResultMatchers.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1413,15 +1331,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="27" column="76" lean-forward="true" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
+        <state relative-caret-position="260">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="114">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1430,8 +1389,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="219">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1440,18 +1409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="209">
+          <caret line="132" column="27" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="27" />
         </state>
       </provider>
     </entry>
