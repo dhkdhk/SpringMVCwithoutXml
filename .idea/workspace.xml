@@ -8,60 +8,13 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/../base/src/test/java/com/study/base/dhk/MemberControllerTest.java" description="        //Given&#10;        Member member = Member.bui..." line="34" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/domain/member/repository/jdbc/MemberManagementJDBC.java" line="29" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUpImpl.java" line="12" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" line="26" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d27a132-a970-4f0e-8465-cd2ce2da251c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/global/error/EntityNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/global/error/ErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/exception/MemberNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/config/security/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/config/security/SpringSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/config/security/SpringSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/config/spring/RootAppContextConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/config/spring/RootAppContextConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/config/spring/WebAppContextConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/config/spring/WebAppContextConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/commonutill/JsonMappingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/global/JsonMappingUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/commonutill/ResponseErrors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/global/error/ResponseErrors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/commonutill/RoleAttributeConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/global/RoleAttributeConvertor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUpImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/utill/validation/MemberValidatior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/utill/validation/MemberValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/security/SecurityConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/security/SpringSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/config/security/SpringSecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/spring/RootAppContextConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/config/spring/RootAppContextConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/spring/WebAppContextConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/config/spring/WebAppContextConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/commonutill/JsonMappingUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/commonutill/ResponseErrors$ErrorInformation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/commonutill/ResponseErrors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/commonutill/RoleAttributeConvertor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberDto$MemberDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberDto$MemberDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/dto/MemberDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/entity/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/entity/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccountChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccountChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberFinderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberFinderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberProfileChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberProfileChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberSignUpImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberSignUpImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/utill/validation/MemberValidatior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/security/SpringSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/config/security/SpringSecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/domain/member/controller/MemberControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/domain/member/controller/MemberControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarkerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -91,22 +44,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="49" column="62" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="62" />
+            <state relative-caret-position="219">
+              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,33 +56,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            <state relative-caret-position="114">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/ResponseErrors.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="19">
+              <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,31 +77,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/exception/MemberNotFoundException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/EntityNotFoundException.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,13 +89,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="151" column="42" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -197,11 +100,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="132" column="27" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -212,45 +121,46 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Enum" />
+        <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vali</find>
-      <find>validator</find>
-      <find>static</find>
-      <find>MemberBuilder</find>
-      <find>build</find>
-      <find>hiberna</find>
-      <find>hibernate</find>
-      <find>true</find>
-      <find>로그</find>
-      <find>private</find>
-      <find>getCode</find>
-      <find>getCod=</find>
+      <find>AuthenticationTo</find>
+      <find>Filters</find>
+      <find>currentPosit</find>
+      <find>getFilters</find>
+      <find>filter</find>
+      <find>Delegating</find>
       <find>security</find>
-      <find>validation</find>
-      <find>&quot;/api/member&quot;</find>
-      <find>roles</find>
-      <find>GETT</find>
-      <find>GET_</find>
-      <find>password</find>
+      <find>&quot;/login&quot;</find>
+      <find>fwRequest</find>
+      <find>HttpServletResponse fw</find>
+      <find>authenticationManagerBean</find>
+      <find>security-test</find>
+      <find>Member.B</find>
+      <find>retrieveUser</find>
+      <find>authro</find>
       <find>memberFinder</find>
-      <find>insert</find>
-      <find>update</find>
-      <find>select</find>
-      <find>inser</find>
-      <find>Memberdto</find>
-      <find>implements memberfi</find>
+      <find>Arrays.asList</find>
+      <find>getRoles</find>
+      <find>granted</find>
+      <find>grantedAu</find>
+      <find>drop members</find>
+      <find>create</find>
+      <find>create table</find>
+      <find>validate</find>
+      <find>spring.jpa.hibernate.ddl-auto</find>
+      <find>drop tables</find>
+      <find>PasswordEncoder</find>
+      <find>signUp</find>
+      <find>get</find>
       <find>getMember</find>
-      <find>F_</find>
-      <find>MemberDto</find>
-      <find>MemberNotFoundException</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -265,57 +175,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberUpdatorController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileUpdateInformation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberUpdator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberInformationUpdator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfileUpdator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileUpdator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountUpdator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/config/spring/ServletInitalizerConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/config/security/SpringSecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/config/spring/WebAppContextConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/config/spring/RootAppContextConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/exceptionhandler/UserNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/commonutill/ResponseErrors.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/utill/exceptionhandler/ExceptionHandlerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/setup/intergationTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandlerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/RequestMemberDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/ResponseMemberDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/validation/MemberValidatior.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUpImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/exceptionhandler/RestResponseEntityExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/exceptionhandler/UserCanNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/EmailNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/ErrorCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/customexception/DuplicatedEntityException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/DuplicatedPhoneNumberException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/DuplicatedEmailException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/RestResponseEntityExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/DuplicatedEntityException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/ResponseErrors.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/EntityNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/EntityNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/exception/MemberNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/ErrorsTEst.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/ErrorCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/utill/validation/MemberValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/ResponseErrors.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/exception/EntityNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/exception/TESTESTESTETSET.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/ServletInitalizerConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMapperUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/LocalDateTimeConvertor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/LocalDateTimeConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/entity/CreatedAndModifiedEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/exception/handler/ErrorCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/exception/DuplicatedEntityException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/exception/MethodNotSupportedException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/exception/MemberNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/exception/EntityNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/exception/handler/ResponseErrors.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/exception/handler/RestResponseEntityExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/login.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/ServletInitializerConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/signin.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberSignController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/MemberFinderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/RoleAttributeConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/GrantedAuthorityAttributeConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberResponseDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMappingUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/datasource/JpaConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jpa.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/RootAppContextConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/WebAppContextConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarkerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" />
       </list>
     </option>
   </component>
@@ -327,10 +237,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="371" />
-    <option name="y" value="141" />
-    <option name="width" value="1940" />
-    <option name="height" value="788" />
+    <option name="x" value="1911" />
+    <option name="y" value="-170" />
+    <option name="width" value="2578" />
+    <option name="height" value="1408" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -378,37 +288,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="error" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
               <item name="member" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -418,20 +297,38 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
               <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="member" type="462c0819:PsiDirectoryNode" />
-              <item name="validation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -487,11 +384,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
@@ -499,7 +397,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/domain/member/utill" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/interfaces" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../base" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -515,10 +413,13 @@
       <recent name="com.domain.member.controller" />
       <recent name="com.domain.member.service.jpa" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.domain.member.utill.error.exception" />
-      <recent name="com.domain.member.controller" />
-      <recent name="com.domain.member.entity" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="spock.lang.Specification" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\과천스터디\spring\src\main\webapp\html" />
+      <recent name="D:\과천스터디\spring\src\main\webapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.domain.member.util" />
@@ -527,16 +428,17 @@
       <recent name="com.domain.controller" />
       <recent name="com.domain.entity" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-      <recent name="spock.lang.Specification" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\과천스터디\spring" />
       <recent name="D:\과천스터디\spring\src\main\webapp\WEB-INF" />
       <recent name="D:\과천스터디\spring\src\main\webapp" />
       <recent name="D:\과천스터디\spring\src\main\resources" />
       <recent name="D:\과천스터디\spring\src\main\webapp\image" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.domain.member.utill.error.exception" />
+      <recent name="com.domain.member.controller" />
+      <recent name="com.domain.member.entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -551,23 +453,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MemberExceptionHandlerTest.memberNotFound">
-    <configuration name="MemberControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.domain.member.service.jpa.MemberIProfile" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.domain.member.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MemberControllerTest.D_getMemberNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MemberControllerTest.C_getMember">
+    <configuration name="MemberControllerTest.C_getMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
@@ -577,13 +464,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.domain.member.controller" />
       <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberControllerTest" />
-      <option name="METHOD_NAME" value="D_getMemberNotFound" />
+      <option name="METHOD_NAME" value="C_getMember" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberControllerTest.memberNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberSignControllerTest.A_addMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
@@ -592,40 +479,56 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.domain.member.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberControllerTest" />
-      <option name="METHOD_NAME" value="memberNotFound" />
+      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberSignControllerTest" />
+      <option name="METHOD_NAME" value="A_addMember" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberControllerTest.memberUpdateInformation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberSignControllerTest.C_getMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.domain.member.service.jpa.MemberIProfile" />
+          <option name="PATTERN" value="com.domain.member.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.domain.member.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberControllerTest" />
-      <option name="METHOD_NAME" value="memberUpdateInformation" />
+      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberSignControllerTest" />
+      <option name="METHOD_NAME" value="C_getMember" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberExceptionHandlerTest.memberNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberSignControllerTest.forbidden" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.domain.member.utill.error.*" />
+          <option name="PATTERN" value="com.domain.member.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.domain.member.utill.error" />
-      <option name="MAIN_CLASS_NAME" value="com.domain.member.utill.error.MemberExceptionHandlerTest" />
-      <option name="METHOD_NAME" value="memberNotFound" />
+      <option name="PACKAGE_NAME" value="com.domain.member.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberSignControllerTest" />
+      <option name="METHOD_NAME" value="forbidden" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberSignControllerTest.loginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.domain.member.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.domain.member.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.domain.member.controller.MemberSignControllerTest" />
+      <option name="METHOD_NAME" value="loginTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -779,20 +682,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MemberControllerTest" />
-      <item itemvalue="JUnit.MemberControllerTest.memberUpdateInformation" />
-      <item itemvalue="JUnit.MemberControllerTest.D_getMemberNotFound" />
+      <item itemvalue="JUnit.MemberSignControllerTest.loginTest" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.478" />
-      <item itemvalue="JUnit.MemberControllerTest.memberNotFound" />
-      <item itemvalue="JUnit.MemberExceptionHandlerTest.memberNotFound" />
+      <item itemvalue="JUnit.MemberSignControllerTest.forbidden" />
+      <item itemvalue="JUnit.MemberSignControllerTest.A_addMember" />
+      <item itemvalue="JUnit.MemberSignControllerTest.C_getMember" />
+      <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MemberExceptionHandlerTest.memberNotFound" />
-        <item itemvalue="JUnit.MemberControllerTest.memberNotFound" />
-        <item itemvalue="JUnit.MemberControllerTest.D_getMemberNotFound" />
-        <item itemvalue="JUnit.MemberControllerTest" />
-        <item itemvalue="JUnit.MemberControllerTest.memberUpdateInformation" />
+        <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
+        <item itemvalue="JUnit.MemberSignControllerTest.loginTest" />
+        <item itemvalue="JUnit.MemberSignControllerTest.A_addMember" />
+        <item itemvalue="JUnit.MemberSignControllerTest.C_getMember" />
+        <item itemvalue="JUnit.MemberSignControllerTest.forbidden" />
       </list>
     </recent_temporary>
   </component>
@@ -873,46 +776,67 @@
       <workItem from="1577493743911" duration="3874000" />
       <workItem from="1577510234729" duration="16509000" />
       <workItem from="1577537617583" duration="1540000" />
-      <workItem from="1577701958875" duration="12422000" />
+      <workItem from="1577701958875" duration="12753000" />
+      <workItem from="1577722893954" duration="540000" />
+      <workItem from="1577724142693" duration="349000" />
+      <workItem from="1577961045218" duration="6307000" />
+      <workItem from="1577972450213" duration="809000" />
+      <workItem from="1577976117102" duration="222000" />
+      <workItem from="1578047918555" duration="10519000" />
+      <workItem from="1578100117505" duration="4924000" />
+      <workItem from="1578300793801" duration="15678000" />
+      <workItem from="1578320900099" duration="1400000" />
+      <workItem from="1578479486510" duration="7971000" />
+      <workItem from="1578487540220" duration="8759000" />
+      <workItem from="1578654401687" duration="1242000" />
+      <workItem from="1578657761744" duration="354000" />
+      <workItem from="1578704636281" duration="864000" />
+      <workItem from="1578736079251" duration="2757000" />
+      <workItem from="1578912557717" duration="763000" />
+      <workItem from="1578914571179" duration="8499000" />
+      <workItem from="1578996576930" duration="4692000" />
+      <workItem from="1579003386846" duration="7625000" />
+      <workItem from="1579018934469" duration="1178000" />
+      <workItem from="1579084673845" duration="13822000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MemberControllerTest_D_getMemberNotFound - 2019.12.28 at 21h 16m 37s.xml">
-      <configuration name="MemberControllerTest.D_getMemberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 36m 22s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberControllerTest_memberNotFound - 2019.12.30 at 22h 46m 42s.xml">
-      <configuration name="MemberControllerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_C_getMember - 2020.01.15 at 23h 39m 13s.xml">
+      <configuration name="MemberSignControllerTest.C_getMember" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberControllerTest_memberNotFound - 2019.12.30 at 22h 48m 08s.xml">
-      <configuration name="MemberControllerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 41m 09s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberControllerTest_memberNotFound - 2019.12.30 at 22h 48m 52s.xml">
-      <configuration name="MemberControllerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_C_getMember - 2020.01.15 at 23h 41m 50s.xml">
+      <configuration name="MemberSignControllerTest.C_getMember" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberControllerTest_memberNotFound - 2019.12.30 at 22h 50m 08s.xml">
-      <configuration name="MemberControllerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_C_getMember - 2020.01.15 at 23h 47m 05s.xml">
+      <configuration name="MemberSignControllerTest.C_getMember" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberExceptionHandlerTest_memberNotFound - 2019.12.30 at 23h 01m 52s.xml">
-      <configuration name="MemberExceptionHandlerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 47m 52s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberExceptionHandlerTest_memberNotFound - 2019.12.30 at 23h 02m 39s.xml">
-      <configuration name="MemberExceptionHandlerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 48m 50s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberExceptionHandlerTest_memberNotFound - 2019.12.30 at 23h 03m 45s.xml">
-      <configuration name="MemberExceptionHandlerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_A_addMember - 2020.01.15 at 23h 49m 41s.xml">
+      <configuration name="MemberSignControllerTest.A_addMember" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberExceptionHandlerTest_memberNotFound - 2019.12.30 at 23h 11m 49s.xml">
-      <configuration name="MemberExceptionHandlerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_A_addMember - 2020.01.15 at 23h 58m 15s.xml">
+      <configuration name="MemberSignControllerTest.A_addMember" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberExceptionHandlerTest_memberNotFound - 2019.12.30 at 23h 16m 31s.xml">
-      <configuration name="MemberExceptionHandlerTest.memberNotFound" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.16 at 00h 10m 29s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381394000" />
+    <option name="totallyTimeSpent" value="480999000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -922,9 +846,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1913" y="-168" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.3281879" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.23326673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -933,21 +858,21 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" sideWeight="0.08308605" side_tool="true" weight="0.14362416" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2212766" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.51631206" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.38267875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6998993" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.35602838" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.6183283" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32765958" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.47659576" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32729104" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5538771" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Spring" order="12" weight="0.4638298" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.36879432" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.34042552" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.15886524" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.4632427" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.36858007" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.33758864" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3248227" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -959,6 +884,42 @@
       <window_info anchor="right" id="Database" order="8" side_tool="true" weight="0.020134227" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.014985015" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" sideWeight="0.08308605" side_tool="true" weight="0.14362416" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38297874" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6371134" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" visible="true" weight="0.28096676" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32729104" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.042296074" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.4632427" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.36858007" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.34038267" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.5548842" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Database" order="8" side_tool="true" weight="0.020134227" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1007,179 +968,371 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java</url>
-          <line>20</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java</url>
+          <line>32</line>
           <properties />
-          <option name="timeStamp" value="41" />
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/exception/MemberNotFoundException.java</url>
-          <line>8</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java</url>
+          <line>26</line>
           <properties />
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/global/error/EntityNotFoundException.java</url>
-          <line>11</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/global/error/ResponseErrors.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/global/error/ResponseErrors.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="48" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUp.java</url>
+          <line>6</line>
+          <properties class="com.domain.member.service.jpa.MemberSignUp" method="signUp" />
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/config/spring/ServletInitalizerConfiguration.java">
+    <entry file="jar://C:/openjdk-11.0.2/lib/src.zip!/java.net.http/jdk/internal/net/http/AuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/config/security/SpringSecurityConfiguration.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/access/ConfigAttribute.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/web/bind/annotation/ResponseStatus.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/http/HttpStatus.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/config/security/SecurityConfiguration.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.9.RELEASE/spring-aop-5.1.9.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/web/bind/annotation/ControllerAdvice.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/access/AccessDecisionManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.2.RELEASE/spring-security-web-5.1.2.RELEASE.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="517" column="27" selection-start-line="517" selection-start-column="27" selection-end-line="517" selection-end-column="27" />
+        <state relative-caret-position="130">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/login.html" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.2.RELEASE/spring-security-web-5.1.2.RELEASE.jar!/org/springframework/security/web/context/HttpSessionSecurityContextRepository.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="61">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="510" selection-start-line="510" selection-end-line="510" />
+        <state relative-caret-position="342">
+          <caret line="22" column="126" selection-start-line="22" selection-start-column="126" selection-end-line="22" selection-end-column="126" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="254">
+          <caret line="122" column="50" lean-forward="true" selection-start-line="122" selection-start-column="50" selection-end-line="122" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/config/spring/WebAppContextConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="548">
+          <caret line="190" column="19" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/exceptionhandler/UserNotFoundException.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/config/spring/RootAppContextConfiguration.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/AbstractAuthenticationFilterConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.2.RELEASE/spring-security-web-5.1.2.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/core/context/SecurityContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/core/authority/SimpleGrantedAuthority.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/utill/exceptionhandler/ExceptionHandlerTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/setup/IntergationTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberDto.java">
+    <entry file="uml://JAVA/org.springframework.security.core.authority.SimpleGrantedAuthority">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>org.springframework.security.core.authority.SimpleGrantedAuthority</OriginalElement>
+          <nodes>
+            <node x="-220.0" y="139.0">org.springframework.security.web.authentication.switchuser.SwitchUserGrantedAuthority</node>
+            <node x="12.0" y="139.0">org.springframework.security.core.authority.SimpleGrantedAuthority</node>
+            <node x="31.0" y="60.0">org.springframework.security.core.GrantedAuthority</node>
+            <node x="218.0" y="139.0">org.springframework.security.authentication.jaas.JaasGrantedAuthority</node>
+            <node x="44.0" y="-19.0">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.springframework.security.web.authentication.switchuser.SwitchUserGrantedAuthority" target="org.springframework.security.core.GrantedAuthority">
+              <point x="0.0" y="-14.5" />
+              <point x="-114.0" y="114.0" />
+              <point x="55.66666666666663" y="114.0" />
+              <point x="-49.33333333333334" y="14.5" />
+            </edge>
+            <edge source="org.springframework.security.core.authority.SimpleGrantedAuthority" target="org.springframework.security.core.GrantedAuthority">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="org.springframework.security.authentication.jaas.JaasGrantedAuthority" target="org.springframework.security.core.GrantedAuthority">
+              <point x="0.0" y="-14.5" />
+              <point x="305.0" y="114.0" />
+              <point x="154.33333333333337" y="114.0" />
+              <point x="49.33333333333337" y="14.5" />
+            </edge>
+            <edge source="org.springframework.security.core.GrantedAuthority" target="java.io.Serializable">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-286.0" y="36.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="152">
+          <caret line="34" column="51" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.13.RELEASE/spring-data-commons-2.1.13.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-test/5.1.2.RELEASE/spring-security-test-5.1.2.RELEASE.jar!/org/springframework/security/test/web/servlet/response/SecurityMockMvcResultMatchers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/support/GrantedAuthorityAttributeConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/MemberServiceConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.9.RELEASE/spring-core-5.1.9.RELEASE.jar!/org/springframework/core/env/PropertyResolver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.1.11.RELEASE/spring-orm-5.1.11.RELEASE.jar!/org/springframework/orm/jpa/vendor/AbstractJpaVendorAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.1.11.RELEASE/spring-orm-5.1.11.RELEASE.jar!/org/springframework/orm/jpa/AbstractEntityManagerFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="104" column="32" lean-forward="true" selection-start-line="104" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="764" column="21" lean-forward="true" selection-start-line="764" selection-start-column="21" selection-end-line="764" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jpa.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/datasource/JpaConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberResponseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMappingUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/authentication/builders/AuthenticationManagerBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="66" column="103" selection-start-line="66" selection-start-column="103" selection-end-line="66" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/spring/WebAppContextConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/spring/ServletInitializerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="23" column="70" lean-forward="true" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/spring/RootAppContextConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberSignController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="67" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/http/ResponseEntity.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="237" column="30" selection-start-line="237" selection-start-column="30" selection-end-line="237" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/dto/ResponseMemberDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="34" />
+        <state relative-caret-position="260">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1188,255 +1341,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUpImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/exceptionhandler/UserCanNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/MemberNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/openjdk-11.0.2/lib/src.zip!/java.base/java/lang/RuntimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-694">
-          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/EmailNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/PhoneNumberNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar!/org/springframework/validation/Errors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/error/exception/EmailNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar!/org/springframework/validation/BindingResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/org.springframework.validation.BindingResult">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>org.springframework.validation.BindingResult</OriginalElement>
-          <nodes>
-            <node x="22.5" y="0.0">org.springframework.validation.Errors</node>
-            <node x="0.0" y="79.0">org.springframework.validation.BindingResult</node>
-            <node x="0.0" y="158.0">org.springframework.validation.BindException</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="org.springframework.validation.BindException" target="org.springframework.validation.BindingResult">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="org.springframework.validation.BindingResult" target="org.springframework.validation.Errors">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-196.0" y="-32.5" />
-          <SelectedNodes>
-            <node>org.springframework.validation.BindingResult</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/ErrorsTEst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#2155#2156#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2227#2228#0" expanded="true" />
-            <element signature="e#2288#2289#0" expanded="true" />
-            <element signature="e#2315#2316#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2451#2452#0" expanded="true" />
-            <element signature="e#2475#2476#0" expanded="true" />
-            <element signature="e#2539#2540#0" expanded="true" />
-            <element signature="e#2566#2567#0" expanded="true" />
-            <element signature="e#2623#2624#0" expanded="true" />
-            <element signature="e#2650#2651#0" expanded="true" />
-            <element signature="e#2703#2704#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2784#2785#0" expanded="true" />
-            <element signature="e#2808#2809#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-            <element signature="e#2897#2898#0" expanded="true" />
-            <element signature="e#2952#2953#0" expanded="true" />
-            <element signature="e#2979#2980#0" expanded="true" />
-            <element signature="e#3040#3041#0" expanded="true" />
-            <element signature="e#3068#3069#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-            <element signature="e#3153#3154#0" expanded="true" />
-            <element signature="e#3223#3224#0" expanded="true" />
-            <element signature="e#3250#3251#0" expanded="true" />
-            <element signature="e#3313#3314#0" expanded="true" />
-            <element signature="e#3340#3341#0" expanded="true" />
-            <element signature="e#3399#3400#0" expanded="true" />
-            <element signature="e#3426#3427#0" expanded="true" />
-            <element signature="e#3486#3487#0" expanded="true" />
-            <element signature="e#3513#3514#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/utill/validation/MemberValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/ErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/http/MediaType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1445,84 +1409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="151" column="42" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/exception/MemberNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/EntityNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/ResponseErrors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.1.9.RELEASE/spring-test-5.1.9.RELEASE.jar!/org/springframework/test/web/servlet/setup/MockMvcBuilders.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="49" column="62" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="132" column="27" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="27" />
         </state>
       </provider>
     </entry>

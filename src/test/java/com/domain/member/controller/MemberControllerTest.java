@@ -1,13 +1,12 @@
 package com.domain.member.controller;
 
-import com.config.spring.RootAppContextConfiguration;
-import com.config.spring.WebAppContextConfiguration;
-import com.domain.member.dto.MemberDto;
+import com.configuration.spring.RootAppContextConfiguration;
+import com.configuration.spring.WebAppContextConfiguration;
+import com.domain.member.dto.MemberRequestDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -15,24 +14,25 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Arrays;
-import java.util.Optional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootAppContextConfiguration.class, WebAppContextConfiguration.class})
+@Transactional
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MemberControllerTest {
 
@@ -63,28 +63,27 @@ public class MemberControllerTest {
     @Test
     public void A_addMember() throws Exception {
         //Given
-        MemberDto member = MemberDto.builder()
-                .memberCheckPassword("123")
-                .memberPassword("123")
-                .memberName("zzzz")
-                .memberEmail("addTest@asdfasdfasdf.com")
+        MemberRequestDto member = MemberRequestDto.builder()
+                .memberCheckPassword("addMember")
+                .memberPassword("addMember")
+                .memberName("kdh")
+                .memberEmail("addMember@naver.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
-                .memberPhoneNumber("010-1111-010")
+                .memberPhoneNumber("010-828-8282")
                 .accountEnable(accountEnable)
                 .memberGrade("admin")
                 .build();
 
         //When & Then
-        mockMvc.perform(post("/api/members")
+        mockMvc.perform(post("/v1/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(member)))
                 .andDo(print())
                 .andExpect(jsonPath("memberName").exists())
-                .andExpect(jsonPath("memberPassword").exists())
                 .andExpect(jsonPath("memberEmail").exists())
                 .andExpect(jsonPath("memberAge").exists())
                 .andExpect(jsonPath("memberSex").exists())
@@ -92,22 +91,24 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("memberPhoneNumber").exists())
                 .andExpect(jsonPath("memberGrade").exists())
                 .andExpect(jsonPath("memberPhoneNumber").exists())
-                .andExpect(jsonPath("roles").exists())
+                .andExpect(jsonPath("grantedAuthority").exists())
                 .andExpect(jsonPath("accountEnable").exists())
+
+                .andExpect(jsonPath("memberPassword").doesNotExist())
                 .andExpect(status().isCreated());
     }
 
     @Test
-    public void B_validatie() throws Exception {
+    public void B_validate() throws Exception {
         //Given
-        MemberDto member = MemberDto.builder()
+        MemberRequestDto member = MemberRequestDto.builder()
                 .memberCheckPassword("1232222222")
                 .memberPassword("123")
                 .memberName("zzzz")
                 .memberEmail("addTest@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("ADMIN"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)
@@ -116,7 +117,7 @@ public class MemberControllerTest {
 
 
         //When & Then
-        mockMvc.perform(post("/api/members")
+        mockMvc.perform(post("/v1/members")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(member)))
@@ -137,7 +138,7 @@ public class MemberControllerTest {
                 .memberEmail("get@asdfasdfasdf.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1001-010")
                 .accountEnable(accountEnable)
@@ -148,12 +149,13 @@ public class MemberControllerTest {
         //When
         Member result = memberCommonRepository.save(member);
 
+
+
         //Then
-        mockMvc.perform(get("/api/members/{memberId}", result.getMemberId())
+        mockMvc.perform(get("/v1/members/{memberId}", result.getMemberId())
                 .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print())
                 .andExpect(jsonPath("memberName").exists())
-                .andExpect(jsonPath("memberPassword").exists())
                 .andExpect(jsonPath("memberEmail").exists())
                 .andExpect(jsonPath("memberAge").exists())
                 .andExpect(jsonPath("memberSex").exists())
@@ -161,10 +163,14 @@ public class MemberControllerTest {
                 .andExpect(jsonPath("memberPhoneNumber").exists())
                 .andExpect(jsonPath("memberGrade").exists())
                 .andExpect(jsonPath("memberPhoneNumber").exists())
+                .andExpect(jsonPath("grantedAuthority").exists())
+                .andExpect(jsonPath("accountEnable").exists())
                 .andExpect(jsonPath("createdAt").exists())
                 .andExpect(jsonPath("modifiedAt").exists())
-                .andExpect(jsonPath("roles").exists())
-                .andExpect(jsonPath("accountEnable").exists());
+
+                .andExpect(jsonPath("memberPassword").doesNotExist())
+
+        ;
     }
 
     @Test
@@ -177,7 +183,7 @@ public class MemberControllerTest {
                 .memberEmail("get@nnnnnnnnnn.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1188-010")
                 .accountEnable(accountEnable)
@@ -189,9 +195,9 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(get("/api/members/{memberId}", result.getMemberId() + 1))
+        mockMvc.perform(get("/v1/members/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
-                .andExpect(status().isNotFound());
+                .andExpect(status().isBadRequest());
     }
 
     @Test
@@ -203,7 +209,7 @@ public class MemberControllerTest {
                 .memberEmail("delete@test.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("012-112-010")
                 .accountEnable(accountEnable)
@@ -215,7 +221,7 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(delete("/api/members/{memberId}", result.getMemberId()))
+        mockMvc.perform(delete("/v1/members/{memberId}", result.getMemberId()))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
@@ -229,7 +235,7 @@ public class MemberControllerTest {
                 .memberEmail("delete_notFound@test.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("013-112-010")
                 .accountEnable(accountEnable)
@@ -241,9 +247,9 @@ public class MemberControllerTest {
         Member result = memberCommonRepository.save(member);
 
         //Then
-        mockMvc.perform(delete("/api/members/{memberId}", result.getMemberId() + 1))
+        mockMvc.perform(delete("/v1/members/{memberId}", result.getMemberId() + 1))
                 .andDo(print())
-                .andExpect(status().isNoContent());
+                .andExpect(status().isBadRequest());
     }
 
     @Test
@@ -255,7 +261,7 @@ public class MemberControllerTest {
                 .memberEmail("NotUpdate@memberUpdate.com")
                 .memberSex("남")
                 .memberAge(99)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-7788-010")
                 .accountEnable(accountEnable)
@@ -263,7 +269,8 @@ public class MemberControllerTest {
                 .build();
         Member result = memberCommonRepository.save(member);
 
-        MemberDto memberUpdate = MemberDto.builder()
+        MemberRequestDto memberUpdate = MemberRequestDto.builder()
+                .memberId(result.getMemberId())
                 .memberName("Update")
                 .memberEmail("update@memberUpdate.com")
                 .memberAddress("서울시 노량진")
@@ -272,24 +279,15 @@ public class MemberControllerTest {
 
 
         //When & Then
-        mockMvc.perform(patch("/api/members/{memberId}", result.getMemberId())
+        mockMvc.perform(patch("/v1/members/{memberId}", result.getMemberId())
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(memberUpdate)))
                 .andDo(print())
-                .andExpect(jsonPath("memberName").value(memberUpdate.getMemberName()))
-                .andExpect(jsonPath("memberEmail").value(memberUpdate.getMemberEmail()))
-                .andExpect(jsonPath("memberAddress").value(memberUpdate.getMemberAddress()))
-                .andExpect(status().isOk());
+                .andExpect(status().is3xxRedirection())
+                .andExpect(header().string("Location", "/v1/members/"+result.getMemberId())) ;
 
 
-        Optional<Member> memberOptional = memberCommonRepository.findById(result.getMemberId());
-        Member memberUpdateObject = memberOptional.get();
-
-        Assert.assertEquals(memberUpdate.getMemberName(), memberUpdateObject.getMemberName());
-        Assert.assertEquals(memberUpdate.getMemberEmail(), memberUpdateObject.getMemberEmail());
-        Assert.assertEquals(memberUpdate.getMemberAddress(), memberUpdateObject.getMemberAddress());
-        Assert.assertEquals(memberUpdate.getMemberPhoneNumber(), memberUpdateObject.getMemberPhoneNumber());
     }
 
 

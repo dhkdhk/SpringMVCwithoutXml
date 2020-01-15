@@ -1,14 +1,14 @@
 package com.domain.member.entity;
 
-import com.domain.global.RoleAttributeConvertor;
-import com.domain.member.dto.MemberDto;
+import com.domain.member.support.GrantedAuthorityAttributeConverter;
 import lombok.*;
-import org.springframework.util.StringUtils;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Getter @Builder
+@Getter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -34,24 +34,23 @@ public class Member extends CreatedAndModifiedEntity {
     private String memberPhoneNumber;
 
     private String memberGrade;
-    @Convert(converter= RoleAttributeConvertor.class)
-    private List<String> roles;
+    @Convert(converter = GrantedAuthorityAttributeConverter.class)
+    private List<String> grantedAuthority;
 
     @Embedded
     private AccountEnable accountEnable;
 
 
-    public void updateInformation(Long memberId, MemberDto memberDto) {
-        if (!StringUtils.isEmpty(memberDto)) {
-            this.memberId = memberId;
-            this.memberName = memberDto.getMemberName();
-            this.memberEmail = memberDto.getMemberEmail();
-            this.memberAddress = memberDto.getMemberAddress();
-            this.memberPhoneNumber = memberDto.getMemberPhoneNumber();
-        }
+    public void updateInformation(Member member) {
+        this.memberName = member.getMemberName();
+        this.memberEmail = member.getMemberEmail();
+        this.memberAddress = member.getMemberAddress();
+        this.memberPhoneNumber = member.getMemberPhoneNumber();
+
     }
 
-    public void responseNotShowPassword(){
-        this.memberPassword = "";
+    public void passwordEncode(PasswordEncoder passwordEncoder){
+       this.memberPassword = passwordEncoder.encode(this.memberPassword);
     }
+
 }
