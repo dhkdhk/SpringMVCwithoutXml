@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,12 +25,13 @@ public class MemberController {
     private final MemberSignUp memberSignUp;
     private final MemberIProfile memberProfileUpdater;
     private final MemberFinder memberFinder;
-
+    private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/v1/members")
     public ResponseEntity signUp(@RequestBody final MemberRequestDto memberRequestDto) {
 
-        final Member member =  memberSignUp.signUp(ModelMappingUtil.dtoToEntity(memberRequestDto));
+        Member member =  memberSignUp.signUp(ModelMappingUtil.dtoToEntity(memberRequestDto));
+        member.passwordEncode(passwordEncoder);
 
         log.debug("###Sign UP", member.getMemberEmail()+" 회원가입 완료");
 

@@ -1,7 +1,8 @@
 package com.domain.member.entity;
 
-import com.domain.member.support.RoleAttributeConverter;
+import com.domain.member.support.GrantedAuthorityAttributeConverter;
 import lombok.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.util.List;
@@ -33,8 +34,8 @@ public class Member extends CreatedAndModifiedEntity {
     private String memberPhoneNumber;
 
     private String memberGrade;
-    @Convert(converter = RoleAttributeConverter.class)
-    private List<String> roles;
+    @Convert(converter = GrantedAuthorityAttributeConverter.class)
+    private List<String> grantedAuthority;
 
     @Embedded
     private AccountEnable accountEnable;
@@ -46,6 +47,10 @@ public class Member extends CreatedAndModifiedEntity {
         this.memberAddress = member.getMemberAddress();
         this.memberPhoneNumber = member.getMemberPhoneNumber();
 
+    }
+
+    public void passwordEncode(PasswordEncoder passwordEncoder){
+       this.memberPassword = passwordEncoder.encode(this.memberPassword);
     }
 
 }

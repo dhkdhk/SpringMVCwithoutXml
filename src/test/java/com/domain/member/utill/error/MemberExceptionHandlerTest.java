@@ -2,12 +2,12 @@ package com.domain.member.utill.error;
 
 import com.configuration.spring.RootAppContextConfiguration;
 import com.configuration.spring.WebAppContextConfiguration;
-import com.interfaces.exception.handler.ErrorCode;
 import com.domain.member.dto.MemberRequestDto;
 import com.domain.member.entity.AccountEnable;
 import com.domain.member.entity.Member;
 import com.domain.member.repository.jpa.MemberCommonRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.interfaces.exception.handler.ErrorCode;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -146,7 +146,7 @@ public class MemberExceptionHandlerTest {
                 .memberEmail("duplicateTest@naver.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)
