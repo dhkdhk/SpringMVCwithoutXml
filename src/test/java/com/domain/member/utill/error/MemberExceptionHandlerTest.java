@@ -146,7 +146,7 @@ public class MemberExceptionHandlerTest {
                 .memberEmail("duplicateTest@naver.com")
                 .memberSex("남")
                 .memberAge(31)
-                .roles(Arrays.asList("ADMIN"))
+                .grantedAuthority(Arrays.asList("READ", "WRITE"))
                 .memberAddress("서울시 동작구")
                 .memberPhoneNumber("010-1111-010")
                 .accountEnable(accountEnable)

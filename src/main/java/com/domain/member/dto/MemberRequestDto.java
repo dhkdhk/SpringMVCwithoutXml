@@ -21,7 +21,7 @@ public class MemberRequestDto {
     private String memberSex;
     private String memberAddress;
     private String memberPhoneNumber;
-    private List<String> roles;
+    private List<String> grantedAuthority;
     private String memberGrade;
     private AccountEnable accountEnable;
 

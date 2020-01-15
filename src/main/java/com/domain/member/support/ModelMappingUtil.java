@@ -16,7 +16,7 @@ public class ModelMappingUtil {
                 .memberSex(member.getMemberSex())
                 .memberAddress(member.getMemberAddress())
                 .memberPhoneNumber(member.getMemberPhoneNumber())
-                .roles(member.getRoles())
+                .grantedAuthority(member.getGrantedAuthority())
                 .memberGrade(member.getMemberGrade())
                 .accountEnable(member.getAccountEnable())
                 .createdAt(member.getCreatedAt())
@@ -34,7 +34,7 @@ public class ModelMappingUtil {
                 .memberSex(memberRequestDto.getMemberSex())
                 .memberAddress(memberRequestDto.getMemberAddress())
                 .memberPhoneNumber(memberRequestDto.getMemberPhoneNumber())
-                .roles(memberRequestDto.getRoles())
+                .grantedAuthority(memberRequestDto.getGrantedAuthority())
                 .memberGrade(memberRequestDto.getMemberGrade())
                 .accountEnable(memberRequestDto.getAccountEnable())
                 .build();
