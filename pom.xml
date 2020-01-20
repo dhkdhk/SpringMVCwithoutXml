@@ -14,10 +14,10 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <org.springframework.security>5.1.2.RELEASE</org.springframework.security>
+        <org.springframework>5.1.9.RELEASE</org.springframework>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
@@ -28,26 +28,26 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.1.9.RELEASE</version>
+            <version>${org.springframework}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>5.1.9.RELEASE</version>
+            <version>${org.springframework}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>5.1.9.RELEASE</version>
+            <version>${org.springframework}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>5.1.9.RELEASE</version>
+            <version>${org.springframework}</version>
         </dependency>
 
 
@@ -150,12 +150,6 @@
         <dependency>
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>
-            <version>2.2.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.glassfish.web</groupId>
-            <artifactId>javax.el</artifactId>
             <version>2.2.4</version>
         </dependency>
 
