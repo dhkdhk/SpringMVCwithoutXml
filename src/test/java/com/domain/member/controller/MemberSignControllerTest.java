@@ -72,7 +72,6 @@ public class MemberSignControllerTest {
     }
 
     @Test
-    @Rollback(false)
     public void loginTest() throws Exception {
         //Given
         String memberPassword = "123";

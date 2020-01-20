@@ -12,9 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d27a132-a970-4f0e-8465-cd2ce2da251c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarkerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/configuration/security/SpringSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/configuration/security/SpringSecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccountChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccountChanger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/domain/member/controller/MemberSignControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/domain/member/controller/MemberSignControllerTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,10 +49,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="370">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,61 +61,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+            <state relative-caret-position="296">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="132" column="27" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="27" />
+            <state relative-caret-position="323">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1663#1664#0" expanded="true" />
+                <element signature="e#1744#1745#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,9 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AuthenticationTo</find>
-      <find>Filters</find>
-      <find>currentPosit</find>
       <find>getFilters</find>
       <find>filter</find>
       <find>Delegating</find>
@@ -141,7 +109,6 @@
       <find>&quot;/login&quot;</find>
       <find>fwRequest</find>
       <find>HttpServletResponse fw</find>
-      <find>authenticationManagerBean</find>
       <find>security-test</find>
       <find>Member.B</find>
       <find>retrieveUser</find>
@@ -161,12 +128,17 @@
       <find>signUp</find>
       <find>get</find>
       <find>getMember</find>
+      <find>databind</find>
+      <find>authenticationManagerBean</find>
+      <find>authenticationManager</find>
+      <find>signup</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
     <dirStrings>
       <dir>D:\과천스터디\spring\src\main\java\com\domain\member</dir>
+      <dir>D:\과천스터디\spring\src\main\java\com\domain\member\repository</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -175,13 +147,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/controller/MemberController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/exception/EntityNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/global/error/RestResponseEntityExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/exception/TESTESTESTETSET.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/ServletInitalizerConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/ModelMapperUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/support/LocalDateTimeConvertor.java" />
@@ -216,16 +186,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/jpa.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/RootAppContextConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/configuration/spring/WebAppContextConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarkerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTestGroovy.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java" />
       </list>
     </option>
   </component>
@@ -237,10 +209,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1911" />
-    <option name="y" value="-170" />
-    <option name="width" value="2578" />
-    <option name="height" value="1408" />
+    <option name="x" value="2217" />
+    <option name="y" value="490" />
+    <option name="width" value="2083" />
+    <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -248,6 +220,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,7 +262,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -298,37 +282,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="member" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="member" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -350,6 +303,15 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -384,8 +346,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,7 +358,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/interfaces" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../base" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -453,7 +413,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MemberControllerTest.C_getMember">
+  <component name="RunManager" selected="JUnit.MemberSignControllerTest.loginTest">
     <configuration name="MemberControllerTest.C_getMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
@@ -683,16 +643,16 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.MemberSignControllerTest.loginTest" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.478" />
       <item itemvalue="JUnit.MemberSignControllerTest.forbidden" />
       <item itemvalue="JUnit.MemberSignControllerTest.A_addMember" />
       <item itemvalue="JUnit.MemberSignControllerTest.C_getMember" />
       <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.478" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.loginTest" />
+        <item itemvalue="JUnit.MemberControllerTest.C_getMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.A_addMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.C_getMember" />
         <item itemvalue="JUnit.MemberSignControllerTest.forbidden" />
@@ -797,44 +757,49 @@
       <workItem from="1578996576930" duration="4692000" />
       <workItem from="1579003386846" duration="7625000" />
       <workItem from="1579018934469" duration="1178000" />
-      <workItem from="1579084673845" duration="13822000" />
+      <workItem from="1579084673845" duration="15612000" />
+      <workItem from="1579187278400" duration="2052000" />
+      <workItem from="1579263187673" duration="62000" />
+      <workItem from="1579308858534" duration="3410000" />
+      <workItem from="1579525890249" duration="186000" />
+      <workItem from="1579530327579" duration="1096000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 36m 22s.xml">
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 26m 14s.xml">
       <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberSignControllerTest_C_getMember - 2020.01.15 at 23h 39m 13s.xml">
-      <configuration name="MemberSignControllerTest.C_getMember" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 41m 09s.xml">
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 26m 27s.xml">
       <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberSignControllerTest_C_getMember - 2020.01.15 at 23h 41m 50s.xml">
-      <configuration name="MemberSignControllerTest.C_getMember" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MemberSignControllerTest_C_getMember - 2020.01.15 at 23h 47m 05s.xml">
-      <configuration name="MemberSignControllerTest.C_getMember" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 47m 52s.xml">
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 26m 44s.xml">
       <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.15 at 23h 48m 50s.xml">
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 26m 58s.xml">
       <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberSignControllerTest_A_addMember - 2020.01.15 at 23h 49m 41s.xml">
-      <configuration name="MemberSignControllerTest.A_addMember" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 29m 53s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberSignControllerTest_A_addMember - 2020.01.15 at 23h 58m 15s.xml">
-      <configuration name="MemberSignControllerTest.A_addMember" configurationId="JUnit" />
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 32m 26s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.16 at 00h 10m 29s.xml">
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 33m 44s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.17 at 00h 35m 22s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.18 at 10h 47m 08s.xml">
+      <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MemberSignControllerTest_loginTest - 2020.01.20 at 23h 38m 05s.xml">
       <configuration name="MemberSignControllerTest.loginTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="480999000" />
+    <option name="totallyTimeSpent" value="489595000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -849,7 +814,7 @@
     <frame x="1913" y="-168" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.23326673" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9169139" visible="true" weight="0.17982018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -858,21 +823,21 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" sideWeight="0.08308605" side_tool="true" weight="0.14362416" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.38267875" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6998993" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38267875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.51460224" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.6183283" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32729104" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5538771" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19838873" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.4632427" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.36858007" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.33758864" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3248227" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.33736154" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.2306143" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -973,12 +938,6 @@
           <properties />
           <option name="timeStamp" value="141" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberSignUp.java</url>
           <line>6</line>
@@ -989,77 +948,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/openjdk-11.0.2/lib/src.zip!/java.net.http/jdk/internal/net/http/AuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/access/ConfigAttribute.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/access/AccessDecisionManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.2.RELEASE/spring-security-web-5.1.2.RELEASE.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/login.html" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.2.RELEASE/spring-security-web-5.1.2.RELEASE.jar!/org/springframework/security/web/context/HttpSessionSecurityContextRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="126" selection-start-line="22" selection-start-column="126" selection-end-line="22" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="122" column="50" lean-forward="true" selection-start-line="122" selection-start-column="50" selection-end-line="122" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="190" column="19" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/AbstractAuthenticationFilterConfigurer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.2.RELEASE/spring-security-web-5.1.2.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/core/context/SecurityContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1145,24 +1033,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/support/GrantedAuthorityAttributeConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/MemberServiceConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1281,27 +1155,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberSignController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberSignController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/dto/MemberRequestDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="67" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1319,26 +1177,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberIProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1346,31 +1185,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinderMarker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberFinder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="68" column="40" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spockframework/spock-core/1.1-groovy-2.4/spock-core-1.1-groovy-2.4.jar!/spock/lang/Specification.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTestGroovy.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberProfileChanger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberPrincipleFinder.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-test/5.1.2.RELEASE/spring-security-test-5.1.2.RELEASE.jar!/org/springframework/security/test/context/support/WithMockUser.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="266">
+          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-test/5.1.2.RELEASE/spring-security-test-5.1.2.RELEASE.jar!/org/springframework/security/test/context/support/WithUserDetails.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/http/HttpStatus.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.1.9.RELEASE/spring-test-5.1.9.RELEASE.jar!/org/springframework/test/web/servlet/result/StatusResultMatchers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="144" column="42" lean-forward="true" selection-start-line="144" selection-start-column="42" selection-end-line="144" selection-end-column="42" />
+          <folding>
+            <element signature="e#4647#4648#0" expanded="true" />
+            <element signature="e#4700#4701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/utill/error/MemberExceptionHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/configuration/spring/ApplicationContextConfigTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.2.RELEASE/spring-security-config-5.1.2.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="122" column="32" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.9.RELEASE/spring-context-5.1.9.RELEASE.jar!/org/springframework/context/annotation/Configuration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/domain/member/service/jpa/MemberAccount.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#215#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/service/jpa/MemberAccountChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1379,18 +1320,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberSignControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="370">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1399,18 +1330,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/interfaces/controller/MemberController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+        <state relative-caret-position="285">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/domain/member/controller/MemberControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/support/GrantedAuthorityAttributeConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="132" column="27" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="27" />
+        <state relative-caret-position="323">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/domain/member/entity/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/configuration/security/SpringSecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1744#1745#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

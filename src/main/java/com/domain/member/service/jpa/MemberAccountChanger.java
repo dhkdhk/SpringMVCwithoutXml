@@ -41,10 +41,7 @@ public class MemberAccountChanger implements MemberAccount, MemberSignUp {
         }
     }
 
-    @Override
-    public void changePassword(Long memberId, String password) {
-        //TODO 구현 필요
-    }
+
 
 
     @Override
